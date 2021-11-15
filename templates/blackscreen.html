@@ -1,0 +1,160 @@
+<!-- Extending the predefined project layout -->
+<!-- Custom file for standardizing Project Data
+This HTML is setup as as a Jinja2 layout, coders use layouts for:
+ ... standardization of style
+ ... setting expectations for data
+ ... code reuse
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+<audio id="MarioTitleMusic" controls loop style="display:none">
+    <source src="/static/assets/MarioTitleMusic.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+<audio id="MarioLevelMusic" controls loop style="display:none">
+    <source src="/static/assets/MarioLevelMusic.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+
+<audio id="MarioStarMusic" controls style="display:none">
+    <source src="/static/assets/MarioStarMusic.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+
+<audio id="MarioJump" controls style="display:none">
+    <source src="/static/assets/MarioJump.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+<audio id="MarioJump2" controls style="display:none">
+    <source src="/static/assets/MarioJump.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+
+<audio id="MarioCoin" controls style="display:none">
+    <source src="/static/assets/MarioCoin.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+<audio id="MarioDeath" controls style="display:none">
+    <source src="/static/assets/MarioDeath.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+
+<audio id="MarioPipe" controls style="display:none">
+    <source src="/static/assets/MarioPipe.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+<audio id="MarioPipe2" controls style="display:none">
+    <source src="/static/assets/MarioPipe.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+
+{#<h1>Easter Eggs</h1>#}
+
+<audio id="longDay" controls style="display:none">
+    <source src="/static/assets/Long%20Day.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+<audio id="footsteps" controls style="display:none">
+    <source src="/static/assets/Footsteps.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+<audio id="notrickroll" controls style="display:none">
+    <source src="/static/assets/notrickrolllol.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+<audio id="xuehuapiaopiao" controls style="display:none">
+    <source src="/static/assets/YiJianMei.mp3" type="audio/mpeg"> Your browser does not support audio.
+</audio>
+
+<script>
+    //https://stackoverflow.com/questions/43958637/how-to-play-a-sound-on-key-press-in-javascript
+
+    let musicMarioDeath = false;
+    let musicMarioLevelMusic = false;
+    let musicMarioStarMusic = false;
+    let musicMarioTitleMusic = false;
+
+    // Easter Egg Variables
+    let music1 = false;
+    let musicEasterEgg = false;
+    let musicCEasterEgg = false;
+
+    // Play Title Music on start
+    document.getElementById('MarioTitleMusic').play();
+
+    document.addEventListener('keydown', function(e) {
+        // W (Player 1 Jumps)
+        if ((e.keyCode === 87) && musicMarioLevelMusic === true) {
+            document.getElementById('MarioJump').play();
+        }
+        // Up Arrow (Player 2 Jumps)
+        if ((e.keyCode === 38) && musicMarioLevelMusic === true) {
+            document.getElementById('MarioJump2').play();
+        }
+
+        // S (Player 1 Pipes)
+        if ((e.keyCode === 83) && musicMarioLevelMusic === true) {
+            document.getElementById('MarioPipe').play();
+        }
+        // Down Arrow (Player 2 Pipes)
+        if ((e.keyCode === 40) && musicMarioLevelMusic === true) {
+            document.getElementById('MarioPipe2').play();
+        }
+
+        // Enter (Start Game)
+        if ((e.keyCode === 13) && musicMarioLevelMusic === false) {
+            document.getElementById('MarioTitleMusic').pause();
+            document.getElementById('MarioLevelMusic').play();
+            musicMarioLevelMusic = true;
+        }
+        // X (Death)
+        if ((e.keyCode === 88) && musicMarioDeath === false){
+            document.getElementById('MarioLevelMusic').pause();
+            document.getElementById('MarioStarMusic').pause();
+            document.getElementById('MarioDeath').play();
+            musicMarioDeath = true;
+            musicMarioLevelMusic = false;
+        }
+
+        // C (Coin)
+        if ((e.keyCode === 67) && musicMarioLevelMusic === true) {
+            document.getElementById('MarioCoin').play();
+        }
+        // Z (Star Power)
+        /*
+        if ((e.keyCode === 90) && musicMarioLevelMusic === true) {
+            document.getElementById('MarioLevelMusic').pause();
+            musicMarioLevelMusic = false;
+            document.getElementById('MarioStarMusic').play();
+        }
+        */
+
+
+
+        // Easter Eggs
+        if ((e.keyCode === 220) && musicEasterEgg === false) {
+            document.getElementById('notrickroll').play();
+            musicEasterEgg = true;
+        }
+        {#else if ((e.keyCode === 220) && musicEasterEgg === true) {#}
+        {#    document.getElementById('notrickroll').pause();#}
+        {#    musicEasterEgg = false;#}
+        {# }#}
+        if ((e.keyCode === 192) && musicCEasterEgg === false) {
+            document.getElementById('xuehuapiaopiao').play();
+            musicCEasterEgg = true;
+        }
+        {#else if ((e.keyCode === 192) && musicCEasterEgg === true) {#}
+        {#    document.getElementById('xuehuapiaopiao').pause();#}
+        {#    musicCEasterEgg = false;#}
+        {# }#}
+        if ((e.keyCode === 49) && music1 === false) {
+            document.getElementById('longDay').play();
+            music1 = true;
+        }
+        else if ((e.keyCode === 49) && music1 === true){
+            document.getElementById('longDay').pause();
+            music1 = false;
+        }
+    });
+</script>
+
+<head>
+    <title>Playground | Games </title>
+</head>
+
+<body style="background-color:black; background-image:none">
+<!- Try building a new body here ->
+</body>
+
+</html>

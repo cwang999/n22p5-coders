@@ -1,0 +1,93 @@
+<!-- Extending the predefined project layout -->
+<!-- Custom file for standardizing Project Data
+This HTML is setup as as a Jinja2 layout, coders use layouts for:
+ ... standardization of style
+ ... setting expectations for data
+ ... code reuse
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+
+
+
+
+<head>
+    <title>Playground | Games </title>
+
+</head>
+
+<body>
+
+
+<!- Try building a new body here ->
+<h1><strong>Rock Paper Scissors</strong></h1>
+<h4 style="color:FireBrick;">Welcome to the Playground!</h4>
+<p>Click either Rock, Paper, or Scissors.</p>
+
+<style>
+input[type=text][
+width:100%;
+border:2px solid #aaa;
+]
+
+
+</style>
+<button class="options">Rock</button>
+<button class="options">Paper</button>
+<button class="options">Scissors</button>
+
+<script>
+    const options = document.querySelectorAll(".options");
+
+    options.forEach((option) => {
+        option.addEventListener("click", function () {
+            const pInput = this.textContent;
+
+            const cOptions = ["Rock", "Paper", "Scissors"];
+            const cInput = cOptions[Math.floor(Math.random() * 3)];
+
+            compareInputs(pInput, cInput);
+        });
+    });
+
+    function compareInputs(pInput, cInput) {
+        const currentMatch = `${pInput} vs ${cInput}`;
+
+        // Tie check
+        if (pInput === cInput) {
+            alert(`${currentMatch} is a Tie`);
+            return;
+        }
+
+        // Rock
+        if (pInput === "Rock") {
+            if (cInput === "Scissors") {
+                alert(`${currentMatch} = You Win`);
+            } else {
+                alert(`${currentMatch} = Computer Wins`);
+            }
+        }
+        // Paper
+        else if (pInput === "Paper") {
+            if (cInput === "Rock") {
+                alert(`${currentMatch} = You Win`);
+            } else {
+                alert(`${currentMatch} = Computer Wins`);
+            }
+        }
+        // Scissors
+        else if (pInput === "Scissors") {
+            if (cInput === "Paper") {
+                alert(`${currentMatch} = You Win`);
+            } else {
+                alert(`${currentMatch} = Computer Wins`);
+            }
+        }
+    }
+</script>
+
+</body>
+
+</html>

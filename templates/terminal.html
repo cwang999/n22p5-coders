@@ -1,0 +1,58 @@
+<!-- Extending the predefined project layout -->
+<!-- Custom file for standardizing Project Data
+This HTML is setup as as a Jinja2 layout, coders use layouts for:
+ ... standardization of style
+ ... setting expectations for data
+ ... code reuse
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+<head>
+    <title>Playground | Terminal </title>
+</head>
+
+<body>
+
+    <div class="container p-3 my-3 bg-dark text-light rounded">
+{#        <p style="color:lime">T:\Green\G1></p> <input name="command" id="command">#}
+{#        <input type="submit" value="enter">#}
+
+        <form action="" id="input" method="POST">
+            <label for="commandInputId" style="color:{{ color }}">{{ currentTerminal }}</label>
+            <input name="commandInput" id="commandInputId" type="text" class="input-box bg-dark" style="color:{{ color }}" autocomplete="off" autofocus>
+        </form>
+
+        <div>
+            <br>
+            <h6 style="color:{{ color }}">{{ today1 }} {{ commandOutput1 }}ㅤ</h6>
+            <h6 style="color:{{ color }}">{{ today2 }} {{ commandOutput2 }}ㅤ</h6>
+            <h6 style="color:{{ color }}">{{ today3 }} {{ commandOutput3 }}ㅤ</h6>
+            <h6 style="color:{{ color }}">{{ today4 }} {{ commandOutput4 }}ㅤ</h6>
+            <h6 style="color:{{ color }}">{{ commandOutput5 }}</h6>
+        </div>
+    </div>
+
+    <div class="container p-3 my-3 bg-light text-black rounded">
+        <h5>README.txt</h5>
+        <p>
+            Hello Agent G1. Your task is to secure this terminal and prevent information leaks.<br>
+            At the same time, if you can find any information from competitors, don't be afraid to snoop around and record anything you find.
+        </p>
+        <p>
+            In case you forget how to operate this terminal, a list of commands has been provided below. Good luck.<br>
+            P.S. Your new password is "qwerty". Keep it secure.
+        </p>
+        <p>
+            echo - Tests terminal functionality.<br>
+            viewport - Lists out available terminals and port information.<br>
+            connect [port] [optional password] - Attempts to connect to the port.<br>
+            scan - Displays files within the system.<br>
+            run [filename] - Reads or executes the requested file.
+        </p>
+    </div>
+
+</body>
+
+</html>

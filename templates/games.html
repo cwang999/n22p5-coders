@@ -1,0 +1,127 @@
+<!-- Extending the predefined project layout -->
+<!-- Custom file for standardizing Project Data
+This HTML is setup as as a Jinja2 layout, coders use layouts for:
+ ... standardization of style
+ ... setting expectations for data
+ ... code reuse
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+
+
+
+
+<head>
+    <title>Playground | Games </title>
+
+</head>
+
+<body>
+
+
+<!- Try building a new body here ->
+<h1><strong>Games</strong></h1>
+<h4 style="color:FireBrick;">Welcome to the Playground!</h4>
+<p>You are at the “Games” screen of this website. This is where you will play games. </p>
+
+
+    <div class="container p-3 my-3 bg-black text-light rounded" style="box-shadow: yellow">
+        <div class="row p-3 my-3 bg-black text-light rounded">
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="/games/rockpaper/">Rock Paper Scissors</a>!<br>
+                <a href="/games/rockpaper/"> <embed type="image/jpg" src="/static/assets/rock_paper_scissors.jpg" width="160" height="160"></a>
+                <p>Play rock paper scissors with friends or against a computer!</p>
+                <p>[Adding more features]</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="/games/tictactoe/">Tic Tac Toe</a>!<br>
+                <a href="/games/tictactoe/"> <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/1200px-Tic_tac_toe.svg.png" width="160" height="160"></a>
+                <p>Classic TicTacToe!</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="/games/sleepingsimulator">Sleep Simulator</a>!<br>
+                <a href="/games/sleepingsimulator"> <embed type="image/jpg" src="/static/assets/sleepgamelogo.jpg" width="160" height="160"></a>
+                <p>Simulate sleep :D</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-12"><br></div>
+            <div class="col-12"><br></div>
+            <div class="col-12"><br></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="/games/whackamole">Whack A Mole</a>!<br>
+                <a href="/games/whackamole"> <embed type="image/jpg" src="/static/assets/whackamolemole.jpg" width="160" height="160"></a>
+                <p>Whack a mole!</p>
+                <p>[Unifish'd]</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="/games/blackscreen">Blackscreen</a>!<br>
+                <a href="/games/blackscreen"> <embed type="image/jpg" src="/static/assets/000000.png" width="160" height="160"></a>
+                <p>Begin your journey...</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="/games/terminal">Terminal Color</a>!<br>
+                <a href="/games/terminal"> <embed type="image/jpg" src="/static/assets/000000.png" width="160" height="160"></a>
+                <p>Play terminal color!</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-12"><br></div>
+            <div class="col-12"><br></div>
+            <div class="col-12"><br></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="#">Dice Roll</a>!<br>
+                <a href="https://www.random.org/dice/"> <embed type="image/jpg" src="/static/assets/dice.jpg" width="160" height="160"></a>
+                <p>Roll dice and see what number(s) you get!</p>
+                <p>[#]</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="https://www.coolmathgames.com/0-darts">Darts</a>!<br>
+                <a href="https://www.coolmathgames.com/0-darts"> <embed type="image/jpg" src="/static/assets/depositphotos_114929056-stock-illustration-darts-sporting-symbols.jpg" width="160" height="160"></a>
+                <p>Play darts with friends or against a computer!</p>
+                <p>[Another Website]</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="https://www.chess.com/play/online">Chess</a>!<br>
+                <a href="https://www.chess.com/play/online"> <embed type="image/jpg" src="/static/assets/chess.jpg" width="160" height="160"></a>
+                <p>Play chess with friends or against a computer!</p>
+                <p>[Another Website]</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-12"><br></div>
+            <div class="col-12"><br></div>
+            <div class="col-12"><br></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="#">Pacman</a>!<br>
+                <a href="#"> <embed type="image/jpg" src="/static/assets/pacman.png" width="160" height="160"></a>
+                <p>Survive as long as you can with pacman and earn as many points as possible.</p>
+                <p>[#]</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="#">Battleship</a>!<br>
+                <a href="#"> <embed type="image/jpg" src="/static/assets/battleship.png" width="160" height="160"></a>
+                <p>Play battleship with friends or against a computer!</p>
+                <p>[#]</p>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-3 my-3 bg-light text-dark rounded" style="text-align: center" >Play <a href="#">Connect Four</a>!<br>
+                <a href="#"> <embed type="image/jpg" src="/static/assets/connect4.png" width="240" height="160"></a>
+                <p>Play connect four with friends or against a computer!</p>
+                <p>[#]</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

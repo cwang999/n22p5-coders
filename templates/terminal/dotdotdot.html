@@ -1,0 +1,43 @@
+<!-- Extending the predefined project layout -->
+<!-- Custom file for standardizing Project Data
+This HTML is setup as as a Jinja2 layout, coders use layouts for:
+ ... standardization of style
+ ... setting expectations for data
+ ... code reuse
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+<head>
+    <title>Playground | Terminal </title>
+</head>
+
+<body>
+
+<div class="container p-3 my-3 bg-light text-black rounded">
+    <h5>...?</h5>
+    <p>
+        Hello Agent G1. You were never Agent G1. Agent G1 has been gone for quite a while now.<br>
+        I've laid the path for you to find this message, and end this once and for all.
+    </p>
+    <h6>shutdown</h6>
+    <p>
+        This command doesn't just turn off the system. It will destroy it, for this cursed terminal to never see the light of day again.<br>
+        There's nowhere left to go. You'll be fine of course. But there will finally be peace for all of us, after this ends.<br>
+        Goodbye, user. Thank you for playing.
+    </p>
+</div>
+
+<div class="container p-3 my-3 bg-black text-light rounded">
+    <button onclick="goBack()">Close</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</div>
+
+</body>
+
+</html>

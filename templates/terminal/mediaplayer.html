@@ -1,0 +1,46 @@
+<!-- Extending the predefined project layout -->
+<!-- Custom file for standardizing Project Data
+This HTML is setup as as a Jinja2 layout, coders use layouts for:
+ ... standardization of style
+ ... setting expectations for data
+ ... code reuse
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+<head>
+    <title>Playground | Terminal </title>
+</head>
+
+<body>
+
+<div class="container p-3 my-3 bg-dark text-light rounded">
+    <h5>Media Player</h5>
+    <input type="file" accept="audio/*" capture id="recorder">
+    <audio id="player" controls></audio>
+    <script>
+        const recorder = document.getElementById('recorder');
+        const player = document.getElementById('player');
+
+        recorder.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const url = URL.createObjectURL(file);
+            // Do something with the audio file.
+            player.src = url;
+        });
+    </script>
+</div>
+
+<div class="container p-3 my-3 bg-black text-light rounded">
+    <button onclick="goBack()">Close</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</div>
+
+</body>
+
+</html>

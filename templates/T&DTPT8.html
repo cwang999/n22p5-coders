@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "layouts/base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>October 12th Extra Credit Challenge</title>
+</head>
+<body>
+
+{% set LIST = l %}
+{% set NUM = n %}
+
+<div class="contact" style="height: 35vh;">
+    <div class="row justify-content-left" style="margin: 2%;">
+
+        <div class="col-12">
+            <p>Your list: <b>{{ LIST }}</b></p>
+            <p>The number of even numbers below said integer that contain a 2 or 8: <b>{{ NUM }}</b></p>
+        </div>
+
+        <div class="col-12">
+            <form action="" id="number" method="POST" >
+                <label for="num">Type the upper bound</label>
+                <input type='number' name="num" id="num">
+                {#                <input type="submit" value="Enter">#}
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
