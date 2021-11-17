@@ -18,6 +18,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/connor_homepage/')
+def connor_homepage():
+    return render_template("connor_homepage.html")
+
 @app.route('/games/')
 def games():
     return render_template("games.html")
