@@ -26,21 +26,19 @@ def connor_homepage():
 def derrickpage():
     return render_template("derrickpage.html")
 
-@app.route('/games/')
+@app.route('/activity/')
 def games():
-    return render_template("games.html")
+    return render_template("activity.html")
 
-@app.route('/games/tictactoe/')
+@app.route('/activity/tictactoe/')
 def tictactoe():
     return render_template("tictactoe.html")
 
-@app.route('/games/blackscreen/')
+@app.route('/activity/blackscreen/')
 def blackscreen():
     return render_template("blackscreen.html")
 
-# @app.route('/games/terminal/')
-# def terminal():
-#     return render_template("terminal_illness.html")
+
 
 
 
@@ -67,7 +65,7 @@ def greet():
 
 # ------------------------------------ Terminal ------------------------------------
 
-@app.route('/games/terminal/', methods=['GET', 'POST'])
+@app.route('/activity/terminal/', methods=['GET', 'POST'])
 def terminal():
     global currentTerminalPY
     global greenThreeOpen
