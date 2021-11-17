@@ -1187,7 +1187,9 @@ def terminal():
 
 # ------------------------------------ End Of Terminal ------------------------------------
 
-
+@app.route('/reinhardtpage')
+def reinhardtpage():
+    return render_template("reinhardtpage.html")
 
 
 
