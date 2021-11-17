@@ -22,6 +22,10 @@ def index():
 def connor_homepage():
     return render_template("connor_homepage.html")
 
+@app.route('/derrickpage/')
+def derrickpage():
+    return render_template("derrickpage.html")
+
 @app.route('/games/')
 def games():
     return render_template("games.html")
