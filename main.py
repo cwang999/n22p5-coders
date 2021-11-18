@@ -47,13 +47,25 @@ def greet():
 def games():
     return render_template("activity.html")
 
+@app.route('/how-to-play/tictactoe/')
+def tictactoeHTP():
+    return render_template("/how-to-play/tictactoeHTP.html")
+
 @app.route('/activity/tictactoe/')
 def tictactoe():
     return render_template("tictactoe.html")
 
+@app.route('/how-to-play/blackscreen/')
+def blackscreenHTP():
+    return render_template("/how-to-play/blackscreenHTP.html")
+
 @app.route('/activity/blackscreen/')
 def blackscreen():
     return render_template("blackscreen.html")
+
+@app.route('/how-to-play/terminal/')
+def terminalHTP():
+    return render_template("/how-to-play/terminalHTP.html")
 
 # ------------------------------------ Terminal Color ------------------------------------
 
