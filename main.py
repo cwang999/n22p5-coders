@@ -14,6 +14,8 @@ app = Flask(__name__)
 
 
 # connects default URL to render index.html
+
+# -------------- WEBSITE PAGES BELONG HERE --------------
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -25,6 +27,21 @@ def connor_homepage():
 @app.route('/derrickpage/')
 def derrickpage():
     return render_template("derrickpage.html")
+
+@app.route('/reinhardtpage')
+def reinhardtpage():
+    return render_template("reinhardtpage.html")
+
+@app.route('/greet/', methods=['GET', 'POST'])
+def greet():
+    # submit button has been pushed
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("/minilab/greet.html", name=name)
+    return render_template("minilab/greet.html", name="World")
+
+# -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
 @app.route('/activity/')
 def games():
@@ -38,32 +55,7 @@ def tictactoe():
 def blackscreen():
     return render_template("blackscreen.html")
 
-
-
-
-
-
-
-@app.route('/greet/', methods=['GET', 'POST'])
-def greet():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("/minilab/greet.html", name=name)
-    return render_template("minilab/greet.html", name="World")
-
-
-
-
-
-
-
-
-
-
-
-# ------------------------------------ Terminal ------------------------------------
+# ------------------------------------ Terminal Color ------------------------------------
 
 @app.route('/activity/terminal/', methods=['GET', 'POST'])
 def terminal():
@@ -1183,18 +1175,7 @@ def terminal():
                            currentTerminal="T:/Green/G1>", color="lime",
                            commandOutput1="Awaiting Input...")
 
-# ------------------------------------ End Of Terminal ------------------------------------
-
-@app.route('/reinhardtpage')
-def reinhardtpage():
-    return render_template("reinhardtpage.html")
-
-
-
-
-
-
-
+# ------------------------------------ End Of Terminal Color ------------------------------------
 
 # runs the application on the development server
 if __name__ == "__main__":
