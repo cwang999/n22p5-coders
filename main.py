@@ -51,7 +51,7 @@ def games():
 def tictactoeHTP():
     return render_template("/how-to-play/tictactoeHTP.html")
 
-@app.route('/activity/tictactoe/')
+@app.route('/tictactoe/')
 def tictactoe():
     return render_template("tictactoe.html")
 
@@ -59,7 +59,7 @@ def tictactoe():
 def blackscreenHTP():
     return render_template("/how-to-play/blackscreenHTP.html")
 
-@app.route('/activity/blackscreen/')
+@app.route('/blackscreen/')
 def blackscreen():
     return render_template("blackscreen.html")
 
@@ -69,7 +69,7 @@ def terminalHTP():
 
 # ------------------------------------ Terminal Color ------------------------------------
 
-@app.route('/activity/terminal/', methods=['GET', 'POST'])
+@app.route('/terminal/', methods=['GET', 'POST'])
 def terminal():
     global currentTerminalPY
     global greenThreeOpen
@@ -1188,6 +1188,14 @@ def terminal():
                            commandOutput1="Awaiting Input...")
 
 # ------------------------------------ End Of Terminal Color ------------------------------------
+
+@app.route('/how-to-play/fightorflight/')
+def fightorflightHTP():
+    return render_template("/how-to-play/fightorflightHTP.html")
+
+@app.route('/fightorflight/')
+def fightorflight():
+    return render_template("fightorflight.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
