@@ -36,7 +36,7 @@ def davidhomepage():
 def derrickpage():
     return render_template("derrickpage.html")
 
-@app.route('/reinhardtpage')
+@app.route('/reinhardtpage/')
 def reinhardtpage():
     return render_template("reinhardtpage.html")
 
