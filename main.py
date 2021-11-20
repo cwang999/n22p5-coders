@@ -20,9 +20,17 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/aboutArch/')
+def aboutArch():
+    return render_template("aboutArch.html")
+
 @app.route('/connor_homepage/')
 def connor_homepage():
     return render_template("connor_homepage.html")
+
+@app.route('/davidhomepage/')
+def davidhomepage():
+    return render_template("davidhomepage.html")
 
 @app.route('/derrickpage/')
 def derrickpage():

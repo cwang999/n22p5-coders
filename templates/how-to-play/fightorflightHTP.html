@@ -15,20 +15,57 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
 
 <body>
 <!- Try building a new body here ->
-<h1><strong>Fight or Flight</strong> - How to play</h1>
+<h1><strong>Fight or Flight</strong></h1>
 
 <a href="/fightorflight/"> <embed type="image/jpg" src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/ec7f4a1c7d1e7e5.png" width="255" height="130"></a>
 
-<div class="container p-3 my-3 rounded">
-    <h5>Gameplay</h5>
-    <p>
-        [Gameplay]]
-    </p>
+<h2><strong>Instructions:</strong></h2>
 
-    <h5>Controls</h5>
+<div class="container p-3 my-3 rounded">
+
+    <h4><strong>Gameplay</strong></h4>
+    <h6>There are two ways to win: Fight or Flight.</h6>
+    <h6>Each player has 3 health. The person that makes their opponent's health drop to 0 wins the Fight.</h6>
+    <h6>Each player has an escape meter. If your escape meter reaches max, you win by Flight.</h6>
+    <br>
+    <h4><strong>Cards</strong></h4>
+    <br>
+    <h4><strong>Inspiration</strong></h4>
     <p>
-        [Controls]
+        A long time ago, back in elementary school, I played a game called double-paper-scissors.
+        It was, of course, based on the popular game rock-paper-scissors, but with a slight twist;
+        both players would turn around, choose one of the three options in the left hand,
+        and one of the two remaining options in the right hand.
+        At the same time, both players would turn around and the results would be calculated.
     </p>
+    <p>
+        This mode had one advantage over rock-paper-scissors: ties were almost non-existent,
+        unless both players happened to pick the same exact choices in the same exact order.
+        The one flaw was still there though, that the game was entirely luck based.
+        It was still extremely fun, and I hope to see a revival of the game someday!
+    </p>
+    <p>
+        Another thing in elementary and middle school was the popular game “double o seven”.
+        This game involved 3 choices, similar to rock-paper-scissors, but with more depth.
+        There was a gun option, a reload option, and a block option.
+        You could block whenever, but using the gun required reloading the turn before.
+        Rounds were continuous, and it was fast-paced fun.
+        There was one problem though:
+        you could theoretically block forever, causing both you and the other player to die of boredom.
+    </p>
+    <p>
+        I wanted to create a game similar to these fun playground psychology games that didn’t have the same issues:
+        the ability to stall forever and lacking an element of skill.
+        To counteract the first issue, I designed a game based around having two ways to win.
+        This way, if players try to prevent their opponent from winning in one way,
+        their opponent could just switch to a different way to win.
+        With these two win conditions, I could now address the lack of skill in rock-paper-scissors;
+        adding many different cards that counter one another,
+        as well as the ability to tell which cards your opponent holds based on your current cards.
+        Knowing how they play and which cards they have can give experienced players an advantage over newer ones.
+    </p>
+    <h6>I hope you all enjoy the end result! Have fun!</h6>
+
 </div>
 
 </body>
