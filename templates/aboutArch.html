@@ -30,6 +30,28 @@
 <br>
 <h6>Mostly...</h6>
 
+<script>
+    import axios from "axios";
+
+    const options = {
+        method: 'POST',
+        url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/classify',
+        params: {locale: 'en_us'},
+        headers: {
+            'content-type': 'application/json',
+            'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+            'x-rapidapi-key': '3c101db5femsh08170f558691f17p1b06d8jsn014526dedbe0'
+        },
+        data: {plu_code: '', title: 'Kroger Vitamin A & D Reduced Fat 2% Milk', upc: ''}
+    };
+
+    axios.request(options).then(function (response) {
+        console.log(response.data);
+    }).catch(function (error) {
+        console.error(error);
+    });
+</script>
+
 </body>
 
 </html>
