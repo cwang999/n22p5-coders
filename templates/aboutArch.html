@@ -20,37 +20,46 @@
 
 <head>
     <title>About Arch</title>
+
+    <script>
+        function Mask1(){
+            document.getElementById('myImage').src="../static/img/arc.jpg";
+            document.getElementById('message')
+        }
+
+        function Mask2(){
+            document.getElementById('myImage').src="https://images.freeimages.com/images/small-previews/fec/sunset-rays-1391805.jpg";
+            document.getElementById('message')
+        }
+    </script>
 </head>
 
 <body>
 
 <h2><strong>About Arch</strong></h2>
+
+
+<div class=imageContainer>
+    <img  id="myImage"
+          src="../static/img/arc.jpg" width="530" height="300"/>
+</div>
+<div class="button">
+    <button class="btn btn-info" onclick=Mask1();>
+        Original
+    </button>
+    <button  class="btn btn-info" onclick=Mask2();>
+        New Image
+    </button>
+</div>
+
 <br>
-<h6>Hi! I'm no longer a copy-paste idiot :D</h6>
-<br>
-<h6>Mostly...</h6>
 
-<script>
-    import axios from "axios";
-
-    const options = {
-        method: 'POST',
-        url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/classify',
-        params: {locale: 'en_us'},
-        headers: {
-            'content-type': 'application/json',
-            'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-            'x-rapidapi-key': '3c101db5femsh08170f558691f17p1b06d8jsn014526dedbe0'
-        },
-        data: {plu_code: '', title: 'Kroger Vitamin A & D Reduced Fat 2% Milk', upc: ''}
-    };
-
-    axios.request(options).then(function (response) {
-        console.log(response.data);
-    }).catch(function (error) {
-        console.error(error);
-    });
-</script>
+<div id="link">
+    <h4>Individual Journal:</h4>
+    <a href="https://docs.google.com/document/d/1em_jarWLRf7CYE-5v51hX0MLGqWXDoDfaWKtYXLEFfI/edit?usp=sharing">
+        <embed type="image/jpg" src="https://www.apkmirror.com/wp-content/uploads/2021/11/02/61a6ab7f73e1f-384x384.png"
+               width="160" height="160"></a>
+</div>
 
 </body>
 
