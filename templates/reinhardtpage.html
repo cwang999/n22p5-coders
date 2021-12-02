@@ -3,13 +3,11 @@
 {% include "layouts/base.html" %}
 <head>
     <meta charset="UTF-8">
-    <title> Reinhardt About Me </title>
+    <title>Reinhardt About Me </title>
 </head>
 <body>
-<h1><center>My name is Reinhardt</center></h1>
-<center>Im a sophomore at Del norte highschool and I'm a member of the Ninjas</center>
-<br>
-<center>Click to enlarge the image !!</center>
+<h1>My name is Reinhardt</h1>
+<p>Im a sophmore at Del norte highschool and I'm a member of the Ninjas</p>
 <div class=imageContainer>
 <img id=myImg src="../static/img/reinhardtpicture.jpg" height="65%" width="35%"/>
 </div>
@@ -20,6 +18,7 @@
 </div>
 
 <style>
+    body {}
 
     #myImg {
         border-radius: 5px;
@@ -78,7 +77,6 @@
         }
     }
 </style>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     var modal = document.getElementById("myModal");
 
@@ -95,30 +93,6 @@
     span.onclick = function() {
         modal.style.display = "none";
     }
-
-    function reqListener () {
-        console.log(this.responseText);
-    }
-
-/* Constant URL value for JOKE API */
-const JOKE_API_URL = 'https://v2.jokeapi.dev';
-
-let JokeOfTheDay = '';
-
-    // Making a POST request using an axios instance from a connected library
-    axios.post(JOKE_API_URL)
-        // Handle a successful response from the server
-        .then(response => {
-            // Getting a data object from response that contains the necessary data from the server
-            const data = response.data;
-            console.log('data', data);
-
-            // Save the unique id that the server gives to our object
-            JokeOfTheDay = data._id;
-        })
-        // Catch and print errors if any
-        .catch(error => console.error('Oops', error));
-
 </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!-- Navigation Bar from bootstrap
 This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
 -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <a class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,8 +9,8 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="/">Ninja Training</a>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+                <a class="navbar-brand" href="/">AstronoNinjas</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -22,11 +22,11 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         About Us
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="#">Arch</a>
-                        <a class="dropdown-item" href="/connor_homepage">Connor</a>
-                        <a class="dropdown-item" href="#">David</a>
+                        <a class="dropdown-item" href="/aboutArch/">Arch</a>
+                        <a class="dropdown-item" href="/connor_homepage/">Connor</a>
+                        <a class="dropdown-item" href="/davidhomepage/">David</a>
                         <a class="dropdown-item" href="/derrickpage/">Derrick</a>
-                        <a class="dropdown-item" href="/reinhardtpage">Reinhardt</a>
+                        <a class="dropdown-item" href="/reinhardtpage/">Reinhardt</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -36,9 +36,9 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <a class="dropdown-item" href="/activity">Menu</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/how-to-play/tictactoe">Tic Tac Toe</a>
-                        <a class="dropdown-item" href="/how-to-play/blackscreen">Blackscreen</a>
-                        <a class="dropdown-item" href="/how-to-play/terminal">Terminal Color</a>
+                        <a class="dropdown-item" href="/how-to-play/tictactoe/">Tic Tac Toe</a>
+                        <a class="dropdown-item" href="/how-to-play/blackscreen/">Blackscreen</a>
+                        <a class="dropdown-item" href="/how-to-play/terminal/">Terminal Color</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -46,9 +46,10 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         MiniLab
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="#">...</a>
+                        <a class="dropdown-item" href="#">Nothing yet...</a>
                     </div>
                 </li>
+            </nav>
         </div>
     </div>
 </nav>

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<!-- Extending the predefined project layout -->
-{% extends "layouts/base.html" %}
-{% set project = "slider" %}
-
-<!- This variable sets name of browser tab  -->
-{% set project = "slider" %}
+<html lang="en">
+{% include "layouts/base.html" %}
+<head>
+  <meta charset="UTF-8">
+  <title>Reinhardt About Me </title>
+</head>
+<body>
+<h1><center>My name is Derrick</center></h1>
+<mark><center>I'm a sophomore and I am part of the Ninjas</center></mark>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -17,7 +20,7 @@
 
   .img-comp-container {
     position: relative;
-    height: 200px; /*should be the same height as the images*/
+    height: 1000px; /*should be the same height as the images*/
   }
 
   .img-comp-img {
@@ -129,9 +132,7 @@
 </head>
 <body>
 
-<h1>Map and Layout Comparison</h1>
 
-<p>Click and slide the blue slider to compare the map and the layout:</p>
 <body style="background-color: lightcoral">
 <div class="col-0" style="margin: 3% 5% 2%" name="imgbox" id="imgbox;>
     <iframe width="1920" height="1080">
@@ -139,22 +140,23 @@
   <div class="row" style="margin:0% 0% 0%">
     <div class="col" >
       <div class="img-comp-container">
-        <div class="img-comp-img">
-          <img src="https://media.steelseriescdn.com/thumbs/blog/posts/valorant-map-guide-bind/6ffdb253e22a40a281f47c902f0131e3.jpg.1920x1080_q100_crop-scale_optimize_upscale.jpg" width="300" height="200">
+        <div class="img-comp-img" width="500" height="900">
+          <img src="../static/img/derrickpicture.jpg" width="500" height="1000">
         </div>
         <div class="img-comp-img img-comp-overlay">
-          <div class="img-comp-container" width="300" height="200">
-            <img src="https://cdn.realsport101.com/images/ncavvykf/gfinityesports/f7311e7f287a31c89c556f76457a2d264002b870-753x797.png?w=328&h=347&auto=format" width="300px" height="200px">
+          <div class="img-comp-container" width="500" height="900">
+            <img src="../static/img/derrickpicture2.jpg" width="500px" height="1000px">
           </div>
         </div>
       </div>
     </div>
 
-
 <script>
   /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
   initComparisons();
 </script>
+
+
 {% endblock %}
 </body>
 </html>

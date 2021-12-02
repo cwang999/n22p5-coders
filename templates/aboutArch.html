@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+<style>
+    html, body{
+        margin: 0;
+        height: 100%;
+        animation: fadein 2s;
+        -moz-animation: fadein 2s; /* Firefox */
+        -webkit-animation: fadein 2s; /* Safari and Chrome */
+        -o-animation: fadein 2s; /* Opera */
+        background-image: url('https://cdn.wallpapersafari.com/93/58/GS1pCE.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: var(--white);
+        font-family: "Comic Sans MS";
+    }
+</style>
+
+<head>
+    <title>About Arch</title>
+
+    <script>
+        function Mask1(){
+            document.getElementById('myImage').src="../static/img/arc.jpg";
+            document.getElementById('message')
+        }
+
+        function Mask2(){
+            document.getElementById('myImage').src="https://images.freeimages.com/images/small-previews/fec/sunset-rays-1391805.jpg";
+            document.getElementById('message')
+        }
+    </script>
+</head>
+
+<body>
+
+<h2><strong>About Arch</strong></h2>
+
+
+<div class=imageContainer>
+    <img  id="myImage"
+          src="../static/img/arc.jpg" width="530" height="300"/>
+</div>
+<div class="button">
+    <button class="btn btn-info" onclick=Mask1();>
+        Original
+    </button>
+    <button  class="btn btn-info" onclick=Mask2();>
+        New Image
+    </button>
+</div>
+
+<br>
+
+<div id="link">
+    <h4>Individual Journal:</h4>
+    <a href="https://docs.google.com/document/d/1em_jarWLRf7CYE-5v51hX0MLGqWXDoDfaWKtYXLEFfI/edit?usp=sharing">
+        <embed type="image/jpg" src="https://www.apkmirror.com/wp-content/uploads/2021/11/02/61a6ab7f73e1f-384x384.png"
+               width="160" height="160"></a>
+</div>
+
+</body>
+
+</html>
