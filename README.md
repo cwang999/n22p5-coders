@@ -19,7 +19,7 @@
 | Name | Assignment | Ticket |
 | ---------- | ---------- | ------ |
 | Arch | Wiki Page, Wire Frames | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
-| Reinhardt | Wiki Page | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
+| Reinhardt | Wiki Page, Wire Frames | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
 | Derrick | Wiki Page | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) |
 | David | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/17)  |
 | Conner | Wiki Page, Wireframes | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
