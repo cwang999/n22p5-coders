@@ -7,8 +7,8 @@
 
 ## Teammates
 ---------------------------------------
-| Name             | ID              | Scrumboard                                                                   | Issues |Commits  | Profile          |
-| ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ |----------- | ---------------- |
+| Name             | ID              | Scrumboard                                                                   | Issues | Commits  | Profile          |
+| ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ | ----------- | ---------------- |
 | Arch Huang  | Archkitten | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Aarchkitten) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=assignee%3AArchkitten+is%3Aopen+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Archkitten)         | [@ArchKitten](https://github.com/ArchKitten)     |
 | Reinhardt Lotter | Reinhardtlotter | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Reinhardtlotter) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=assignee%3AReinhardtlotter+is%3Aopen+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Reinhardtlotter)         | [@Reinhardtlotter](https://github.com/Reinhardtlotter) |
 | Derrick Huang    | Pitsco          | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=assignee%3APitsco+is%3Aopen+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco)         | [@Pitsco](https://github.com/Pitsco)          |
@@ -17,7 +17,7 @@
 
 ### Week 1
 | Name | Assignment | Ticket |
-| -------------------------- |
+| ---------- | ---------- | ------ |
 | Arch | Wiki Page, Wire Frames | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
 | Reinhardt | Wiki Page | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
 | Derrick | Wiki Page | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) |
