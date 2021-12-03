@@ -27,7 +27,7 @@
 
 ### Week 0
 | Name | Assignment | Ticket |
-| -------------------------- |
+| ---- |----------- | -------- |
 | Arch | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/6) |
 | Reinhardt | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/2) |
 | Derrick | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/4) |
