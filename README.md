@@ -4,7 +4,8 @@
 | Name             | Journal                                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ |
 | Reinhardt Lotter + Derrick Huang | [Journal](https://docs.google.com/document/d/1sQEuq-pUUQEaaTpWS4qkyn-rWqiij7jwhqi_axAfKCg/edit?usp=sharing) |
-| Arch Huang + Conner Wang + David Xie | [Journal](https://docs.google.com/document/d/1nQK3_Lvh3XT3Vwb-PrkNCrcTUAUlYSsifrXgkbSCXvw/edit) |
+| Arch Huang | 
+| Conner Wang + David Xie | [Journal]() |
 
 [Contributing guidelines](https://docs.google.com/document/d/1U18-l772UyNbFlkvBeJZ7O4DMtzl09AFkpKyu8vNqQg/edit?usp=sharing)
 
