@@ -4,11 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <title>About David</title>
+    <script>
+        function davidMask(){
+            document.getElementById('myImage')
+                .src="../static/img/David-Xie-mask-on.jpg";
+            document.getElementById('message')
+        }
+
+        function davidNoMask(){
+            document.getElementById('myImage')
+                .src="../static/img/David-Xie-mask-off.JPG";
+            document.getElementById('message')
+        }
+    </script>
 </head>
 <body>
 <h3>Hello, user! David is a junior in Computer Science Principles who enjoys coding to help others as well as for entertainment.</h3>
+
 <div class=imageContainer>
-    <img id=myImg src="../static/img/David-Xie-mask-off.JPG" height="65%" width="35%"/>
+    <img  id="myImage"
+          src="../static/img/David-Xie-mask-on.jpg" width="530" height="300"/>
+</div>
+<div class="button">
+    <button class="btn btn-warning"
+            onclick=davidMask();>
+        Mask
+    </button>
+    <button  class="btn btn-success"
+             onclick=davidNoMask();>
+        No Mask
+    </button>
 </div>
 <div id="myModal" class="modal">
     <span class="close">&times;</span>
