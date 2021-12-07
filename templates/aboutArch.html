@@ -32,6 +32,22 @@
             document.getElementById('message')
         }
     </script>
+    <script>
+        fetch("https://google-translate1.p.rapidapi.com/language/translate/v2/languages", {
+            "method": "GET",
+            "headers": {
+                "accept-encoding": "application/gzip",
+                "x-rapidapi-host": "google-translate1.p.rapidapi.com",
+                "x-rapidapi-key": "3c101db5femsh08170f558691f17p1b06d8jsn014526dedbe0"
+            }
+        })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    </script>
 </head>
 
 <body>
