@@ -66,6 +66,25 @@
             <embed type="image/jpg" src="https://www.apkmirror.com/wp-content/uploads/2021/11/02/61a6ab7f73e1f-384x384.png"
                    width="160" height="160"></a>
     </div>
+<div id="astroNewsId">
 
+</div>
 </body>
+
+{#API STUFF#}
+<script>
+    async function getAstroNews() {
+        const response = await fetch("https://space-news.p.rapidapi.com/news/guardian", {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "space-news.p.rapidapi.com",
+                    "x-rapidapi-key": "92b9f4e31cmsh02f34db44282758p14191cjsndd8b61d87098"
+                }
+            })
+            console.log(response);
+            const astroNews = await response.text();
+            document.getElementById("astroNewsId").innerHTML = astroNews;
+    }
+    getAstroNews();
+</script>
 </html>
