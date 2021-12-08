@@ -33,20 +33,20 @@
         }
     </script>
     <script>
-        fetch("https://google-translate1.p.rapidapi.com/language/translate/v2/languages", {
-            "method": "GET",
-            "headers": {
-                "accept-encoding": "application/gzip",
-                "x-rapidapi-host": "google-translate1.p.rapidapi.com",
-                "x-rapidapi-key": "3c101db5femsh08170f558691f17p1b06d8jsn014526dedbe0"
-            }
-        })
-            .then(response => {
-                console.log(response);
+        async function getLanguage() {
+            const response = await fetch("https://google-translate1.p.rapidapi.com/language/translate/v2/languages", {
+                "method": "GET",
+                "headers": {
+                    "accept-encoding": "application/gzip",
+                    "x-rapidapi-host": "google-translate1.p.rapidapi.com",
+                    "x-rapidapi-key": "3c101db5femsh08170f558691f17p1b06d8jsn014526dedbe0"
+                }
             })
-            .catch(err => {
-                console.error(err);
-            });
+            console.log(response);
+            const language = await response.text();
+            document.getElementById("languageId").innerHTML = language;
+        }
+        getLanguage();
     </script>
 </head>
 
@@ -75,6 +75,10 @@
     <a href="https://docs.google.com/document/d/1em_jarWLRf7CYE-5v51hX0MLGqWXDoDfaWKtYXLEFfI/edit?usp=sharing">
         <embed type="image/jpg" src="https://www.apkmirror.com/wp-content/uploads/2021/11/02/61a6ab7f73e1f-384x384.png"
                width="160" height="160"></a>
+</div>
+
+<div id="languageId">
+
 </div>
 
 </body>
