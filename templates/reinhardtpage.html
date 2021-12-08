@@ -11,8 +11,13 @@
 <div class=imageContainer>
 <img id=myImg src="../static/img/reinhardtpicture.jpg" height="65%" width="35%"/>
 </div>
-<div id="deaths"></div>
-<p id="confirmed"></p>
+<h2>COVID STATISTICS</h2>
+<p>TOTAL DEATHS:</p>
+<div id="deaths">:TOTAL DEATHS</div>
+<p>CONFIRMED CASES:</p>
+<div id="confirmed">:CONFIRMED CASES</div>
+<p>RECOVERED CASES:</p>
+<div id="recovered">:RECOVERED CASES</div>
 <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="img01">
@@ -33,6 +38,7 @@
         const covidstats = covidarr[0];
         document.getElementById("confirmed").textContent = covidstats["confirmed"];
         document.getElementById("deaths").textContent = covidstats["deaths"];
+        document.getElementById("recovered").textContent = covidstats["recovered"];
     }
     getcovid();
 </script>
