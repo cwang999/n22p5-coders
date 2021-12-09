@@ -23,6 +23,15 @@
 ### Week 1
 | Name | Assignment | Ticket |
 | ---------- | ---------- | ------ |
+| Arch | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/33d2f835120c31b0a9ea73aad004eb4d3b43040f) |
+| Reinhardt | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/ee6612b4bb875ba771413dff2cf051dc4c8f0e60) |
+| Derrick | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/cb33b5e4c504c459ae9011b8aa73dd6bdd590092) |
+| David | Home Page (with API) | [Ticket]()  |
+| Conner | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/ed4d0762171382055ab24a5f57732375ff0187ee) |
+
+### Week 1
+| Name | Assignment | Ticket |
+| ---------- | ---------- | ------ |
 | Arch | Wiki Page, Wire Frames | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
 | Reinhardt | Wiki Page, Wire Frames | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
 | Derrick | Wiki Page | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) |
