@@ -20,7 +20,7 @@
 | David Xie      | David-Xie123  | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Adavid+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01)          | [@David-Xie123](https://github.com/David-Xie123)  |
 | Conner Wang  | cwang999 | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aconnor+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999)         | [@cwang999](https://github.com/cwang999)     |
 
-### Week 1
+### Week 2
 | Name | Assignment | Ticket |
 | ---------- | ---------- | ------ |
 | Arch | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/33d2f835120c31b0a9ea73aad004eb4d3b43040f) |
