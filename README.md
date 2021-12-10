@@ -1,4 +1,12 @@
 # Ninjas
+
+Release Day Policy:
+Day before review day, 6PM: Freeze Code - everybody push changes, no one change code after 6 PM [EVERYONE]
+Day before review day, 7PM: Deploy - Deployment Manager updates website [DeployManager ONLY]
+Day before review day, 7PM: Move Tickets, add Tangibles [EVERYONE]
+Time Box
+Review Ticket
+
 -----------------------------------------------------------------------------------
 
 | Name             | Journal                                                                                                      |
