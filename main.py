@@ -49,6 +49,11 @@ def greet():
             return render_template("/minilab/greet.html", name=name)
     return render_template("minilab/greet.html", name="World")
 
+# Space Pages
+@app.route('/learn_planets/')
+def learn_planets():
+    return render_template("learn_planets.html")
+
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
 @app.route('/activity/')
