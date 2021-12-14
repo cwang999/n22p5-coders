@@ -54,6 +54,10 @@ def greet():
 def learn_planets():
     return render_template("learn_planets.html")
 
+@app.route('/randomphotos/')
+def randomphotos():
+    return render_template("randomphotos.html")
+
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
 @app.route('/activity/')
