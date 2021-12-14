@@ -2,33 +2,13 @@
 <html lang="en">
 {% include "layouts/base.html" %}
 
-<style>
-    html, body{
-        margin: 0;
-        height: 100%;
-        animation: fadein 2s;
-        -moz-animation: fadein 2s; /* Firefox */
-        -webkit-animation: fadein 2s; /* Safari and Chrome */
-        -o-animation: fadein 2s; /* Opera */
-        background-image: url('https://i.pinimg.com/originals/8d/bb/58/8dbb588536397d8571c934332ff1dffc.jpg');
-        background-repeat: no-repeat;
-        background-size: 1550px 800px;
-        background-attachment: fixed;
-        color: var(--white);
-        font-family: "Comic Sans MS";
-    }
-</style>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Connor Home Page</title>
-    <style>
-        .button{
-            margin-left: 45%;
-        }
-    </style>
+    <title>Random Photos</title>
+</head>
 
 <body>
+    <embed type="image/jpg" src="{{ photo }}" width="160" height="160">
+    <button onClick="window.location.reload();">Randomize!</button>
 </body>
 
 </html>

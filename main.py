@@ -54,9 +54,19 @@ def greet():
 def learn_planets():
     return render_template("learn_planets.html")
 
-@app.route('/randomphotos/')
+@app.route('/randomphotos/', methods=['GET', 'POST'])
 def randomphotos():
-    return render_template("randomphotos.html")
+    photoID = random.randint(1, 5)
+    if photoID == 1:
+        return render_template("randomphotos.html", photo="https://www.timeforkids.com/wp-content/uploads/2018/08/Planets-HERO.jpg?w=640")
+    elif photoID == 2:
+        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
+    elif photoID == 3:
+        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
+    elif photoID == 4:
+        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
+    elif photoID == 5:
+        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
 
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
