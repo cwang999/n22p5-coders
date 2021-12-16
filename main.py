@@ -22,7 +22,7 @@ def index():
 
 @app.route('/aboutArch/')
 def aboutArch():
-    return render_template("aboutArch.html")
+    return render_template("aboutArch.py")
 
 @app.route('/search/')
 def search():
