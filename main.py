@@ -62,15 +62,23 @@ def learn_planets():
 def randomphotos():
     photoID = random.randint(1, 5)
     if photoID == 1:
-        return render_template("randomphotos.html", photo="https://www.timeforkids.com/wp-content/uploads/2018/08/Planets-HERO.jpg?w=640")
+        return render_template("randomphotos.html", photo="https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-2060x1288.jpg")
     elif photoID == 2:
-        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
+        return render_template("randomphotos.html", photo="https://i.natgeofe.com/n/8a3e578f-346b-479f-971d-29dd99a6b699/nationalgeographic_2751013_4x3.jpg")
     elif photoID == 3:
-        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
+        return render_template("randomphotos.html", photo="https://www.lockheedmartin.com/content/dam/lockheed-martin/space/photo/exploration/Earth_Moon_Mars.jpg.pc-adaptive.full.medium.jpeg")
     elif photoID == 4:
-        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
+        return render_template("randomphotos.html", photo="https://cdn.mos.cms.futurecdn.net/M7fDTpDnJcZ4dt3myngzxi.jpg")
     elif photoID == 5:
-        return render_template("randomphotos.html", photo="../static/img/arc.jpg")
+        return render_template("randomphotos.html", photo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/LH_95.jpg/330px-LH_95.jpg")
+
+@app.route('/planetpictures/')
+def planetpictures():
+    return render_template("planetpictures.html")
+
+@app.route('/uploadphotos/')
+def uploadphotos():
+    return render_template("uploadphotos.html")
 
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
