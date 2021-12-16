@@ -24,6 +24,10 @@ def index():
 def aboutArch():
     return render_template("aboutArch.html")
 
+@app.route('/search/')
+def search():
+    return render_template("search.html")
+
 @app.route('/connor_homepage/')
 def connor_homepage():
     return render_template("connor_homepage.html")

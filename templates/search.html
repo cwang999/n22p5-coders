@@ -48,7 +48,7 @@ class Users(db.Model):
     // returns self or None on error
     def create(self):
         try:
-             creates a person object from Users(db.Model) class, passes initializers
+            // creates a person object from Users(db.Model) class, passes initializers
             db.session.add(self)  # add prepares to persist person object to Users table
             db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
             return self
@@ -97,10 +97,10 @@ def model_tester():
     print("--------------------------")
     db.create_all()
     """Tester data for table"""
-    u1 = Users(name='Nicolaus Copernicus', email='ncopernicus@example.com', password='123toby', phone="1111111111")
-    u2 = Users(name='Galileo Galilei', email='ggalilei@example.com', password='123niko', phone="1111112222")
-    u3 = Users(name='Johannes Kepler', email='jkepler@example.com', password='123lex', phone="1111113333")
-    u4 = Users(name='Isaac Newton', email='inewton@example.com', password='123whit', phone="1111114444")
+    u1 = Users(name='Nicolaus Copernicus', email='ncopernicus@example.com', password='123nic', phone="1111111111")
+    u2 = Users(name='Galileo Galilei', email='ggalilei@example.com', password='123gali', phone="1111112222")
+    u3 = Users(name='Johannes Kepler', email='jkepler@example.com', password='123johan', phone="1111113333")
+    u4 = Users(name='Isaac Newton', email='inewton@example.com', password='123isaa', phone="1111114444")
     u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
     u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
     // U7 intended to fail as duplicate key
