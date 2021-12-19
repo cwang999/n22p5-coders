@@ -8,9 +8,12 @@ import http.client
 import requests
 import json
 import random
+from crud.app_crud import app_crud
 
 # create a Flask instance
-app = Flask(__name__)
+from __init__ import app
+
+app.register_blueprint(app_crud)
 
 
 # connects default URL to render index.html
@@ -22,11 +25,11 @@ def index():
 
 @app.route('/aboutArch/')
 def aboutArch():
-    return render_template("aboutArch.py")
+    return render_template("aboutArch.html")
 
 @app.route('/search/')
 def search():
-    return render_template("search.py")
+    return render_template("search.html")
 
 @app.route('/connor_homepage/')
 def connor_homepage():
