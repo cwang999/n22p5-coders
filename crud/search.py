@@ -26,14 +26,14 @@ class Users(db.Model):
     # define the Users schema
     userID = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), unique=False, nullable=False)
-    email = db.Column(db.String(255), unique=True, nullable=False)
+    description = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
 
     # constructor of a User object, initializes of instance variables within object
-    def __init__(self, name, email, password, phone):
+    def __init__(self, name, description, password, phone):
         self.name = name
-        self.email = email
+        self.description = description
         self.password = password
         self.phone = phone
 
@@ -55,7 +55,7 @@ class Users(db.Model):
         return {
             "userID": self.userID,
             "name": self.name,
-            "email": self.email,
+            "description": self.description,
             "password": self.password,
             "phone": self.phone
         }
@@ -93,12 +93,12 @@ def model_tester():
     db.create_all()
 
     """Tester data for table"""
-    u1 = Users(name='Nicolaus Copernicus', email='He was the first modern European scientist to propose that Earth and other planets revolve around the sun, or the Heliocentric Theory of the universe.', password='123nic', phone="1111111111")
-    u2 = Users(name='Galileo Galilei', email='He made revolutionary telescopic discoveries, including the four largest moons of Jupiter.', password='123gali', phone="1111112222")
-    u3 = Users(name='Johannes Kepler', email='He was a German mathematician and astronomer who discovered that the Earth and planets travel about the sun in elliptical orbits.', password='123johan', phone="1111113333")
-    u4 = Users(name='Isaac Newton', email='He was a physicist and mathematician who developed the principles of modern physics, including the laws of motion and is credited as one of the great minds of the 17th-century Scientific Revolution.', password='123isaa', phone="1111114444")
-    u5 = Users(name='Neil DeGrasse Tyson', email='He, (born October 5, 1958, New York, New York, U.S.), is an American astronomer who popularized science with his books and frequent appearances on radio and television.', password='123neil', phone="1111115555")
-    u6 = Users(name='Aristotle', email='He made pioneering contributions to all fields of philosophy and science, he invented the field of formal logic, and he identified the various scientific disciplines and explored their relationships to each other.', password='123aris', phone="1111116666")
+    u1 = Users(name='Nicolaus Copernicus', description='was the first modern European scientist to propose that Earth and other planets revolve around the sun, or the Heliocentric Theory of the universe.', password='123nic', phone="1111111111")
+    u2 = Users(name='Galileo Galilei', description='made revolutionary telescopic discoveries, including the four largest moons of Jupiter.', password='123gali', phone="1111112222")
+    u3 = Users(name='Johannes Kepler', description='was a German mathematician and astronomer who discovered that the Earth and planets travel about the sun in elliptical orbits.', password='123johan', phone="1111113333")
+    u4 = Users(name='Isaac Newton', description='was a physicist and mathematician who developed the principles of modern physics, including the laws of motion and is credited as one of the great minds of the 17th-century Scientific Revolution.', password='123isaa', phone="1111114444")
+    u5 = Users(name='Neil DeGrasse Tyson', description=', (born October 5, 1958, New York, New York, U.S.), is an American astronomer who popularized science with his books and frequent appearances on radio and television.', password='123neil', phone="1111115555")
+    u6 = Users(name='Aristotle', description='made pioneering contributions to all fields of philosophy and science, he invented the field of formal logic, and he identified the various scientific disciplines and explored their relationships to each other.', password='123aris', phone="1111116666")
     # U7 intended to fail as duplicate key
 
     table = [u1, u2, u3, u4, u5, u6]
@@ -108,7 +108,7 @@ def model_tester():
             db.session.commit()
         except IntegrityError:
             db.session.remove()
-            print(f"Records exist, duplicate email, or error: {row.email}")
+            print(f"Records exist, duplicate description, or error: {row.description}")
 
 
 def model_printer():
