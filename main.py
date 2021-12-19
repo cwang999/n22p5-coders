@@ -26,7 +26,7 @@ def aboutArch():
 
 @app.route('/search/')
 def search():
-    return render_template("search.html")
+    return render_template("search.py")
 
 @app.route('/connor_homepage/')
 def connor_homepage():
