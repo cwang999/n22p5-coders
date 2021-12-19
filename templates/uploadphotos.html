@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "layouts/base.html" %}
+
+<head>
+    <title>Random Photos</title>
+</head>
+
+<body>
+<div class="container p-3 my-3 bg-dark text-light rounded">
+    <h5>Media Player</h5>
+    <input type="file" accept="image/*" capture id="uploadimageid">
+    <image id="player" src="userimage" width="530" height="300" controls>
+
+    </image>
+    <script>
+        const recorder = document.getElementById('recorder');
+        const player = document.getElementById('player');
+
+        recorder.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const url = URL.createObjectURL(file);
+            // Do something with the audio file.
+            player.src = url;
+        });
+    </script>
+</div>
+
+
+</body>
+
+</html>
