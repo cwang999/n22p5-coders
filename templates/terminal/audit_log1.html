@@ -7,14 +7,13 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
 -->
 <!DOCTYPE HTML>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 
-<head>
+{% block meta %}
     <title>Terminal</title>
-</head>
+{% endblock %}
 
-<body>
-
+{% block content %}
 <div class="container p-3 my-3 bg-light text-black rounded">
 <h5>audit_log.txt</h5>
 <p>
@@ -40,7 +39,6 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
         }
     </script>
 </div>
-
-</body>
+{% endblock %}
 
 </html>

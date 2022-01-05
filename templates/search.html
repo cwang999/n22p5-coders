@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+{% extends "layouts/base.html" %}
+{% block meta %}
     <meta charset="UTF-8">
     <title>Search</title>
-</head>
-<body>
+{% endblock %}
+{% block content %}
 <script>
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
@@ -129,5 +130,5 @@ if __name__ == "__main__":
     model_tester()  # builds model of Users
     model_printer()
 </script>
-</body>
+{% endblock %}
 </html>

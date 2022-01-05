@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 
-<head>
-    <title>Random Photos</title>
-</head>
+{% block meta %}
+    <title>Upload Photos</title>
+{% endblock %}
 
-<body>
+{% block content %}
 <div class="container p-3 my-3 bg-dark text-light rounded">
     <h5>Media Player</h5>
     <input type="file" accept="image/*" capture id="uploadimageid">
@@ -27,6 +27,6 @@
 </div>
 
 
-</body>
+{% endblock %}
 
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 
 <style>
     html, body{
@@ -19,7 +19,7 @@
     }
 </style>
 
-<head>
+{% block meta %}
     <meta charset="UTF-8">
     <title>Connor Home Page</title>
     <style>
@@ -40,8 +40,8 @@
             document.getElementById('message')
         }
     </script>
-</head>
-<body>
+{% endblock meta %}
+{% block content %}
     <h3 id="message">
         Hi! I'm Connor Wang. Welcome to my home page. Stay as long as you'd like!
     </h3>
@@ -69,7 +69,7 @@
 <div id="astroNewsId">
 
 </div>
-</body>
+{% endblock %}
 
 {#API STUFF#}
 <script>
