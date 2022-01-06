@@ -7,18 +7,17 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
 -->
 <!DOCTYPE HTML>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 
 
 
 
 
-<head>
+{% block meta %}
     <title>Activities</title>
+{% endblock %}
 
-</head>
-
-<body>
+{% block content %}
 
 
 <!- Try building a new body here ->
@@ -116,6 +115,6 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
         </div>
     </div>
 
-</body>
+{% endblock %}
 
 </html>

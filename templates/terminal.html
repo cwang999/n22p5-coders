@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 
 <style>
     html, body{
@@ -18,11 +18,11 @@
     }
 </style>
 
-<head>
+{% block meta %}
     <title>Terminal</title>
-</head>
+{% endblock %}
 
-<body>
+{% block content %}
 
     <div class="container p-3 my-3 bg-dark text-light rounded">
 
@@ -60,6 +60,6 @@
         </p>
     </div>
 
-</body>
+{% endblock %}
 
 </html>

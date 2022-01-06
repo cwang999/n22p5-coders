@@ -1,113 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+{% extends "layouts/base.html" %}
+{% block meta %}
     <meta charset="UTF-8">
     <title>Search</title>
-</head>
-{% include "layouts/base.html" %}
-<style>
-    html, body{
-        margin: 0;
-        height: 100%;
-        animation: fadein 2s;
-        -moz-animation: fadein 2s; /* Firefox */
-        -webkit-animation: fadein 2s; /* Safari and Chrome */
-        -o-animation: fadein 2s; /* Opera */
-        background-image: url('https://mcdn.wallpapersafari.com/medium/51/9/A0YSpE.jpg');
-        background-repeat: no-repeat;
-        background-size: 1550px 800px;
-        background-attachment: fixed;
-        color: var(--white);
-        font-family: "Comic Sans MS";
-    }
-</style>
-<body>
-<!DOCTYPE html>
-<!-- Preparing search using asynchronous "fetch" (no page reload, no wait)
-inspiration from https://www.youtube.com/watch?v=QKcVjdLEX_s
--->
-
-
-{% block meta %}
-    <title>SQL search</title>
 {% endblock %}
-
 {% block content %}
-    <div class="container py-4 bg-primary">
-        <!-- heading -->
-        <header class="pb-3 mb-4 border-bottom">
-            <a href="#" class="d-flex align-items-center text-light text-decoration-none">
-                <span class="fs-4">Search Database</span>
-            </a>
-        </header>
-        <!-- search box -->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="mb-3">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="term" placeholder="enter search term">
-                            <label></label> <!-- used for spacer -->
-                        </div>
-                        <button class="btn btn-primary bg-secondary" onclick="search_data();">Search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- result of search -->
-    <div class="container">
-        <div class="row" id="result">
-        </div>
-    </div>
+<script>
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import IntegrityError
+from flask_migrate import Migrate
 
-    <script>
-        function search_data() {
-            // fetch standard requires data set to a name-value pair
-            const term = document.getElementById("term");
-            const body = {
-                term: term.value
-            };
+from __init__ import app
 
-            // fetch call with header options
-            fetch('/crud/search/term/', {
-                method: "POST",
-                credentials: "include",
-                body: JSON.stringify(body),
-                cache: "no-cache",
-                headers: new Headers({
-                    "content-type": "application/json"
-                })
-            })
-                // async then replies with response header
-                .then(function (response) {
-                    // prepare HTML search result container for new output
-                    const resultContainer = document.getElementById("result");
-                    // clean up from previous search
-                    while (resultContainer.firstChild) {
-                        resultContainer.removeChild(resultContainer.firstChild);
-                    }
-                    // trap error response from Web API
-                    if (response.status !== 200) {
-                        const errorMsg = 'Database response error: ' + response.status;
-                        console.log(errorMsg);
-                        const div = document.createElement("div");
-                        div.innerHTML = errorMsg;
-                        resultContainer.appendChild(div);
-                        return;
-                    }
-                    // response contains valid result
-                    response.json().then(function(data) {
-                        // loop through JSON and build HTML output
-                        for (let i = 0; i < data.length; i++) {
-                            const div = document.createElement("div");
-                            div.innerHTML = data[i].name + ' ' + data[i].description;
-                            resultContainer.appendChild(div);
-                        }
-                    })
-                })
+// Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
+// Define variable to define type of database (sqlite), and name and location of myDB.db
+dbURI = 'sqlite:///model/myDB.db'
+// Setup properties for the database
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
+app.config['SECRET_KEY'] = 'SECRET_KEY'
+// Create SQLAlchemy engine to support SQLite dialect (sqlite:)
+db = SQLAlchemy(app)
+Migrate(app, db)
+
+
+// Define the Users table within the model
+// -- Object Relational Mapping (ORM) is the key concept of SQLAlchemy
+// -- a.) db.Model is like an inner layer of the onion in ORM
+// -- b.) Users represents data we want to store, something that is built on db.Model
+// -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
+class Users(db.Model):
+    // define the Users schema
+    userID = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), unique=False, nullable=False)
+    email = db.Column(db.String(255), unique=True, nullable=False)
+    password = db.Column(db.String(255), unique=False, nullable=False)
+    phone = db.Column(db.String(255), unique=False, nullable=False)
+
+    // constructor of a User object, initializes of instance variables within object
+    def __init__(self, name, email, password, phone):
+        self.name = name
+        self.email = email
+        self.password = password
+        self.phone = phone
+
+    // CRUD create/add a new record to the table
+    // returns self or None on error
+    def create(self):
+        try:
+            // creates a person object from Users(db.Model) class, passes initializers
+            db.session.add(self)  # add prepares to persist person object to Users table
+            db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    // CRUD read converts self to dictionary
+    // returns dictionary
+    def read(self):
+        return {
+            "userID": self.userID,
+            "name": self.name,
+            "email": self.email,
+            "password": self.password,
+            "phone": self.phone
         }
-    </script>
+
+    // CRUD update: updates users name, password, phone
+    // returns self
+    def update(self, name, password="", phone=""):
+        """only updates values with length"""
+        if len(name) > 0:
+            self.name = name
+        if len(password) > 0:
+            self.password = password
+        if len(phone) > 0:
+            self.phone = phone
+        db.session.commit()
+        return self
+
+    // CRUD delete: remove self
+    // None
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
+
+"""Database Creation and Testing section"""
+
+
+def model_tester():
+    print("--------------------------")
+    print("Seed Data for Table: users")
+    print("--------------------------")
+    db.create_all()
+    """Tester data for table"""
+    u1 = Users(name='Nicolaus Copernicus', email='ncopernicus@example.com', password='123nic', phone="1111111111")
+    u2 = Users(name='Galileo Galilei', email='ggalilei@example.com', password='123gali', phone="1111112222")
+    u3 = Users(name='Johannes Kepler', email='jkepler@example.com', password='123johan', phone="1111113333")
+    u4 = Users(name='Isaac Newton', email='inewton@example.com', password='123isaa', phone="1111114444")
+    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
+    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
+    // U7 intended to fail as duplicate key
+    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8586791294")
+    table = [u1, u2, u3, u4, u5, u6, u7]
+    for row in table:
+        try:
+            db.session.add(row)
+            db.session.commit()
+        except IntegrityError:
+            db.session.remove()
+            print(f"Records exist, duplicate email, or error: {row.email}")
+
+
+def model_printer():
+    print("------------")
+    print("Table: users with SQL query")
+    print("------------")
+    result = db.session.execute('select * from users')
+    print(result.keys())
+    for row in result:
+        print(row)
+
+
+if __name__ == "__main__":
+    model_tester()  # builds model of Users
+    model_printer()
+</script>
 {% endblock %}
-</body>
 </html>

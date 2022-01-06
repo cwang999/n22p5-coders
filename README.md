@@ -32,6 +32,15 @@ Review Ticket
 | David Xie      | David-Xie123  | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Adavid+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01)          | [@David-Xie123](https://github.com/David-Xie123)  |
 | Conner Wang  | cwang999 | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aconnor+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999)         | [@cwang999](https://github.com/cwang999)     |
 
+### Week 4
+| Name | Assignment | Ticket |
+| ---------- | ---------- | ------ |
+| Arch | Replit PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/36) |
+| Reinhardt | Orbit Times PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/39) |
+| Derrick | Galaxy Comparision PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/38)  |
+| David | Search PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/41) |
+| Conner | Finished Rock Content PBL, started on upload images PBL| [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/37) |
+
 ### Week 3
 | Name | Assignment | Ticket |
 | ---------- | ---------- | ------ |

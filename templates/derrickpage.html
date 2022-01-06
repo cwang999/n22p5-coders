@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "layouts/base.html" %}
-<head>
+{% extends "layouts/base.html" %}
+{% block meta %}
   <meta charset="UTF-8">
-  <title>Derrick About Me</title>
-</head>
-<body>
+  <title>Derrick About Me </title>
+{% endblock %}
+{% block content %}
 <h1><center>My name is Derrick</center></h1>
 <mark><center>I'm a sophomore and I am part of the Ninjas</center></mark>
 <html>
@@ -200,5 +200,4 @@
 
 
 {% endblock %}
-</body>
 </html>

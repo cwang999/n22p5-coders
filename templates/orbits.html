@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "layouts/base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Orbit Times</title>
+</head>
+<body>
+<h1>ORBIT TIMES OF THE PLANETS IN OUR SOLAR SYSTEM</h1>
+<h2>ENTER A PLANET(No pluto isn't a planet)</h2>
+<div class="col-0">
+    <form method="POST">
+        <label for="planet" >Capitalize the first letter please</label>
+        <input type="text" name="planet" id="planet">
+        <input type="submit" value="Enter">
+    </form>
+</div>
+    <p>{{ orbit }}</p>
+</body>
+</html>
