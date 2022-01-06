@@ -83,6 +83,43 @@ def planetpictures():
 def uploadphotos():
     return render_template("uploadphotos.html")
 
+@app.route('/orbits/', methods=['GET', 'POST'])
+def orbits():
+    factlist = ["Time it takes to orbit sun: 88 Earth days",
+                "Time it takes to orbit sun: 225 Earth days",
+                "Time it takes to orbit sun: 365 Earth days",
+                "Time it takes to orbit sun: 687 Earth days",
+                "Time it takes to orbit sun: 12 Earth years",
+                "Time it takes to orbit sun: 29.5 Earth years",
+                "Time it takes to orbit sun: 84 Earth years",
+                "Time it takes to orbit sun: 165 Earth years"
+                ]
+    planet = None
+    if request.form:
+        planet = request.form.get("planet")
+    if planet is not None :
+        if planet == "Mercury":
+            orbittime = (factlist[0])
+        elif planet == "Venus":
+            orbittime = (factlist[1])
+        elif planet == "Earth":
+            orbittime = (factlist[2])
+        elif planet == "Mars":
+            orbittime = (factlist[3])
+        elif planet == "Jupiter":
+            orbittime = (factlist[4])
+        elif planet == "Saturn":
+            orbittime = (factlist[5])
+        elif planet == "Uranus":
+            orbittime = (factlist[6])
+        elif planet == "Neptune":
+            orbittime = (factlist[7])
+    else:
+            orbittime = "Enter a planet"
+
+    return render_template("orbits.html", orbit = orbittime)
+
+
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
 @app.route('/activity/')
