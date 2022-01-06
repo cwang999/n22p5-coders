@@ -37,8 +37,8 @@ Review Ticket
 | ---------- | ---------- | ------ |
 | Arch | Replit PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/36) |
 | Reinhardt | Orbit Times PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/39) |
-| Derrick | Galaxy Comparision PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/38)  [Ticket2](https://youtu.be/TSD0Jb_oI8c)|
-| David | Search PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/41)  [Ticket2](https://youtu.be/TSD0Jb_oI8c) |
+| Derrick | Galaxy Comparision PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/38)  |
+| David | Search PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/41) |
 | Conner | Finished Rock Content PBL, started on upload images PBL| [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/37) |
 
 ### Week 3
