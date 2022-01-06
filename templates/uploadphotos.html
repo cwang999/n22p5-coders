@@ -4,28 +4,76 @@
 
 {% block meta %}
     <title>Upload Photos</title>
+    <link
+            class="jsbin"
+            href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+            rel="stylesheet"
+            type="text/css"
+    />
+    <script
+            class="jsbin"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+    ></script>
+    <script
+            class="jsbin"
+            src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"
+    ></script>
+    <meta charset="utf-8" />
+    <title>JS Bin</title>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        article,
+        aside,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
-<div class="container p-3 my-3 bg-dark text-light rounded">
-    <h5>Media Player</h5>
-    <input type="file" accept="image/*" capture id="uploadimageid">
-    <image id="player" src="userimage" width="530" height="300" controls>
+{#<div class="container p-3 my-3 bg-dark text-light rounded">#}
+{#    <h5>Media Player</h5>#}
+{#    <input type="file" accept="image/*" capture id="uploadimageid">#}
+{#    <image id="player" src="userimage" width="530" height="300" controls>#}
+{##}
+{#    </image>#}
+{#    <script>#}
+{#        const recorder = document.getElementById('recorder');#}
+{#        const player = document.getElementById('player');#}
+{##}
+{#        recorder.addEventListener('change', function(e) {#}
+{#            const file = e.target.files[0];#}
+{#            const url = URL.createObjectURL(file);#}
+{#            // Do something with the audio file.#}
+{#            player.src = url;#}
+{#        });#}
+{#    </script>#}
+{#</div>#}
+{##}
+    <input type="file" onchange="readURL(this);" />
+    <img id="blah" src="#" alt="your image" />
 
-    </image>
-    <script>
-        const recorder = document.getElementById('recorder');
-        const player = document.getElementById('player');
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-        recorder.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            const url = URL.createObjectURL(file);
-            // Do something with the audio file.
-            player.src = url;
-        });
-    </script>
-</div>
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            };
 
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 
 {% endblock %}
 
