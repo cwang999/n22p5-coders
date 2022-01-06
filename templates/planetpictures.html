@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 
-<head>
-    <title>Astrogallery</title>
-</head>
+    {% block meta %}
+        <title>Astro Gallery</title>
+    {% endblock %}
 
-<body>
+{% block content %}
     <div class="row">
         <div class="col-6 col-sm-3">
             <img  id="myImage"
@@ -41,6 +41,6 @@
                   src="https://astrobackyard.com/wp-content/uploads/2020/02/rosette-nebula.jpg" class="img-thumbnail" width="530" height="300"/>
         </div>
     </div>
-</body>
 
+{% endblock %}
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 <style>
     html, body{
         margin: 0;
@@ -17,7 +17,7 @@
         font-family: "Comic Sans MS";
     }
 </style>
-<head>
+{% block meta %}
     <meta charset="UTF-8">
     <title>About David</title>
     <script>
@@ -33,8 +33,8 @@
             document.getElementById('message')
         }
     </script>
-</head>
-<body>
+{% endblock %}
+{% block content %}
 <h3>Hello, user! David is a junior in Computer Science Principles who enjoys coding to help others as well as for entertainment.</h3>
 
 <div class=imageContainer>
@@ -134,5 +134,5 @@
 getposition()
 </script>
 <div id="data"></div>
-</body>
+{% endblock %}
 </html>

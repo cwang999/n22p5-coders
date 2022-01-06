@@ -1,55 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "layouts/base.html" %}
+{% extends "layouts/base.html" %}
 
-<style>
-    html, body{
-        margin: 0;
-        height: 100%;
-        animation: fadein 2s;
-        -moz-animation: fadein 2s; /* Firefox */
-        -webkit-animation: fadein 2s; /* Safari and Chrome */
-        -o-animation: fadein 2s; /* Opera */
-        background-image: url('https://i.pinimg.com/originals/8d/bb/58/8dbb588536397d8571c934332ff1dffc.jpg');
-        background-repeat: no-repeat;
-        background-size: 1550px 800px;
-        background-attachment: fixed;
-        color: var(--white);
-        font-family: "Comic Sans MS";
-    }
-</style>
+    {% block meta %}
+        <title>Learn About the Planets</title>
+    {% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Connor Home Page</title>
-    <style>
-        .button{
-            margin-left: 45%;
-        }
-    </style>
-    <script>
-        function connorMask(){
-            document.getElementById('myImage')
-                .src="../static/img/connorpicture.jpg";
-            document.getElementById('message')
-        }
-
-        function connorNoMask(){
-            document.getElementById('myImage')
-                .src="../static/img/connor_no_mask.jpg";
-            document.getElementById('message')
-        }
-    </script>
-</head>
-<body>
-<h3 id="message">
-    Learn about the planets!
-</h3>
-
+{% block content %}
+<div class="container">
+    <h3 id="message">
+        Learn about the planets!
+    </h3>
 <div id="link">
     <h4>Mercury</h4>
     <a href="https://solarsystem.nasa.gov/planets/mercury/overview/">
-        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg"
+        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" class="img-thumbnail"
                width="160" height="160"></a>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -61,7 +26,7 @@
 <div id="link">
     <h4>Venus</h4>
     <a href="https://solarsystem.nasa.gov/planets/venus/overview/">
-        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg"
+        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg" class="img-thumbnail"
                width="160" height="160"></a>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -73,7 +38,7 @@
 <div id="link">
     <h4>Mars</h4>
     <a href="https://solarsystem.nasa.gov/planets/mars/overview/">
-        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg"
+        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" class="img-thumbnail"
                width="160" height="160"></a>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -85,7 +50,7 @@
 <div id="link">
     <h4>Jupiter</h4>
     <a href="https://solarsystem.nasa.gov/planets/jupiter/overview/">
-        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg"
+        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" class="img-thumbnail"
                width="160" height="160"></a>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -97,7 +62,7 @@
 <div id="link">
     <h4>Saturn</h4>
     <a href="https://solarsystem.nasa.gov/planets/saturn/overview/">
-        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg"
+        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg" class="img-thumbnail"
                width="325" height="160"></a>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -109,7 +74,7 @@
 <div id="link">
     <h4>Uranus</h4>
     <a href="https://solarsystem.nasa.gov/planets/uranus/overview/">
-        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Uranus_true_colour.jpg"
+        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Uranus_true_colour.jpg" class="img-thumbnail"
                width="160" height="160"></a>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -121,7 +86,7 @@
 <div id="link">
     <h4>Neptune</h4>
     <a href="https://solarsystem.nasa.gov/planets/neptune/overview/">
-        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg"
+        <embed type="image/jpg" src="https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg" class="img-thumbnail"
                width="160" height="160"></a>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -130,6 +95,8 @@
 </svg>
 <p1>Click to learn more</p1>
 
-</body>
+</div>
+
+{% endblock %}
 
 </html>
