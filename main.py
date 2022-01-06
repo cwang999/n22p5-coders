@@ -26,6 +26,9 @@ def index():
 @app.route('/aboutArch/')
 def aboutArch():
     return render_template("aboutArch.html")
+@app.route('/aboutArch/rapidAPI/')
+def aboutArchRapidAPI():
+    return render_template("archPBL/RapidAPI.html")
 
 @app.route('/search/')
 def search():
