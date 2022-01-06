@@ -123,6 +123,10 @@ def orbits():
     return render_template("orbits.html", orbit = orbittime)
 
 
+@app.route('/spacesliders/')
+def spacesliders():
+    return render_template("spacesliders.html")
+
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
 @app.route('/activity/')
