@@ -29,6 +29,9 @@ def aboutArch():
 @app.route('/aboutArch/rapidAPI/')
 def aboutArchRapidAPI():
     return render_template("archPBL/RapidAPI.html")
+@app.route('/aboutArch/replit/')
+def aboutArchReplit():
+    return render_template("archPBL/Replit.html")
 
 @app.route('/search/')
 def search():
