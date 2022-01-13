@@ -10,7 +10,9 @@
 <body>
 <h2>Space News Title</h2>
 <div id="printspacefact"></div>
-
+<h2>URL</h2>
+<div id="spaceurl"></div>
+<button onClick="window.location.reload();">New Story</button>
 <script>
     async function getAstroNews() {
         const response = await fetch("https://space-news.p.rapidapi.com/news/guardian", {
@@ -30,6 +32,7 @@
         console.log(spacefact);
 
         document.getElementById("printspacefact").innerHTML = spacefact.title;
+        document.getElementById("spaceurl").innerHTML = spacefact.url;
 
         /* const astroNews = await response.text(); */
     }
