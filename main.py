@@ -92,6 +92,10 @@ def planetpictures():
 def uploadphotos():
     return render_template("uploadphotos.html")
 
+@app.route('/site/')
+def site():
+    return render_template("site.html")
+
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
     factlist = ["Time it takes to orbit sun: 88 Earth days",

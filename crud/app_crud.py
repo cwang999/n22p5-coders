@@ -113,13 +113,6 @@ def delete():
     return redirect(url_for('crud.crud'))
 
 
-# Search Form
-@app_crud.route('/search/')
-def search():
-    """loads form to search Users data"""
-    return render_template("templates/crud/search.html")
-
-
 # Search request and response
 @app_crud.route('/search/term/', methods=["POST"])
 def search_term():
