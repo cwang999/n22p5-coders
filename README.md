@@ -14,6 +14,7 @@ Review Ticket
   <thead>
     <tr>
       <th>Item</th>
+      <th>Arch</th>
       <th>Amount</th>
     </tr>
   </thead>
@@ -21,6 +22,7 @@ Review Ticket
     <tr>
       <td>Bananas</td>
       <td>$8</td>
+      <th>Amount</th>
     </tr>
   </tbody>
 </table>
