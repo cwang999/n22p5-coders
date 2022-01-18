@@ -13,16 +13,21 @@ Review Ticket
 <table>
   <thead>
     <tr>
-      <th>Item</th>
-      <th>Arch</th>
-      <th>Amount</th>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Scrumboard</th>
+      <th>Issues</th>
+      <th>Commits</th>
+      <th>Profile</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Bananas</td>
       <td>$8</td>
-      <th>Amount</th>
+      <td>$8</td>
+      <td>$8</td>
+      
     </tr>
   </tbody>
 </table>
