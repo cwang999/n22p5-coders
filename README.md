@@ -9,6 +9,23 @@ Day before review day, 7PM: Move Tickets, add Tangibles [EVERYONE]
 Time Box
 Review Ticket
 
+<body>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bananas</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+
 -----------------------------------------------------------------------------------
 ### Your Creators
 ![image](https://user-images.githubusercontent.com/89278326/145645493-99d04805-dcc8-481d-819a-31bbeeddb244.png)
