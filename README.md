@@ -26,6 +26,8 @@ Review Ticket
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
     </tr>
   </tbody>
 </table>
