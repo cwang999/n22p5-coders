@@ -22,7 +22,7 @@ Review Ticket
   </thead>
   <tbody>
     <tr>
-      <td>Bananas</td>
+      <td>Arch Huang</td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
@@ -32,7 +32,37 @@ Review Ticket
   </tbody>
     <tbody>
     <tr>
-      <td>Bananas</td>
+      <td>Reinhardt Lotter</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+    <tbody>
+    <tr>
+      <td>Derrick Huang</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+    <tbody>
+    <tr>
+      <td>David Xie</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+      <tbody>
+    <tr>
+      <td>Reinhardt Lotter</td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
