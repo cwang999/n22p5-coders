@@ -9,7 +9,6 @@ Day before review day, 7PM: Move Tickets, add Tangibles [EVERYONE]
 Time Box
 Review Ticket
 
-<body>
 <table>
   <thead>
     <tr>
@@ -30,7 +29,6 @@ Review Ticket
     </tr>
   </tbody>
 </table>
-</body>
 
 -----------------------------------------------------------------------------------
 ### Your Creators
