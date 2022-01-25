@@ -8,15 +8,14 @@
     <title>Space quiz</title>
 </head>
 <body>
-<label for="q1">What Planet do we live on</label>
-<select name="q1" id="q1" method="POST">
-    <option value="earth">earth</option>
-    <option value="mercury">Mercury</option>
-    <option value="venus">venus</option>
-    <option value="sun">The sun</option>
-</select>
+    <div class="col-0">
+        <form method="POST">
+            <label for="q1" >What planet do we live on?</label>
+            <input type="text" name="q1" id="q1">
+            <input type="submit" value="Enter">
+        </form>
+    </div>
 <br><br>
-<input type="submit" value="Submit">
 {{ score }}
 {% endblock %}
 </body>

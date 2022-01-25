@@ -137,20 +137,21 @@ def orbits():
 
     return render_template("orbits.html", orbit = orbittime)
 
-@app.route('/spacequiz/')
+@app.route('/spacequiz/' ,methods=['GET', 'POST'])
 def spacequiz():
-    # global q1
     global quizscore
+    q1 = None
     if request.form:
-        q1 = "earth"
-    # if q1 is not None :
+        q1 = request.form.get("q1")
+    if q1 is not None :
         if q1 == "earth":
-            quizscore = quizscore + 1
-            return render_template("spacequiz.html", score="1")
+            quizscore += 1
         else:
-            quizscore = quizscore + 0
-            return render_template("spacequiz.html", score="0")
-        # return render_template("spacequiz.html", score=1)
+            quizscore += 0
+        print(q1)
+    else:
+        quizscore = 0
+    return render_template("spacequiz.html", score=quizscore)
 
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
