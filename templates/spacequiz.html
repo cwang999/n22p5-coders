@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+{% block meta %}
+<meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title>Space quiz</title>
+</head>
+<body>
+<label for="q1">What Planet do we live on</label>
+<select name="q1" id="q1" method="POST">
+    <option value="earth">earth</option>
+    <option value="mercury">Mercury</option>
+    <option value="venus">venus</option>
+    <option value="sun">The sun</option>
+</select>
+<br><br>
+<input type="submit" value="Submit">
+{{ score }}
+{% endblock %}
+</body>
+</html>

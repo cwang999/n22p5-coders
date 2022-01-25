@@ -10,10 +10,14 @@ import json
 import random
 from crud.app_crud import app_crud
 
+
+
+
 # create a Flask instance
 from __init__ import app
 
 app.register_blueprint(app_crud)
+
 
 
 # connects default URL to render index.html
@@ -52,9 +56,6 @@ def davidhomepage():
 def derrickpage():
     return render_template("derrickpage.html")
 
-@app.route('/reinhardtpage/')
-def reinhardtpage():
-    return render_template("reinhardtpage.html")
 
 @app.route('/greet/', methods=['GET', 'POST'])
 def greet():
@@ -91,6 +92,10 @@ def planetpictures():
 @app.route('/uploadphotos/')
 def uploadphotos():
     return render_template("uploadphotos.html")
+
+@app.route('/reinhardtpage/')
+def reinhardtpage():
+    return render_template("reinhardtpage.html")
 
 @app.route('/site/')
 def site():
@@ -132,6 +137,20 @@ def orbits():
 
     return render_template("orbits.html", orbit = orbittime)
 
+@app.route('/spacequiz/')
+def spacequiz():
+    # global q1
+    global quizscore
+    if request.form:
+        q1 = "earth"
+    # if q1 is not None :
+        if q1 == "earth":
+            quizscore = quizscore + 1
+            return render_template("spacequiz.html", score="1")
+        else:
+            quizscore = quizscore + 0
+            return render_template("spacequiz.html", score="0")
+        # return render_template("spacequiz.html", score=1)
 
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
