@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "layouts/base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Orbit Times</title>
+</head>
+<body>
+
+<h2>Calculate the time needed to travel to any planet</h2>
+<div class="col-0">
+    <form action="" id="input" method="POST">
+        <label for="planet" >Input the planet</label>
+        <input type="text" name="planet" id="planet">
+        <label for="speed" >Input the speed at which you wish to travel (km/hr)</label>
+        <input type="number" name="speed" id="speed">
+        <input type="submit" value="Enter">
+    </form>
+</div>
+
+<p>Minimum time = {{ time1 }} days</p>
+<p>Maximum time = {{ time2 }} days</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{% extends "layouts/base.html" %}
+
+{% block meta %}
+    <title>Terminal</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container p-3 my-3 bg-light text-light rounded">
+
+        <form action="" id="input" method="POST">
+            <label for="dataInputId" style="color:black">Input word:</label>
+            <input name="dataInput" id="dataInputId" type="text" class="input-box bg-white" style="color:black" autocomplete="off" autofocus>
+        </form>
+
+        <div>
+            <br>
+            <h6 style="color:black">{{ result }}</h6>
+        </div>
+    </div>
+
+{% endblock %}
+
+</html>

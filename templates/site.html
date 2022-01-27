@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+{% block body %}
+<body>
+<h2>Space News Title</h2>
+<div id="printspacefact"></div>
+<h2>URL</h2>
+<div id="spaceurl"></div>
+<button onClick="window.location.reload();">New Story</button>
+<script>
+    async function getAstroNews() {
+        const response = await fetch("https://space-news.p.rapidapi.com/news/guardian", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "space-news.p.rapidapi.com",
+                "x-rapidapi-key": "92b9f4e31cmsh02f34db44282758p14191cjsndd8b61d87098"
+            }
+        })
+/*        console.log(response.json());*/
+        const spacefactcontainer = await response.json();
+        console.log(spacefactcontainer);
+
+        const arrind =  Math.floor(Math.random() * 19);
+        console.log(arrind);
+        const spacefact = spacefactcontainer[arrind];
+        console.log(spacefact);
+
+        document.getElementById("printspacefact").innerHTML = spacefact.title;
+        document.getElementById("spaceurl").innerHTML = spacefact.url;
+
+        /* const astroNews = await response.text(); */
+    }
+    getAstroNews();
+</script>
+</body>
+{% endblock %}
+
+</html>

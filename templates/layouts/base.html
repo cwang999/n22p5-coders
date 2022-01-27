@@ -92,10 +92,14 @@
     {% block meta %}
         <title>AstroNinjas</title>
     {% endblock %}
+    <link rel="stylesheet" href="../../static/scss/custom.css">
+    <link rel="stylesheet" href="../../static/scss/custom.scss">
+    <link rel="stylesheet" href="../../static/scss/custom.css.map">
 </head>
-
 <body>
 {% include "layouts/navbar.html" %}
-    {% block content %}
-    {% endblock %}
+{% block body %}
+{% endblock %}
+{% block content %}
+{% endblock %}
 </body>
