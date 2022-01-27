@@ -38,7 +38,7 @@ def aboutArchReplit():
     return render_template("archPBL/Replit.html")
 @app.route('/aboutArch/notdatabase/')
 def aboutArchNotDatabase():
-    return render_template("archPBL/NotDatabase.html")
+    return render_template("archPBL/templates/NotDatabase.html")
 
 @app.route('/search/')
 def search():
@@ -187,6 +187,52 @@ def spacequiz():
     else:
         quizscore = 0
     return render_template("spacequiz.html", score=quizscore)
+
+@app.route('/NotDatabase/', methods=['GET', 'POST'])
+
+def not_database():
+    nd = NotDatabase()
+    if request.form:
+        dataInputPY = request.form.get("dataInput")
+        nd.input_word(dataInputPY)
+        nd.create_palindrome()
+        resultPY = nd.is_it_a_palindrome()
+        return render_template("NotDatabase.html", result=resultPY)
+    return render_template("NotDatabase.html", result="Awaiting Input...")
+
+class NotDatabase:
+    def __init__(self):
+        self.word_array = []
+        self.palindrome_array = []
+
+    def input_word(self, word):
+        for x in word:
+            self.word_array.append(x)
+            self.palindrome_array.append(x)
+        # Tests the arrays
+        # print(self.word_array)
+        # print(self.palindrome_array)
+
+    def create_palindrome(self):
+        self.palindrome_array.reverse()
+        # Tests the arrays
+        # print(self.word_array)
+        # print(self.palindrome_array)
+
+    def is_it_a_palindrome(self):
+        # Turns the word array into a string
+        word = ''
+        for char in self.word_array:
+            word = word + char
+        # Turns the palindrome array into a string
+        palindrome_word = ''
+        for char in self.palindrome_array:
+            palindrome_word = palindrome_word + char
+
+        if word == palindrome_word:
+            return word + ' is a palindrome!'
+        else:
+            return word + ' is not a palindrome, because the reverse is ' + palindrome_word + '!'
 
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
