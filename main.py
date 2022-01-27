@@ -141,14 +141,49 @@ def orbits():
 def spacequiz():
     global quizscore
     q1 = None
+    q2 = None
+    q3 = None
+    q4 = None
+    q5 = None
     if request.form:
         q1 = request.form.get("q1")
+        q2 = request.form.get("q2")
+        q3 = request.form.get("q3")
+        q4 = request.form.get("q4")
+        q5 = request.form.get("q5")
     if q1 is not None :
-        if q1 == "earth":
+        if q1 == "earth" or q1 == "Earth":
             quizscore += 1
         else:
             quizscore += 0
-        print(q1)
+    else:
+        quizscore = 0
+    if q2 is not None :
+        if q2 == "mars" or q2 == "Mars":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    if q3 is not None :
+        if q3 == "uranus" or q3 == "Uranus":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    if q4 is not None :
+        if q4 == "1969":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    if q5 is not None :
+        if q5 == "jupiter" or q5 == "Jupiter":
+            quizscore += 1
+        else:
+            quizscore += 0
     else:
         quizscore = 0
     return render_template("spacequiz.html", score=quizscore)
