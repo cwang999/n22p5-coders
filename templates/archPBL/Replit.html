@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{% extends "layouts/base.html" %}
+
+{% block meta %}
+    <title>About Arch</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container p-3 my-3 text-black rounded">
+
+        <h2><strong>Replit</strong></h2>
+
+        <div class="row justify-content-center" style="margin: 2%;">
+            <iframe height="1000px" src="https://replit.com/@ArchHuang/LonelyArchitecture?lite=true"></iframe>
+        </div>
+
+        <div class="button">
+            <button class="btn btn-success" onclick="window.location.href='/aboutArch/'">
+                Back
+            </button>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+</html>

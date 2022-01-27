@@ -9,6 +9,69 @@ Day before review day, 7PM: Move Tickets, add Tangibles [EVERYONE]
 Time Box
 Review Ticket
 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Scrumboard</th>
+      <th>Issues</th>
+      <th>Commits</th>
+      <th>Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Arch Huang</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+    <tbody>
+    <tr>
+      <td>Reinhardt Lotter</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+    <tbody>
+    <tr>
+      <td>Derrick Huang</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+    <tbody>
+    <tr>
+      <td>David Xie</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+      <tbody>
+    <tr>
+      <td>Reinhardt Lotter</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+      <td>$8</td>
+    </tr>
+  </tbody>
+</table>
+
 -----------------------------------------------------------------------------------
 ### Your Creators
 ![image](https://user-images.githubusercontent.com/89278326/145645493-99d04805-dcc8-481d-819a-31bbeeddb244.png)
@@ -31,6 +94,15 @@ Review Ticket
 | Derrick Huang    | Pitsco          | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aderrick+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco)         | [@Pitsco](https://github.com/Pitsco)          |
 | David Xie      | David-Xie123  | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Adavid+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01)          | [@David-Xie123](https://github.com/David-Xie123)  |
 | Conner Wang  | cwang999 | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aconnor+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999)         | [@cwang999](https://github.com/cwang999)     |
+
+### Week 5
+| Name | Assignment | Ticket |
+| ---------- | ---------- | ------ |
+| Arch | Jekyll | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/62) |
+| Reinhardt | Under the hood (javascript) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/63) |
+| Derrick | Under the hood (javascript) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/63)  |
+| David | Crud | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/64) |
+| Conner | Sassy Bootstrap | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/65) |
 
 ### Week 4
 | Name | Assignment | Ticket |

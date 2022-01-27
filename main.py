@@ -10,10 +10,14 @@ import json
 import random
 from crud.app_crud import app_crud
 
+
+
+
 # create a Flask instance
 from __init__ import app
 
 app.register_blueprint(app_crud)
+
 
 
 # connects default URL to render index.html
@@ -29,6 +33,12 @@ def aboutArch():
 @app.route('/aboutArch/rapidAPI/')
 def aboutArchRapidAPI():
     return render_template("archPBL/RapidAPI.html")
+@app.route('/aboutArch/replit/')
+def aboutArchReplit():
+    return render_template("archPBL/Replit.html")
+@app.route('/aboutArch/notdatabase/')
+def aboutArchNotDatabase():
+    return render_template("archPBL/templates/NotDatabase.html")
 
 @app.route('/search/')
 def search():
@@ -46,9 +56,6 @@ def davidhomepage():
 def derrickpage():
     return render_template("derrickpage.html")
 
-@app.route('/reinhardtpage/')
-def reinhardtpage():
-    return render_template("reinhardtpage.html")
 
 @app.route('/greet/', methods=['GET', 'POST'])
 def greet():
@@ -86,6 +93,14 @@ def planetpictures():
 def uploadphotos():
     return render_template("uploadphotos.html")
 
+@app.route('/reinhardtpage/')
+def reinhardtpage():
+    return render_template("reinhardtpage.html")
+
+@app.route('/site/')
+def site():
+    return render_template("site.html")
+
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
     factlist = ["Time it takes to orbit sun: 88 Earth days",
@@ -122,6 +137,104 @@ def orbits():
 
     return render_template("orbits.html", orbit = orbittime)
 
+
+@app.route('/spacequiz/' ,methods=['GET', 'POST'])
+def spacequiz():
+    global quizscore
+    q1 = None
+    q2 = None
+    q3 = None
+    q4 = None
+    q5 = None
+    if request.form:
+        q1 = request.form.get("q1")
+        q2 = request.form.get("q2")
+        q3 = request.form.get("q3")
+        q4 = request.form.get("q4")
+        q5 = request.form.get("q5")
+    if q1 is not None :
+        if q1 == "earth" or q1 == "Earth":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    if q2 is not None :
+        if q2 == "mars" or q2 == "Mars":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    if q3 is not None :
+        if q3 == "uranus" or q3 == "Uranus":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    if q4 is not None :
+        if q4 == "1969":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    if q5 is not None :
+        if q5 == "jupiter" or q5 == "Jupiter":
+            quizscore += 1
+        else:
+            quizscore += 0
+    else:
+        quizscore = 0
+    return render_template("spacequiz.html", score=quizscore)
+
+@app.route('/NotDatabase/', methods=['GET', 'POST'])
+
+def not_database():
+    nd = NotDatabase()
+    if request.form:
+        dataInputPY = request.form.get("dataInput")
+        nd.input_word(dataInputPY)
+        nd.create_palindrome()
+        resultPY = nd.is_it_a_palindrome()
+        return render_template("NotDatabase.html", result=resultPY)
+    return render_template("NotDatabase.html", result="Awaiting Input...")
+
+class NotDatabase:
+    def __init__(self):
+        self.word_array = []
+        self.palindrome_array = []
+
+    def input_word(self, word):
+        for x in word:
+            self.word_array.append(x)
+            self.palindrome_array.append(x)
+        # Tests the arrays
+        # print(self.word_array)
+        # print(self.palindrome_array)
+
+    def create_palindrome(self):
+        self.palindrome_array.reverse()
+        # Tests the arrays
+        # print(self.word_array)
+        # print(self.palindrome_array)
+
+    def is_it_a_palindrome(self):
+        # Turns the word array into a string
+        word = ''
+        for char in self.word_array:
+            word = word + char
+        # Turns the palindrome array into a string
+        palindrome_word = ''
+        for char in self.palindrome_array:
+            palindrome_word = palindrome_word + char
+
+        if word == palindrome_word:
+            return word + ' is a palindrome!'
+        else:
+            return word + ' is not a palindrome, because the reverse is ' + palindrome_word + '!'
+          
 @app.route('/planetcalculator/', methods=['GET', 'POST'])
 def planetcalculator():
     global time1Py
