@@ -101,9 +101,11 @@ def model_tester():
     u6 = Users(name='Aristotle', description='made pioneering contributions to all fields of philosophy and science, he invented the field of formal logic, and he identified the various scientific disciplines and explored their relationships to each other.', password='123aris', phone="1111116666")
     u7 = Users(name='Michael E. Brown', description='has been referred to by himself and by others as the man who killed Pluto, because he furthered Pluto as being downgraded to a dwarf planet.', password='123mich', phone="1111117777")
     u8 = Users(name='Albert Einstein', description='developed a key theoretical development for 20th-century astronomy and cosmology: the theory of relativity, from 1905 to 1915, which eventually led to an explanation of the origin of the universe', password='123albe', phone="1111118888")
+    u9 = Users(name='Tycho Brahe', description='was best known for developing astronomical instruments and in measuring and fixing the positions of stars, which paved the way for future discoveries.', password='123tych', phone="1111119999")
+    u10 = Users(name='Edwin Hubble', description='proved that many objects previously thought to be clouds of dust and gas and classified as "nebulae" were actually galaxies beyond the Milky Way.', password='123edwi', phone="1111111010")
     # U7 intended to fail as duplicate key
 
-    table = [u1, u2, u3, u4, u5, u6, u7, u8]
+    table = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
     for row in table:
         try:
             db.session.add(row)
