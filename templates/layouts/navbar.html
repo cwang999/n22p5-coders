@@ -40,6 +40,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         <a class="dropdown-item" href="/uploadphotos/">Upload Photos</a>
                         <a class="dropdown-item" href="/planetpictures/">Astrogallery</a>
                         <a class="dropdown-item" href="/orbits/">Orbit Times</a>
+                        <a class="dropdown-item" href="/planetcalculator/">Calculate Travel Time to Planets</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -65,4 +66,25 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
             </nav>
         </div>
     </div>
+    <div class="btn-group">
+        <!-- Clock display -->
+        <div class="px-3 text-dark">
+            <span id="clock"></span>
+        </div>
+        <!-- Dark mode action -->
+        <div class="form-check form-switch">
+            <input type="checkbox" onclick="darkFunction()" class="form-check-input" id="darkSwitch">
+            <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+        </div>
+    </div>
+    <script>
+        function darkFunction() {
+            // toggles between off (standard CSS) and dark-mode (.dark-mode CSS)
+            document.body.classList.toggle("dark-mode");
+            // localStorage is used to manage darkSwitch status
+            darkSwitch.checked
+                ? localStorage.setItem("darkSwitch","dark")
+                : localStorage.removeItem("darkSwitch");
+        }
+    </script>
 </nav>
