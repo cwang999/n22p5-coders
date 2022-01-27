@@ -137,6 +137,7 @@ def orbits():
 
     return render_template("orbits.html", orbit = orbittime)
 
+
 @app.route('/spacequiz/' ,methods=['GET', 'POST'])
 def spacequiz():
     global quizscore
@@ -233,7 +234,41 @@ class NotDatabase:
             return word + ' is a palindrome!'
         else:
             return word + ' is not a palindrome, because the reverse is ' + palindrome_word + '!'
-
+          
+@app.route('/planetcalculator/', methods=['GET', 'POST'])
+def planetcalculator():
+    global time1Py
+    global time2Py
+    if request.form:
+        planetPy = request.form.get("planet")
+        speedPy = request.form.get("speed")
+        if planetPy == "Mercury" or "mercury":
+            time1Py = 77_000_000 / int(speedPy)
+            time2Py = 222_000_000 / int(speedPy)
+        elif planetPy == "Venus" or "venus":
+            time1Py = 38_000_000 / int(speedPy)
+            time2Py = 261_000_000 / int(speedPy)
+        elif planetPy == "Mars" or "mars":
+            time1Py = 54_600_000 / int(speedPy)
+            time2Py = 401_000_000 / int(speedPy)
+        elif planetPy == "Jupiter" or "jupiter":
+            time1Py = 365_000_000 / int(speedPy)
+            time2Py = 968_000_000 / int(speedPy)
+        elif planetPy == "Saturn" or "saturn":
+            time1Py = 1_200_000_000 / int(speedPy)
+            time2Py = 1_700_000_000 / int(speedPy)
+        elif planetPy == "Uranus" or "uranus":
+            time1Py = 2_600_000_000 / int(speedPy)
+            time2Py = 3_200_000_000 / int(speedPy)
+        elif planetPy == "Neptune" or "neptune":
+            time1Py = 4_300_000_000 / int(speedPy)
+            time2Py = 4_500_000_000 / int(speedPy)
+        else:
+            time1Py = 0
+            time2Py = 0
+        return render_template("planetcalculator.html", time1=time1Py/24, time2=time2Py/24)
+    else:
+        return render_template("planetcalculator.html", time1=0, time2=0)
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
 @app.route('/activity/')
