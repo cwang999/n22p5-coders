@@ -2,6 +2,8 @@
 
 [Deployed Website](https://crahpi.tk)
 
+[Jekyll Page](https://compapter.me)
+
 Release Day Policy:
 Day before review day, 6PM: Freeze Code - everybody push changes, no one change code after 6 PM [EVERYONE]
 Day before review day, 7PM: Deploy - Deployment Manager updates website [DeployManager ONLY]
