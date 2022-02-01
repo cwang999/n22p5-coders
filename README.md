@@ -26,7 +26,7 @@ Review Ticket
     <tr>
       <td>Arch Huang</td>
       <td>$8</td>
-      <td>$8</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues/assigned/Archkitten">Scrum tasks</a></td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
@@ -36,7 +36,7 @@ Review Ticket
     <tr>
       <td>Reinhardt Lotter</td>
       <td>$8</td>
-      <td>$8</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3AReinhardtlotter">Scrum tasks</a></td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
@@ -46,7 +46,7 @@ Review Ticket
     <tr>
       <td>Derrick Huang</td>
       <td>$8</td>
-      <td>$8</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3APitsco">Scrum tasks</a> </td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
@@ -56,7 +56,7 @@ Review Ticket
     <tr>
       <td>David Xie</td>
       <td>$8</td>
-      <td>$8</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3ADavid-Xie123">Scrum Tasks</a></td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
@@ -64,9 +64,9 @@ Review Ticket
   </tbody>
       <tbody>
     <tr>
-      <td>Reinhardt Lotter</td>
+      <td>Connor Wang</td>
       <td>$8</td>
-      <td>$8</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3Acwang999">Scrum tasks</a></td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
