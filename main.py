@@ -242,31 +242,43 @@ def planetcalculator():
     if request.form:
         planetPy = request.form.get("planet")
         speedPy = request.form.get("speed")
-        if planetPy == "Mercury" or "mercury":
+        if planetPy == "Mercury" or planetPy == "mercury":
             time1Py = 77_000_000 / int(speedPy)
             time2Py = 222_000_000 / int(speedPy)
-        elif planetPy == "Venus" or "venus":
+        elif planetPy == "Venus" or planetPy == "venus":
             time1Py = 38_000_000 / int(speedPy)
             time2Py = 261_000_000 / int(speedPy)
-        elif planetPy == "Mars" or "mars":
+        elif planetPy == "Mars" or planetPy == "mars":
             time1Py = 54_600_000 / int(speedPy)
             time2Py = 401_000_000 / int(speedPy)
-        elif planetPy == "Jupiter" or "jupiter":
+        elif planetPy == "Jupiter" or planetPy == "jupiter":
             time1Py = 365_000_000 / int(speedPy)
             time2Py = 968_000_000 / int(speedPy)
-        elif planetPy == "Saturn" or "saturn":
+        elif planetPy == "Saturn" or planetPy == "saturn":
             time1Py = 1_200_000_000 / int(speedPy)
             time2Py = 1_700_000_000 / int(speedPy)
-        elif planetPy == "Uranus" or "uranus":
+        elif planetPy == "Uranus" or planetPy == "uranus":
             time1Py = 2_600_000_000 / int(speedPy)
             time2Py = 3_200_000_000 / int(speedPy)
-        elif planetPy == "Neptune" or "neptune":
+        elif planetPy == "Neptune" or planetPy == "neptune":
             time1Py = 4_300_000_000 / int(speedPy)
             time2Py = 4_500_000_000 / int(speedPy)
+        elif planetPy == "Pluto" or planetPy == "pluto":
+            time1Py = 4_280_000_000 / int(speedPy)
+            time2Py = 7_500_000_000 / int(speedPy)
+        elif planetPy == "Alpha Centauri" or planetPy == "alpha centauri":
+            time1Py = 41_150_000_000_000 / int(speedPy)
+            time2Py = 41_150_000_000_000 / int(speedPy)
+        elif planetPy == "Andromeda Galaxy" or planetPy == "andromeda galaxy":
+            time1Py = 24_001_873_000_000_000_000 / int(speedPy)
+            time2Py = 24_001_873_000_000_000_000 / int(speedPy)
+        elif planetPy == "Moon" or planetPy == "moon":
+            time1Py = 363_104 / int(speedPy)
+            time2Py = 405_696 / int(speedPy)
         else:
             time1Py = 0
             time2Py = 0
-        return render_template("planetcalculator.html", time1=time1Py/24, time2=time2Py/24)
+        return render_template("planetcalculator.html", time1=(round(time1Py/24, 2)), time2=round(time2Py/24, 2), time3=round(time1Py/24/365, 2), time4=round(time2Py/24/365, 2), time5=round(time1Py/100000000,2))
     else:
         return render_template("planetcalculator.html", time1=0, time2=0)
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
