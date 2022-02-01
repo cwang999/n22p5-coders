@@ -66,7 +66,7 @@ Review Ticket
     <tr>
       <td>Connor Wang</td>
       <td>$8</td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3Acwang999"</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3Acwang999">Scrum tasks</a></td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
