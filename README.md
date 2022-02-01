@@ -26,7 +26,7 @@ Review Ticket
     <tr>
       <td>Arch Huang</td>
       <td>$8</td>
-      <td>$8</td>
+      <td>[Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Aarchkitten)</td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
