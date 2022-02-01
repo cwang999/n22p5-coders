@@ -17,7 +17,9 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
 <!- Try building a new body here ->
 <h1><strong>Tic Tac Toe</strong></h1>
 
-<a href="/tictactoe/"> <embed type="image/jpg" src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/ec7f4a1c7d1e7e5.png" width="255" height="130"></a>
+<a href={{ url_for('tictactoe') }}>
+    <img  alt="start button" src="/static/img/start.png" width=240" height="150">
+</a>
 
 <h2><strong>Instructions:</strong></h2>
 
