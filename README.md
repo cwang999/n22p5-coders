@@ -26,7 +26,7 @@ Review Ticket
     <tr>
       <td>Arch Huang</td>
       <td>$8</td>
-      <td>[Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Aarchkitten)</td>
+      <td<a href="https://github.com/Archkitten/m22p4-ninjas/issues/assigned/Archkitten">Scrum tasks</a></td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
@@ -36,7 +36,7 @@ Review Ticket
     <tr>
       <td>Reinhardt Lotter</td>
       <td>$8</td>
-      <td>$8</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3AReinhardtlotter">Scrum tasks></td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
@@ -46,7 +46,7 @@ Review Ticket
     <tr>
       <td>Derrick Huang</td>
       <td>$8</td>
-      <td>$8</td>
+      <td<a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3APitsco">Scrum tasks </td>
       <td>$8</td>
       <td>$8</td>
       <td>$8</td>
