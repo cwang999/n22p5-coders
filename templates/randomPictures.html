@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Space Picture Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+    #board {
+        text-decoration: none;
+        color: #000;
+        background: black;
+        display: block;
+        height: 460px;
+        width: 100%;
+        justify-content: center;
+    }
+    .pictures {
+        width: auto;
+        height: 460px;
+        text-align: center;
+    }
+    .grayscale{
+        filter: grayscale(100%);
+    }
+    .blur{
+        filter: blur(2px);
+    }
+    .btn-group{
+        margin-right: 5px;
+    }
+</style>
+<body>
+<center>
+    <br>
+    <h1 style="font-size:45px; color:#e0e1dd;">Random Space Picture Generator</h1>
+    <br>
+    <button onclick="newPicture()" class="btn-group" style="margin-right: 30px;"> New Picture</button>
+    <button onclick="grayIt()" class="btn-group"> Grayscale</button>
+    <button onclick="blurIt()" class="btn-group"> Blur it</button>
+    <br>
+    <br>
+    <div id="board">
+        <img id="pictureDisplay" class="pictures" alt=""  src="/static/spacePictures/{{files}}">
+    </div>
+</center>
+</html>
+
+<script>
+    document.body.style.backgroundColor =
+        "#0b1d2a";
+
+    var pictures = [
+        "space1.jpg",
+        "space2.jpeg",
+        "space3.webp",
+        "space4.jpeg",
+        "space5.jpeg",
+        "space6.jpeg",
+        "space7.jpg",
+        "space8.jpeg",
+        "space9.jpg",
+        "space10.jpeg"
+    ]
+
+    function newPicture() {
+        // get a random factor, e.g 0-1
+        var randomFactor = Math.random();
+        // get a random seed base on the length of given array, e.g it is pictures in this case
+        var randomSeed = randomFactor * pictures.length;
+        // round down the randomSeed to a random number int, e.g 0~9
+        // The Math.floor() function returns the largest integer less than or equal to a given number
+        var randomNumber = Math.floor(randomSeed);
+        document.getElementById('pictureDisplay').src = "/static/spacePictures/" + pictures[randomNumber];
+    }
+
+    function grayIt(){
+        if($('#pictureDisplay').hasClass("blur")) $('#pictureDisplay').removeClass('blur');
+        if($('#pictureDisplay').hasClass("grayscale")) $('#pictureDisplay').removeClass('grayscale');
+        else $('#pictureDisplay').addClass('grayscale');
+    }
+
+    function blurIt(){
+        if($('#pictureDisplay').hasClass("grayscale")) $('#pictureDisplay').removeClass('grayscale');
+        if($('#pictureDisplay').hasClass("blur")) $('#pictureDisplay').removeClass('blur');
+        else $('#pictureDisplay').addClass('blur');
+    }
+</script>
+</body>
+
+{% endblock %}
