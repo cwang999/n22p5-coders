@@ -85,6 +85,10 @@ def randomphotos():
     elif photoID == 5:
         return render_template("randomphotos.html", photo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/LH_95.jpg/330px-LH_95.jpg")
 
+@app.route('/randomPictures/')
+def randomPictures():
+    return render_template("randomPictures.html")
+
 @app.route('/planetpictures/')
 def planetpictures():
     return render_template("planetpictures.html")
