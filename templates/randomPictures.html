@@ -30,6 +30,9 @@
     .blur{
         filter: blur(2px);
     }
+    .invert{
+        filter: invert(100%);
+    }
     .btn-group{
         margin-right: 5px;
     }
@@ -40,8 +43,9 @@
     <h1 style="font-size:45px; color:#e0e1dd;">Random Space Picture Generator</h1>
     <br>
     <button onclick="newPicture()" class="btn-group" style="margin-right: 30px;"> New Picture</button>
-    <button onclick="grayIt()" class="btn-group"> Grayscale</button>
-    <button onclick="blurIt()" class="btn-group"> Blur it</button>
+    <button onclick="grayIt()" class="btn-group"> Grayscale </button>
+    <button onclick="blurIt()" class="btn-group"> Blur it </button>
+    <button onclick="invertIt()" class="btn-group"> Invert </button>
     <br>
     <br>
     <div id="board">
@@ -80,14 +84,22 @@
 
     function grayIt(){
         if($('#pictureDisplay').hasClass("blur")) $('#pictureDisplay').removeClass('blur');
+        if($('#pictureDisplay').hasClass("invert")) $('#pictureDisplay').removeClass('invert');
         if($('#pictureDisplay').hasClass("grayscale")) $('#pictureDisplay').removeClass('grayscale');
         else $('#pictureDisplay').addClass('grayscale');
     }
 
     function blurIt(){
         if($('#pictureDisplay').hasClass("grayscale")) $('#pictureDisplay').removeClass('grayscale');
+        if($('#pictureDisplay').hasClass("invert")) $('#pictureDisplay').removeClass('invert');
         if($('#pictureDisplay').hasClass("blur")) $('#pictureDisplay').removeClass('blur');
         else $('#pictureDisplay').addClass('blur');
+    }
+    function invertIt(){
+        if($('#pictureDisplay').hasClass("grayscale")) $('#pictureDisplay').removeClass('grayscale');
+        if($('#pictureDisplay').hasClass("blur")) $('#pictureDisplay').removeClass('blur');
+        if($('#pictureDisplay').hasClass("invert")) $('#pictureDisplay').removeClass('invert');
+        else $('#pictureDisplay').addClass('invert');
     }
 </script>
 </body>
