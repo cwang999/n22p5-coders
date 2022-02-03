@@ -1,57 +1,58 @@
-<!-- Extending the predefined project layout -->
-<!-- Custom file for standardizing Project Data
-This HTML is setup as as a Jinja2 layout, coders use layouts for:
- ... standardization of style
- ... setting expectations for data
- ... code reuse
--->
-<!DOCTYPE HTML>
-<html lang="en">
 {% extends "layouts/base.html" %}
+{% block body %}
+    <!DOCTYPE html>
+    <body style="background-image: url('../static/img/space_background2.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+
+    <div style = " margin: 2% 5% 5% 2%; text-align:left;">
+        <div>
+            <h1 style id="welcome">Welcome to Ninja Academy!</h1>
+            <p style id="aboutus">To learn about the people who created this fun website, click “About” at the top of the screen. <br>
+                In order of mention, the creators’ names are Arch Huang, Connor Wang, David Xie, Derrick Huang, and Reinhardt Lotter. <br>
+                Both our mask-on and mask-off pictures are included.</p>
+            <p style id="training"> We have some training activities to help YOU become a better ninja. Have fun! </p>
+        </div>
+    </div>
+
+    <style>
+        #welcome{
+            position: relative;
+            left: 100px;
+            font-family: 'Impact';
+            font-size: 60px;
+            font-weight: 900;
+            text-align: left;
+            padding: 30px;
+            color: #F37C61;
+        }
+        #aboutus{
+            position: relative;
+            left: 100px;
+            font-family: 'Helvetica';
+            font-size: 20px;
+            font-weight: 200;
+            text-align: left;
+            padding: 20px;
+            color: #dcd9d8;
+        }
+        #training{
+            position: relative;
+            left: 100px;
+            font-family: 'Impact';
+            font-size: 25px;
+            font-weight: 200;
+            text-align: left;
+            padding: 20px;
+            color: #e3c4b7;
+        }
+    </style>
 
 
 
 
-{% block meta %}
-    <title>Ninjas</title>
+
 {% endblock %}
 
-{% block content %}
-
-
-<!- Try building a new body here ->
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="row justify-content-left" style="background-color:transparent;border-left: thick ">
-
-    <br>
-
-    <h1><strong>Home</strong></h1>
-
-    <h4 style="color:FireBrick;">Ninja Academy!</h4>
-
-    <p>Welcome to the Ninja Academy!</p>
-
-    <p>
-        To learn about the people who created this fun website, click “About” at the top of the screen.
-        In order of mention, the creators’ names are Arch Huang, Connor Wang, David Xie, Derrick Huang, and Reinhardt Lotter.
-        Both our mask-on and mask-off pictures are included.
-    </p>
-
-    <p>
-        We have some training activities to help YOU become a better ninja. Have fun!
-    </p>
-
-    <br>
-
-</div>
-
-{% endblock %}
 
 
 
 
-</html>
