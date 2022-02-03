@@ -11,7 +11,7 @@
 <h2>Space News Title</h2>
 <div id="printspacefact"></div>
 <h2>URL</h2>
-<div id="spaceurl"></div>
+<a id="spaceurl" href="#"></a>
 <button onClick="window.location.reload();">New Story</button>
 <script>
     async function getAstroNews() {
@@ -33,6 +33,7 @@
 
         document.getElementById("printspacefact").innerHTML = spacefact.title;
         document.getElementById("spaceurl").innerHTML = spacefact.url;
+        document.getElementById("spaceurl").href = spacefact.url;
 
         /* const astroNews = await response.text(); */
     }
