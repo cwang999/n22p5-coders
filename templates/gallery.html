@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         body {
             background-color: #0b1d2a;
@@ -31,13 +32,23 @@
             overflow-y: hidden;
             white-space: nowrap;
             display: flex;
-            margin-top: 100px;
+            margin-top: 30px;
+        }
+        .grayscale{
+            filter: grayscale(100%);
+        }
+        .blur{
+            filter: blur(2px);
+        }
+        .invert{
+            filter: invert(100%);
         }
     </style>
 </head>
 <body>
-
-<div class="scroll">
+<br>
+<center><h1 style="font-size:45px; color:#e0e1dd;">Space Gallery</h1></center>
+<div id="spaceGallery" class="scroll">
     <div>
         <a href="/static/spacePictures/space1.jpg/" target="_blank">
             <img src="/static/spacePictures/space1.jpg/" alt="Space Picture 1" width="1000" height="600">
@@ -90,6 +101,33 @@
         </a>
     </div>
 </div>
-</body>
+<br>
+<button onclick="grayIt()" class="btn-group"> Grayscale </button>
+<button onclick="blurIt()" class="btn-group"> Blur it </button>
+<button onclick="invertIt()" class="btn-group"> Invert </button>
 </html>
+
+<script>
+    function grayIt(){
+        if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
+        if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
+        if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
+        else $('#spaceGallery').addClass('grayscale');
+    }
+
+    function blurIt(){
+        if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
+        if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
+        if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
+        else $('#spaceGallery').addClass('blur');
+    }
+
+    function invertIt(){
+        if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
+        if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
+        if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
+        else $('#spaceGallery').addClass('invert');
+    }
+</script>
+</body>
 {% endblock %}
