@@ -1,6 +1,12 @@
 <!-- Navigation Bar from bootstrap
 This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
 -->
+<!DOCTYPE html>
+<html lang="en">
+{% block meta %}
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+{% endblock %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <a class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,11 +28,11 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         About Us
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="/aboutArch/">Arch</a>
-                        <a class="dropdown-item" href="/connor_homepage/">Connor</a>
-                        <a class="dropdown-item" href="/davidhomepage/">David</a>
-                        <a class="dropdown-item" href="/derrickpage/">Derrick</a>
-                        <a class="dropdown-item" href="/reinhardtpage/">Reinhardt</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.aboutArch') }}>Arch</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.connor_homepage') }}>Connor</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.davidhomepage') }}>David</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.derrickpage') }}>Derrick</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.reinhardtpage') }}>Reinhardt</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -43,7 +49,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
 
                         <a class="dropdown-item" href="/site/">Space News</a>
                         <a class="dropdown-item" href="/spacequiz/">Space Quiz</a>
-                        <a class="dropdown-item" href="/NotDatabase/">Not Database - Palindrome</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.not_database') }}>Not Database - Palindrome</a>
                   <a class="dropdown-item" href="/planetcalculator/">Calculate Travel Time to Planets</a>
 
                     </div>
@@ -65,7 +71,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         MiniLab
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="#">Nothing yet...</a>
+                        <a class="dropdown-item" href={{ url_for('crud.crud') }}>CRUD</a>
                     </div>
                 </li>
             </nav>
