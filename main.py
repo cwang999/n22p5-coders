@@ -93,6 +93,10 @@ def randomPictures():
 def planetpictures():
     return render_template("planetpictures.html")
 
+@app.route('/gallery/')
+def gallery():
+    return render_template("gallery.html")
+
 @app.route('/uploadphotos/')
 def uploadphotos():
     return render_template("uploadphotos.html")
