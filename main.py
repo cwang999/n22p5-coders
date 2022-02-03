@@ -154,6 +154,12 @@ def spacequiz():
     q3 = None
     q4 = None
     q5 = None
+    answer1 = ''
+    answer2 = ''
+    answer3 = ''
+    answer4 = ''
+    answer5 = ''
+
     if request.form:
         q1 = request.form.get("q1")
         q2 = request.form.get("q2")
@@ -165,37 +171,48 @@ def spacequiz():
             quizscore += 1
         else:
             quizscore += 0
+            answer1 += '1. Earth'
     else:
         quizscore = 0
+        answer1 = ''
     if q2 is not None :
         if q2 == "mars" or q2 == "Mars":
             quizscore += 1
         else:
             quizscore += 0
+            answer2 += '2. Mars'
     else:
         quizscore = 0
+        answer2 = ''
     if q3 is not None :
         if q3 == "uranus" or q3 == "Uranus":
             quizscore += 1
         else:
             quizscore += 0
+            answer3 += '3. Uranus'
     else:
         quizscore = 0
+        answer3 = ''
     if q4 is not None :
         if q4 == "1969":
             quizscore += 1
         else:
             quizscore += 0
+            answer4 += '4. 1964'
     else:
         quizscore = 0
+        answer4 = ''
     if q5 is not None :
         if q5 == "jupiter" or q5 == "Jupiter":
             quizscore += 1
         else:
             quizscore += 0
+            answer5 += '5. Jupiter'
+
     else:
         quizscore = 0
-    return render_template("spacequiz.html", score=quizscore)
+        answer5 = ''
+    return render_template("spacequiz.html", score=quizscore, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, answer5=answer5)
 
 @app.route('/NotDatabase/', methods=['GET', 'POST'])
 
