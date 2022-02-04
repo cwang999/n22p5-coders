@@ -22,16 +22,6 @@ def search():
     return render_template("search.html")
 
 
-@app.route('/greet/', methods=['GET', 'POST'])
-def greet():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("/minilab/greet.html", name=name)
-    return render_template("minilab/greet.html", name="World")
-
-
 # Space Pages
 @app.route('/learn_planets/')
 def learn_planets():

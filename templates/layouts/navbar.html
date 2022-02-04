@@ -71,7 +71,9 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         MiniLab
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href={{ url_for('crud.crud') }}>CRUD</a>
+                        <a class="dropdown-item" href={{ url_for('crud.crud') }}>CRUD Database</a>
+                        <a class="dropdown-item" href={{ url_for('crud.searchcrud') }}>CRUD Search</a>
+                        <a class="dropdown-item" href={{ url_for('crud.asyncc') }}>CRUD Async</a>
                     </div>
                 </li>
             </nav>

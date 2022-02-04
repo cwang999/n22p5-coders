@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request, url_for, redirect, jsonif
 from flask_restful import Api, Resource
 import requests
 
-from crud.search import Users
+from crud.model import Users
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_crud = Blueprint('crud', __name__,
@@ -51,6 +51,18 @@ def user_by_description(description):
 
 
 """ app route section """
+
+
+@app_crud.route('/search/')
+def searchcrud():
+    """obtains all Users from table and loads Admin Form"""
+    return render_template("searchcrud.html", table=users_all())
+
+
+@app_crud.route('/async/')
+def asyncc():
+    """obtains all Users from table and loads Admin Form"""
+    return render_template("crud_async.html", table=users_all())
 
 
 # Default URL
