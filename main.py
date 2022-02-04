@@ -97,6 +97,10 @@ def planetpictures():
 def gallery():
     return render_template("gallery.html")
 
+@app.route('/snake/')
+def snake():
+    return render_template("snake.html")
+
 @app.route('/uploadphotos/')
 def uploadphotos():
     return render_template("uploadphotos.html")
