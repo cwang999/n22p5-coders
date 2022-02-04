@@ -1,23 +1,12 @@
-# import "packages" from flask
-from datetime import datetime
-from flask import Flask, render_template, request
-from image import image_data
-from pathlib import \
-    Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
-import http.client
-import requests
-import json
 import random
-from crud.app_crud import app_crud
-
-
-
-
-# create a Flask instance
+from datetime import datetime
+from flask import render_template, request
 from __init__ import app
+from crud.app_crud import app_crud
+from homepages.homepages import app_homepages
 
 app.register_blueprint(app_crud)
-
+app.register_blueprint(app_homepages)
 
 
 # connects default URL to render index.html
@@ -27,63 +16,37 @@ app.register_blueprint(app_crud)
 def index():
     return render_template("index.html")
 
-@app.route('/aboutArch/')
-def aboutArch():
-    return render_template("aboutArch.html")
-@app.route('/aboutArch/rapidAPI/')
-def aboutArchRapidAPI():
-    return render_template("archPBL/RapidAPI.html")
-@app.route('/aboutArch/replit/')
-def aboutArchReplit():
-    return render_template("archPBL/Replit.html")
-@app.route('/aboutArch/notdatabase/')
-def aboutArchNotDatabase():
-    return render_template("archPBL/templates/NotDatabase.html")
 
 @app.route('/search/')
 def search():
     return render_template("search.html")
 
-@app.route('/connor_homepage/')
-def connor_homepage():
-    return render_template("connor_homepage.html")
-
-@app.route('/davidhomepage/')
-def davidhomepage():
-    return render_template("davidhomepage.html")
-
-@app.route('/derrickpage/')
-def derrickpage():
-    return render_template("derrickpage.html")
-
-
-@app.route('/greet/', methods=['GET', 'POST'])
-def greet():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("/minilab/greet.html", name=name)
-    return render_template("minilab/greet.html", name="World")
 
 # Space Pages
 @app.route('/learn_planets/')
 def learn_planets():
     return render_template("learn_planets.html")
 
+
 @app.route('/randomphotos/', methods=['GET', 'POST'])
 def randomphotos():
     photoID = random.randint(1, 5)
     if photoID == 1:
-        return render_template("randomphotos.html", photo="https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-2060x1288.jpg")
+        return render_template("randomphotos.html",
+                               photo="https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-2060x1288.jpg")
     elif photoID == 2:
-        return render_template("randomphotos.html", photo="https://i.natgeofe.com/n/8a3e578f-346b-479f-971d-29dd99a6b699/nationalgeographic_2751013_4x3.jpg")
+        return render_template("randomphotos.html",
+                               photo="https://i.natgeofe.com/n/8a3e578f-346b-479f-971d-29dd99a6b699/nationalgeographic_2751013_4x3.jpg")
     elif photoID == 3:
-        return render_template("randomphotos.html", photo="https://www.lockheedmartin.com/content/dam/lockheed-martin/space/photo/exploration/Earth_Moon_Mars.jpg.pc-adaptive.full.medium.jpeg")
+        return render_template("randomphotos.html",
+                               photo="https://www.lockheedmartin.com/content/dam/lockheed-martin/space/photo/exploration/Earth_Moon_Mars.jpg.pc-adaptive.full.medium.jpeg")
     elif photoID == 4:
-        return render_template("randomphotos.html", photo="https://cdn.mos.cms.futurecdn.net/M7fDTpDnJcZ4dt3myngzxi.jpg")
+        return render_template("randomphotos.html",
+                               photo="https://cdn.mos.cms.futurecdn.net/M7fDTpDnJcZ4dt3myngzxi.jpg")
     elif photoID == 5:
-        return render_template("randomphotos.html", photo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/LH_95.jpg/330px-LH_95.jpg")
+        return render_template("randomphotos.html",
+                               photo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/LH_95.jpg/330px-LH_95.jpg")
+
 
 @app.route('/randomPictures/')
 def randomPictures():
@@ -105,13 +68,11 @@ def snake():
 def uploadphotos():
     return render_template("uploadphotos.html")
 
-@app.route('/reinhardtpage/')
-def reinhardtpage():
-    return render_template("reinhardtpage.html")
 
 @app.route('/site/')
 def site():
     return render_template("site.html")
+
 
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
@@ -127,7 +88,7 @@ def orbits():
     planet = None
     if request.form:
         planet = request.form.get("planet")
-    if planet is not None :
+    if planet is not None:
         if planet == "Mercury":
             orbittime = (factlist[0])
         elif planet == "Venus":
@@ -145,12 +106,12 @@ def orbits():
         elif planet == "Neptune":
             orbittime = (factlist[7])
     else:
-            orbittime = "Enter a planet"
+        orbittime = "Enter a planet"
 
-    return render_template("orbits.html", orbit = orbittime)
+    return render_template("orbits.html", orbit=orbittime)
 
 
-@app.route('/spacequiz/' ,methods=['GET', 'POST'])
+@app.route('/spacequiz/', methods=['GET', 'POST'])
 def spacequiz():
     global quizscore
     q1 = None
@@ -170,7 +131,7 @@ def spacequiz():
         q3 = request.form.get("q3")
         q4 = request.form.get("q4")
         q5 = request.form.get("q5")
-    if q1 is not None :
+    if q1 is not None:
         if q1 == "earth" or q1 == "Earth":
             quizscore += 1
         else:
@@ -196,8 +157,9 @@ def spacequiz():
             answer3 += '3. Uranus'
     else:
         quizscore = 0
+    if q4 is not None:
         answer3 = ''
-    if q4 is not None :
+    if q4 is not None:
         if q4 == "1969":
             quizscore += 1
         else:
@@ -205,6 +167,7 @@ def spacequiz():
             answer4 += '4. 1964'
     else:
         quizscore = 0
+    if q5 is not None:
         answer4 = ''
     if q5 is not None :
         if q5 == "jupiter" or q5 == "Jupiter":
@@ -218,52 +181,7 @@ def spacequiz():
         answer5 = ''
     return render_template("spacequiz.html", score=quizscore, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, answer5=answer5)
 
-@app.route('/NotDatabase/', methods=['GET', 'POST'])
 
-def not_database():
-    nd = NotDatabase()
-    if request.form:
-        dataInputPY = request.form.get("dataInput")
-        nd.input_word(dataInputPY)
-        nd.create_palindrome()
-        resultPY = nd.is_it_a_palindrome()
-        return render_template("NotDatabase.html", result=resultPY)
-    return render_template("NotDatabase.html", result="Awaiting Input...")
-
-class NotDatabase:
-    def __init__(self):
-        self.word_array = []
-        self.palindrome_array = []
-
-    def input_word(self, word):
-        for x in word:
-            self.word_array.append(x)
-            self.palindrome_array.append(x)
-        # Tests the arrays
-        # print(self.word_array)
-        # print(self.palindrome_array)
-
-    def create_palindrome(self):
-        self.palindrome_array.reverse()
-        # Tests the arrays
-        # print(self.word_array)
-        # print(self.palindrome_array)
-
-    def is_it_a_palindrome(self):
-        # Turns the word array into a string
-        word = ''
-        for char in self.word_array:
-            word = word + char
-        # Turns the palindrome array into a string
-        palindrome_word = ''
-        for char in self.palindrome_array:
-            palindrome_word = palindrome_word + char
-
-        if word == palindrome_word:
-            return word + ' is a palindrome!'
-        else:
-            return word + ' is not a palindrome, because the reverse is ' + palindrome_word + '!'
-          
 @app.route('/planetcalculator/', methods=['GET', 'POST'])
 def planetcalculator():
     global time1Py
@@ -307,34 +225,44 @@ def planetcalculator():
         else:
             time1Py = 0
             time2Py = 0
-        return render_template("planetcalculator.html", time1=(round(time1Py/24, 2)), time2=round(time2Py/24, 2), time3=round(time1Py/24/365, 2), time4=round(time2Py/24/365, 2), time5=round(time1Py/100000000,2))
+        return render_template("planetcalculator.html", time1=(round(time1Py / 24, 2)), time2=round(time2Py / 24, 2),
+                               time3=round(time1Py / 24 / 365, 2), time4=round(time2Py / 24 / 365, 2),
+                               time5=round(time1Py / 100000000, 2))
     else:
         return render_template("planetcalculator.html", time1=0, time2=0)
+
+
 # -------------- ACTIVITY (GAMES) BELONG HERE --------------
 
 @app.route('/activity/')
 def games():
     return render_template("activity.html")
 
+
 @app.route('/how-to-play/tictactoe/')
 def tictactoeHTP():
     return render_template("/how-to-play/tictactoeHTP.html")
+
 
 @app.route('/tictactoe/')
 def tictactoe():
     return render_template("tictactoe.html")
 
+
 @app.route('/how-to-play/blackscreen/')
 def blackscreenHTP():
     return render_template("/how-to-play/blackscreenHTP.html")
+
 
 @app.route('/blackscreen/')
 def blackscreen():
     return render_template("blackscreen.html")
 
+
 @app.route('/how-to-play/terminal/')
 def terminalHTP():
     return render_template("/how-to-play/terminalHTP.html")
+
 
 # ------------------------------------ Terminal Color ------------------------------------
 
