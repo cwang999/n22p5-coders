@@ -1,136 +1,136 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-<!DOCTYPE html>
-<html>
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        body {
-            background-image: url('/static/spacePictures/spaceBackground.jpg');
-            background-repeat: repeat-y;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        div.gallery {
-            margin: 5px;
-            border: 1px solid #ccc;
-            float: left;
-            width: 180px;
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            body {
+                background-image: url('/static/spacePictures/spaceBackground.jpg');
+                background-repeat: repeat-y;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            div.gallery {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 180px;
+            }
+
+            div.gallery:hover {
+                border: 1px solid #777;
+            }
+
+            div.gallery img {
+                width: 100%;
+                height: auto;
+            }
+            div.scroll {
+                margin: 4px, 4px;
+                padding: 4px;
+                background-color: #0b1d2a;
+                width: 1500px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+                display: flex;
+                margin-top: 30px;
+            }
+            .grayscale{
+                filter: grayscale(100%);
+            }
+            .blur{
+                filter: blur(2px);
+            }
+            .invert{
+                filter: invert(100%);
+            }
+        </style>
+    </head>
+    <body>
+    <br>
+    <center><h1 style="font-size:45px; color:#e0e1dd;">Space Gallery</h1></center>
+    <div id="spaceGallery" class="scroll">
+        <div>
+            <a href="/static/spacePictures/space1.jpg/" target="_blank" download>
+                <img src="/static/spacePictures/space1.jpg/" alt="Space Picture 1" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space2.jpeg" target="_blank" download>
+                <img src="/static/spacePictures/space2.jpeg" alt="Space Picture 2" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space3.webp" target="_blank" download>
+                <img src="/static/spacePictures/space3.webp" alt="Space Picture 3" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space4.jpeg" target="_blank" download>
+                <img src="/static/spacePictures/space4.jpeg" alt="Space Picture 4" width="1000" height="600">
+            </a>
+        </div>
+
+        <div>
+            <a href="/static/spacePictures/space5.jpeg" target="_blank" download>
+                <img src="/static/spacePictures/space5.jpeg" alt="Space Picture 5" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space6.jpeg" target="_blank" download>
+                <img src="/static/spacePictures/space6.jpeg" alt="Space Picture 6" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space7.jpg" target="_blank" download>
+                <img src="/static/spacePictures/space7.jpg" alt="Space Picture 7" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space8.jpeg" target="_blank" download>
+                <img src="/static/spacePictures/space8.jpeg" alt="Space Picture 8" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space9.jpg" target="_blank" download>
+                <img src="/static/spacePictures/space9.jpg" alt="Space Picture 9" width="1000" height="600">
+            </a>
+        </div>
+        <div>
+            <a href="/static/spacePictures/space10.jpeg" target="_blank" download>
+                <img src="/static/spacePictures/space10.jpeg" alt="Space Picture 10" width="1000" height="600">
+            </a>
+        </div>
+    </div>
+    <br>
+    <button onclick="grayIt()" class="btn-group"> Grayscale </button>
+    <button onclick="blurIt()" class="btn-group"> Blur it </button>
+    <button onclick="invertIt()" class="btn-group"> Invert </button>
+    </html>
+
+    <script>
+        function grayIt(){
+            if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
+            if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
+            if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
+            else $('#spaceGallery').addClass('grayscale');
         }
 
-        div.gallery:hover {
-            border: 1px solid #777;
+        function blurIt(){
+            if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
+            if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
+            if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
+            else $('#spaceGallery').addClass('blur');
         }
 
-        div.gallery img {
-            width: 100%;
-            height: auto;
+        function invertIt(){
+            if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
+            if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
+            if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
+            else $('#spaceGallery').addClass('invert');
         }
-        div.scroll {
-            margin: 4px, 4px;
-            padding: 4px;
-            background-color: #0b1d2a;
-            width: 1500px;
-            overflow-x: auto;
-            overflow-y: hidden;
-            white-space: nowrap;
-            display: flex;
-            margin-top: 30px;
-        }
-        .grayscale{
-            filter: grayscale(100%);
-        }
-        .blur{
-            filter: blur(2px);
-        }
-        .invert{
-            filter: invert(100%);
-        }
-    </style>
-</head>
-<body>
-<br>
-<center><h1 style="font-size:45px; color:#e0e1dd;">Space Gallery</h1></center>
-<div id="spaceGallery" class="scroll">
-    <div>
-        <a href="/static/spacePictures/space1.jpg/" target="_blank">
-            <img src="/static/spacePictures/space1.jpg/" alt="Space Picture 1" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space2.jpeg" target="_blank">
-            <img src="/static/spacePictures/space2.jpeg" alt="Space Picture 2" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space3.webp" target="_blank">
-            <img src="/static/spacePictures/space3.webp" alt="Space Picture 3" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space4.jpeg" target="_blank">
-            <img src="/static/spacePictures/space4.jpeg" alt="Space Picture 4" width="1000" height="600">
-        </a>
-    </div>
-
-    <div>
-        <a href="/static/spacePictures/space5.jpeg" target="_blank">
-            <img src="/static/spacePictures/space5.jpeg" alt="Space Picture 5" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space6.jpeg" target="_blank">
-            <img src="/static/spacePictures/space6.jpeg" alt="Space Picture 6" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space7.jpg" target="_blank">
-            <img src="/static/spacePictures/space7.jpg" alt="Space Picture 7" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space8.jpeg" target="_blank">
-            <img src="/static/spacePictures/space8.jpeg" alt="Space Picture 8" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space9.jpg" target="_blank">
-            <img src="/static/spacePictures/space9.jpg" alt="Space Picture 9" width="1000" height="600">
-        </a>
-    </div>
-    <div>
-        <a href="/static/spacePictures/space10.jpeg" target="_blank">
-            <img src="/static/spacePictures/space10.jpeg" alt="Space Picture 10" width="1000" height="600">
-        </a>
-    </div>
-</div>
-<br>
-<button onclick="grayIt()" class="btn-group"> Grayscale </button>
-<button onclick="blurIt()" class="btn-group"> Blur it </button>
-<button onclick="invertIt()" class="btn-group"> Invert </button>
-</html>
-
-<script>
-    function grayIt(){
-        if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
-        if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
-        if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
-        else $('#spaceGallery').addClass('grayscale');
-    }
-
-    function blurIt(){
-        if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
-        if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
-        if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
-        else $('#spaceGallery').addClass('blur');
-    }
-
-    function invertIt(){
-        if($('#spaceGallery').hasClass("grayscale")) $('#spaceGallery').removeClass('grayscale');
-        if($('#spaceGallery').hasClass("blur")) $('#spaceGallery').removeClass('blur');
-        if($('#spaceGallery').hasClass("invert")) $('#spaceGallery').removeClass('invert');
-        else $('#spaceGallery').addClass('invert');
-    }
-</script>
-</body>
+    </script>
+    </body>
 {% endblock %}
