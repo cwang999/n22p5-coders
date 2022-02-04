@@ -101,6 +101,10 @@ def gallery():
 def snake():
     return render_template("snake.html")
 
+@app.route('/flappybird/')
+def flappybird():
+    return render_template("flappybird.html")
+
 @app.route('/uploadphotos/')
 def uploadphotos():
     return render_template("uploadphotos.html")
