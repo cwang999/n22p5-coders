@@ -22,6 +22,15 @@ def index():
 def search():
     return render_template("search.html")
 
+@app.route('/spaceshooters/')
+def spaceshooters():
+    return render_template("spaceshooters.html")
+
+
+@app.route('/life/')
+def life():
+    return render_template("life.html")
+
 
 # Space Pages
 @app.route('/learn_planets/')
