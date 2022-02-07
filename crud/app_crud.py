@@ -57,7 +57,7 @@ def user_by_description(description):
 @app_crud.route('/')
 def crud():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("crud.html", table=users_all())
+    return render_template("crudtable.html", table=users_all())
 
 
 # CRUD create/add
@@ -85,7 +85,7 @@ def read():
         po = user_by_id(userid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
-    return render_template("crud.html", table=table)
+    return render_template("crudtable.html", table=table)
 
 
 # CRUD update

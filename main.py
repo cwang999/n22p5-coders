@@ -9,7 +9,7 @@ import requests
 import json
 import random
 from crud.app_crud import app_crud
-
+from crud.app_crud_api import app_crud_api
 
 
 
@@ -17,7 +17,7 @@ from crud.app_crud import app_crud
 from __init__ import app
 
 app.register_blueprint(app_crud)
-
+app.register_blueprint(app_crud_api)
 
 
 # connects default URL to render index.html
@@ -43,6 +43,10 @@ def aboutArchNotDatabase():
 @app.route('/search/')
 def search():
     return render_template("search.html")
+
+@app.route('/crudtable/')
+def crudtable():
+    return render_template("crudtable.html")
 
 @app.route('/connor_homepage/')
 def connor_homepage():
