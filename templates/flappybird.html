@@ -70,6 +70,7 @@
             if (jumping == 0){
                 character.style.top = (characterTop+3)+"px";
             }
+            var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
             if(characterTop>400){
                 alert("Game over. Score: "+counter);
                 character.style.top = 100 + "px";
