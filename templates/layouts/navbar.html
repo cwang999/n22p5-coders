@@ -1,6 +1,12 @@
 <!-- Navigation Bar from bootstrap
 This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
 -->
+<!DOCTYPE html>
+<html lang="en">
+{% block meta %}
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+{% endblock %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <a class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,23 +16,20 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
         <div class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-                <a class="navbar-brand" href="/">AstronoNinjas</a>
+                <a class="navbar-brand" href={{ url_for('index') }}>AstronoNinjas</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
                         About Us
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="/aboutArch/">Arch</a>
-                        <a class="dropdown-item" href="/connor_homepage/">Connor</a>
-                        <a class="dropdown-item" href="/davidhomepage/">David</a>
-                        <a class="dropdown-item" href="/derrickpage/">Derrick</a>
-                        <a class="dropdown-item" href="/reinhardtpage/">Reinhardt</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.aboutArch') }}>Arch</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.connor_homepage') }}>Connor</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.davidhomepage') }}>David</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.derrickpage') }}>Derrick</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.reinhardtpage') }}>Reinhardt</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -34,17 +37,18 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         Space Center
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <a class="dropdown-item" href="/learn_planets/">Learn the Planets</a>
+                        <a class="dropdown-item" href="/create_planet/">Learn the Planets</a>
                         <a class="dropdown-item" href="/randomphotos/">Random Astro Photos</a>
                         <a class="dropdown-item" href="/randomPictures/">Random Space Picture Generator</a>
                         <a class="dropdown-item" href="/search/">Search Astronomers</a>
+                        <a class="dropdown-item" href="/crudtable/">Astronomer Table</a>
                         <a class="dropdown-item" href="/uploadphotos/">Upload Photos</a>
                         <a class="dropdown-item" href="/planetpictures/">Astrogallery</a>
                         <a class="dropdown-item" href="/gallery/">Space Gallery</a>
                         <a class="dropdown-item" href="/orbits/">Orbit Times</a>
                         <a class="dropdown-item" href="/site/">Space News</a>
                         <a class="dropdown-item" href="/spacequiz/">Space Quiz</a>
-                        <a class="dropdown-item" href="/NotDatabase/">Not Database - Palindrome</a>
+                        <a class="dropdown-item" href={{ url_for('homepages.not_database') }}>Not Database - Palindrome</a>
                   <a class="dropdown-item" href="/planetcalculator/">Calculate Travel Time to Planets</a>
 
                     </div>
@@ -54,12 +58,12 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         Activities
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="/activity">Menu</a>
+                        <a class="dropdown-item" href={{ url_for('games.activity') }}>Menu</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/how-to-play/tictactoe/">Tic Tac Toe</a>
-                        <a class="dropdown-item" href="/how-to-play/blackscreen/">Blackscreen</a>
-                        <a class="dropdown-item" href="/how-to-play/terminal/">Terminal Color</a>
-                        <a class="dropdown-item" href="/snake/">Snake</a>
+                        <a class="dropdown-item" href={{ url_for('games.tictactoeHTP') }}>Tic Tac Toe</a>
+                        <a class="dropdown-item" href={{ url_for('games.blackscreenHTP') }}>Blackscreen</a>
+                        <a class="dropdown-item" href={{ url_for('games.terminalHTP') }}>Terminal Color</a>
+                        <a class="dropdown-item" href={{ url_for('games.snake') }}>Snake</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -67,7 +71,9 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                         MiniLab
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="#">Nothing yet...</a>
+                        <a class="dropdown-item" href={{ url_for('crud.crud') }}>CRUD Database</a>
+                        <a class="dropdown-item" href={{ url_for('crud.searchcrud') }}>CRUD Search</a>
+                        <a class="dropdown-item" href={{ url_for('crud.asyncc') }}>CRUD Async</a>
                     </div>
                 </li>
             </nav>
