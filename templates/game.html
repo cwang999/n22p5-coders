@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+{% include "layouts/base.html" %}
+
+{% block meta %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Play</title>
+</head>
+<body>
+<div class="container">
+    <div id="game" class="justify-center flex-column">
+        <div id="hud">
+            <div id="hud-item">
+                <p class="hud-prefix">
+                    Question
+                </p>
+                <h1 class="hud-main-text" id="questionCounter"></h1>
+            </div>
+            <div id="hud-item">
+                <p class="hud-prefix">
+                    Score
+                </p>
+                <h1 class="hud-main-text" id="score">
+                    0
+                </h1>
+            </div>
+        </div>
+        <h2 id="question">What is the answer to this questions?</h2>
+        <div class="choice-container">
+            <p class="choice-prefix">A</p>
+            <p class="choice-text" data-number="1">Choice 1</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2">Choice 2</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3">Choice 3</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-number="4">Choice 4</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<style>
+    :root {
+        background: #36223D;
+    }
+    .choice-container {
+        display: flex;
+        margin-bottom: 1.5rem;
+        margin-left:23rem;
+        width: 50%;
+        font-size: 1.1rem;
+        border: 0.3rem solid rgb(0, 21, 128);
+        background-color: #ffffff;
+        border-radius: 15px;
+    }
+
+    .choice-container:hover {
+        cursor: pointer;
+        box-shadow: 0 0.4rem 1.4rem 0 rgb(0, 21, 128);
+        transform: translateY(-0.1rem);
+        transition: transform 150ms;
+
+
+    }
+
+    .choice-prefix {
+        padding: 1.5rem 2.5rem;
+        background-color: #001580;
+        color: white;
+    }
+
+    .choice-text {
+        padding: 1.5rem;
+        font-family: "Share Tech Mono" , Monospace;
+        width: 100%;
+
+
+    }
+
+    #question{
+        font-family: "Share Tech Mono" , Monospace;
+        text-align: center;
+        color: #001580;
+        font-size: 2.5rem;
+    }
+
+    .correct  {
+        background-color: #28a745 ! important;
+    }
+
+    .incorrect {
+        background-color: #dc3545 ! important;
+    }
+
+    #hud {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .hud-prefix {
+        font-family: "Share Tech Mono" , Monospace;
+        text-align: center;
+        font-size: 1rem;
+        color:white;
+
+    }
+
+    .hud-main-text {
+        font-family: "Share Tech Mono" , Monospace;
+        text-align: center;
+        font-size: 2rem;
+        color: #001580;
+    }
+
+</style>
+
+<script>
+    let question = document.getElementById('question');
+    let choices = Array.from(document.getElementsByClassName('choice-text'));
+    let scoreText = document.getElementById('score');
+    let questionCounterText = document.getElementById("questionCounter");
+    let currentQuestion = {};
+    let acceptingAnswers = false;
+    let score = 0;
+    let questionCounter = 0;
+    let availableQuestions = [];
+
+    let questions = [];
+
+    fetch(
+        'https://opentdb.com/api.php?amount=50&category=15&type=multiple'
+    )
+        .then((res) => {
+            return res.json();
+        })
+        .then((loadedQuestions) => {
+            questions = loadedQuestions.results.map((loadedQuestion) => {
+                const formattedQuestion = {
+                    question: loadedQuestion.question,
+                };
+
+                let answerChoices = [...loadedQuestion.incorrect_answers];
+                formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+                answerChoices.splice(
+                    formattedQuestion.answer - 1,
+                    0,
+                    loadedQuestion.correct_answer
+                );
+
+                answerChoices.forEach((choice, index) => {
+                    formattedQuestion['choice' + (index + 1)] = choice;
+                });
+
+                return formattedQuestion;
+            });
+            startGame();
+        })
+
+
+    //CONSTANTS
+    let CORRECT_BONUS = 10;
+    let MAX_QUESTIONS = 10;
+
+    startGame = () => {
+        questionCounter = 0;
+        score = 0;
+        availableQuestions = [...questions];
+        getNewQuestion();
+    };
+
+    getNewQuestion = () => {
+        if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+            //go to the trivia page
+            return window.location.assign('http://127.0.0.1:5000/trivia');
+        }
+        questionCounter++;
+        questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
+
+        let questionIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[questionIndex];
+        question.innerHTML = currentQuestion.question;
+
+        choices.forEach((choice) => {
+            let number = choice.dataset['number'];
+            choice.innerHTML = currentQuestion['choice' + number];
+        });
+
+        availableQuestions.splice(questionIndex, 1);
+        acceptingAnswers = true;
+    };
+
+    choices.forEach((choice) => {
+        choice.addEventListener('click', (e) => {
+            if (!acceptingAnswers) return;
+
+            acceptingAnswers = false;
+            let selectedChoice = e.target;
+            let selectedAnswer = selectedChoice.dataset['number'];
+
+            let classToApply =
+                selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+            if (classToApply === 'correct') {
+                incrementScore(CORRECT_BONUS);
+            }
+
+            selectedChoice.parentElement.classList.add(classToApply);
+
+            setTimeout(() => {
+                selectedChoice.parentElement.classList.remove(classToApply);
+                getNewQuestion();
+            }, 1000);
+        });
+    });
+
+    incrementScore = (num) => {
+        score += num;
+        scoreText.innerText = score;
+    };
+</script>
+
+{% endblock %}
