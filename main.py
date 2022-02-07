@@ -21,6 +21,19 @@ def index():
 def search():
     return render_template("search.html")
 
+@app.route('/create_planet/')
+def create_planet():
+    return render_template("create_planet.html")
+
+@app.route('/game/')
+def game():
+    return render_template("game.html")
+
+@app.route('/trivia/')
+def trivia():
+    return render_template("trivia.html")
+
+
 @app.route('/spaceshooters/')
 def spaceshooters():
     return render_template("spaceshooters.html")

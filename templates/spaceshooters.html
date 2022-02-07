@@ -1,182 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
+
+{% include "layouts/base.html" %}
+
+{% block meta %}
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-
-    <title>Space Invaders</title>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Shooter</title>
 
 </head>
-<body>
-<h1 class="results">0</h1>
-<div class="grid"></div>
-</body>
-</html>
 <style>
-    .grid {
-        width: 300px;
-        height: 300px;
-        border: solid black 1px;
-        display: flex;
-        flex-wrap: wrap;
+    body {
+        width: 100%;
+        overflow: hidden;
+        background-image: url('/static/spacePictures/spaceBackground.jpg');background-attachment: fixed;background-size: cover;">
+        background-size: cover;
+    }
+    #board {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        margin: 40px auto;
+        border: 2px solid white;
+        background-color: black;
+        overflow: hidden;
     }
 
-    .grid div {
+    #jet {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: url('../static/img/rocket.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: 50%;
+        bottom: 0px;
+    }
+
+    .bullets {
+        position: absolute;
+        bottom: 40px;
+        left: 51%;
         width: 20px;
         height: 20px;
+        background: url('../static/img/bullet.png');
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
-    .invader {
-        background-color: green;
-        border-radius: 10px;
+    .rocks {
+        position: absolute;
+        top: 0px;
+        width: 50px;
+        height: 50px;
+        background: url('../static/img/alien.png');
+        background-size: contain;
+        background-repeat: no-repeat;
     }
-
-    .shooter {
-        background-color: blue;
+    #points {
+        position: absolute;
+        top: 0px;
+        margin: 40px;
+        opacity: 0.7;
+        font-size: 10em;
+        color: darkblue;
     }
-
-    .laser {
-        background-color: red;
-    }
-
-    .boom {
-        background-color: orange;
-    }
-
 </style>
+<script src="app.js" defer></script>
+<body>
+<div id="board">
+    <div class="rocks"></div>
+    <div id="jet"></div>
+</div>
+<div id="points">0</div>
+</body>
+</html>
 
 <script>
-    const grid = document.querySelector('.grid')
-    const resultsDisplay = document.querySelector('.results')
-    let currentShooterIndex = 202
-    let width = 15
-    let direction = 1
-    let invadersId
-    let goingRight = true
-    let aliensRemoved = []
-    let results = 0
+    var jet = document.getElementById("jet");
+    var board = document.getElementById("board");
 
-    for (let i = 0; i < 225; i++) {
-        const square = document.createElement('div')
-        grid.appendChild(square)
-    }
+    window.addEventListener("keydown", (e) => {
+        var left = parseInt(window.getComputedStyle(jet).getPropertyValue("left"));
+        if (e.key == "ArrowLeft" && left > 0) {
+            jet.style.left = left - 10 + "px";
+        }
+        //460  =>  board width - jet width
+        else if (e.key == "ArrowRight" && left <= 460) {
+            jet.style.left = left + 10 + "px";
+        }
 
-    const squares = Array.from(document.querySelectorAll('.grid div'))
+        if (e.key == "ArrowUp" || e.keyCode == 32) {
+            //32 is for space key
+            var bullet = document.createElement("div");
+            bullet.classList.add("bullets");
+            board.appendChild(bullet);
 
-    const alienInvaders = [
-        0,1,2,3,4,5,6,7,8,9,
-        15,16,17,18,19,20,21,22,23,24,
-        30,31,32,33,34,35,36,37,38,39
-    ]
+            var movebullet = setInterval(() => {
+                var rocks = document.getElementsByClassName("rocks");
 
-    function draw() {
-        for (let i = 0; i < alienInvaders.length; i++) {
-            if(!aliensRemoved.includes(i)) {
-                squares[alienInvaders[i]].classList.add('invader')
+                for (var i = 0; i < rocks.length; i++) {
+                    var rock = rocks[i];
+                    if (rock != undefined) {
+                        var rockbound = rock.getBoundingClientRect();
+                        var bulletbound = bullet.getBoundingClientRect();
+
+                        //Condition to check whether the rock/alien and the bullet are at the same position..!
+                        //If so,then we have to destroy that rock
+
+                        if (
+                            bulletbound.left >= rockbound.left &&
+                            bulletbound.right <= rockbound.right &&
+                            bulletbound.top <= rockbound.top &&
+                            bulletbound.bottom <= rockbound.bottom
+                        ) {
+                            rock.parentElement.removeChild(rock); //Just removing that particular rock;
+                            //Scoreboard
+                            document.getElementById("points").innerHTML =
+                                parseInt(document.getElementById("points").innerHTML) + 1;
+                        }
+                    }
+                }
+                var bulletbottom = parseInt(
+                    window.getComputedStyle(bullet).getPropertyValue("bottom")
+                );
+
+                //Stops the bullet from moving outside the gamebox
+                if (bulletbottom >= 500) {
+                    clearInterval(movebullet);
+                }
+
+                bullet.style.left = left + "px"; //bullet should always be placed at the top of my jet..!
+                bullet.style.bottom = bulletbottom + 3 + "px";
+            });
+        }
+    });
+
+    var generaterocks = setInterval(() => {
+        var rock = document.createElement("div");
+        rock.classList.add("rocks");
+        //Just getting the left of the rock to place it in random position...
+        var rockleft = parseInt(
+            window.getComputedStyle(rock).getPropertyValue("left")
+        );
+        //generate value between 0 to 450 where 450 => board width - rock width
+        rock.style.left = Math.floor(Math.random() * 450) + "px";
+
+        board.appendChild(rock);
+    }, 1000);
+
+    var moverocks = setInterval(() => {
+        var rocks = document.getElementsByClassName("rocks");
+
+        if (rocks != undefined) {
+            for (var i = 0; i < rocks.length; i++) {
+                //Now I have to increase the top of each rock,so that the rocks can move downwards..
+                var rock = rocks[i]; //getting each rock
+                var rocktop = parseInt(
+                    window.getComputedStyle(rock).getPropertyValue("top")
+                );
+                //475 => boardheight - rockheight + 25
+                if (rocktop >= 475) {
+                    alert("Game Over");
+                    clearInterval(moverocks);
+                    window.location.reload();
+                }
+
+                rock.style.top = rocktop + 25 + "px";
             }
         }
-    }
-
-    draw()
-
-    function remove() {
-        for (let i = 0; i < alienInvaders.length; i++) {
-            squares[alienInvaders[i]].classList.remove('invader')
-        }
-    }
-
-    squares[currentShooterIndex].classList.add('shooter')
-
-
-    function moveShooter(e) {
-        squares[currentShooterIndex].classList.remove('shooter')
-        switch(e.key) {
-            case 'ArrowLeft':
-                if (currentShooterIndex % width !== 0) currentShooterIndex -=1
-                break
-            case 'ArrowRight' :
-                if (currentShooterIndex % width < width -1) currentShooterIndex +=1
-                break
-        }
-        squares[currentShooterIndex].classList.add('shooter')
-    }
-    document.addEventListener('keydown', moveShooter)
-
-    function moveInvaders() {
-        const leftEdge = alienInvaders[0] % width === 0
-        const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width -1
-        remove()
-
-        if (rightEdge && goingRight) {
-            for (let i = 0; i < alienInvaders.length; i++) {
-                alienInvaders[i] += width +1
-                direction = -1
-                goingRight = false
-            }
-        }
-
-        if(leftEdge && !goingRight) {
-            for (let i = 0; i < alienInvaders.length; i++) {
-                alienInvaders[i] += width -1
-                direction = 1
-                goingRight = true
-            }
-        }
-
-        for (let i = 0; i < alienInvaders.length; i++) {
-            alienInvaders[i] += direction
-        }
-
-        draw()
-
-        if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
-            resultsDisplay.innerHTML = 'GAME OVER'
-            clearInterval(invadersId)
-        }
-
-        for (let i = 0; i < alienInvaders.length; i++) {
-            if(alienInvaders[i] > (squares.length)) {
-                resultsDisplay.innerHTML = 'GAME OVER'
-                clearInterval(invadersId)
-            }
-        }
-        if (aliensRemoved.length === alienInvaders.length) {
-            resultsDisplay.innerHTML = 'YOU WIN'
-            clearInterval(invadersId)
-        }
-    }
-    invadersId = setInterval(moveInvaders, 600)
-
-    function shoot(e) {
-        let laserId
-        let currentLaserIndex = currentShooterIndex
-        function moveLaser() {
-            squares[currentLaserIndex].classList.remove('laser')
-            currentLaserIndex -= width
-            squares[currentLaserIndex].classList.add('laser')
-
-            if (squares[currentLaserIndex].classList.contains('invader')) {
-                squares[currentLaserIndex].classList.remove('laser')
-                squares[currentLaserIndex].classList.remove('invader')
-                squares[currentLaserIndex].classList.add('boom')
-
-                setTimeout(()=> squares[currentLaserIndex].classList.remove('boom'), 300)
-                clearInterval(laserId)
-
-                const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
-                aliensRemoved.push(alienRemoved)
-                results++
-                resultsDisplay.innerHTML = results
-                console.log(aliensRemoved)
-
-            }
-
-        }
-        switch(e.key) {
-            case 'ArrowUp':
-                laserId = setInterval(moveLaser, 100)
-        }
-    }
-
-    document.addEventListener('keydown', shoot)
+    }, 450);
 </script>
 
+{% endblock %}
