@@ -1,5 +1,6 @@
-import random
+
 from flask import render_template, request
+
 from __init__ import app
 from crud.app_crud import app_crud
 from homepages.homepages import app_homepages
@@ -22,9 +23,19 @@ def index():
 def search():
     return render_template("search.html")
 
+
+@app.route('/crudtable/')
+def crudtable():
+    return render_template("crudtable.html")
+
+@app.route('/connor_homepage/')
+def connor_homepage():
+    return render_template("connor_homepage.html")
+
 @app.route('/create_planet/')
 def create_planet():
     return render_template("create_planet.html")
+
 
 @app.route('/game/')
 def game():
