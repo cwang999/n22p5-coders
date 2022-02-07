@@ -2,6 +2,8 @@
 
 [Deployed Website](https://crahpi.tk)
 
+[Jekyll Page](https://compapter.me)
+
 Release Day Policy:
 Day before review day, 6PM: Freeze Code - everybody push changes, no one change code after 6 PM [EVERYONE]
 Day before review day, 7PM: Deploy - Deployment Manager updates website [DeployManager ONLY]
@@ -14,8 +16,8 @@ Review Ticket
     <tr>
       <th>Name</th>
       <th>ID</th>
-      <th>Scrumboard</th>
       <th>Issues</th>
+      <th>Scrumboard</th>
       <th>Commits</th>
       <th>Profile</th>
     </tr>
@@ -23,51 +25,51 @@ Review Ticket
   <tbody>
     <tr>
       <td>Arch Huang</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
+      <td>@Archkitten</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues/assigned/Archkitten">Issues</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Aarchkitten">Scrum tasks</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Archkitten">Commits</a></td>
+      <td><a href="https://github.com/ArchKitten">Profile</a></td>
     </tr>
   </tbody>
     <tbody>
     <tr>
       <td>Reinhardt Lotter</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
+      <td>@Reinhardtlotter</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3AReinhardtlotter">Issues</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Reinhardtlotter">Scrum tasks</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Reinhardtlotter">Commits</a></td>
+      <td><a href="https://github.com/Reinhardtlotter">Profile</a></td>
     </tr>
   </tbody>
     <tbody>
     <tr>
       <td>Derrick Huang</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
+      <td>@Pitsco</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3APitsco">Issues</a> </td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco">Scrum tasks</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco">Commits</a></td>
+      <td><a href="https://github.com/Pitsco">Profile</a></td>
     </tr>
   </tbody>
     <tbody>
     <tr>
       <td>David Xie</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
+      <td>@David-Xie123</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3ADavid-Xie123">Issues</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123">Scrum tasks</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01">Commits</a></td>
+      <td><a href="https://github.com/David-Xie123">Profile</a></td>
     </tr>
   </tbody>
       <tbody>
     <tr>
-      <td>Reinhardt Lotter</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
-      <td>$8</td>
+      <td>Connor Wang</td>
+      <td>@cwang999</td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3Acwang999">Issues</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999">Scrum tasks</a></td>
+      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999">Commits</a></td>
+      <td><a href="https://github.com/cwang999">Profile</a></td>
     </tr>
   </tbody>
 </table>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends "layouts/base.html" %}
-{% block meta %}
+{% block content %}
 <meta charset="UTF-8">
 <head>
     <meta charset="UTF-8">
@@ -30,6 +30,27 @@
     </div>
 <br><br>
     <p>Your score {{ score }}/5 </p>
+    <p>Correct answers: </p>
+    {% if answer1 != ""%}
+        <p>{{ answer1 }}</p>
+    {% endif %}
+
+    {% if answer2 != ""%}
+        <p>{{ answer2 }}</p>
+    {% endif %}
+
+    {% if answer3 != ""%}
+        <p>{{ answer3 }}</p>
+    {% endif %}
+
+    {% if answer4 != ""%}
+        <p>{{ answer4 }}</p>
+    {% endif %}
+
+    {% if answer5 != ""%}
+        <p>{{ answer5 }}</p>
+    {% endif %}
+
 {% endblock %}
 </body>
 </html>

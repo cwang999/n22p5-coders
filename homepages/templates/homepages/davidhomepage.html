@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+<style>
+    html, body{
+        margin: 0;
+        height: 100%;
+        animation: fadein 2s;
+        -moz-animation: fadein 2s; /* Firefox */
+        -webkit-animation: fadein 2s; /* Safari and Chrome */
+        -o-animation: fadein 2s; /* Opera */
+        background-image: url('https://mcdn.wallpapersafari.com/medium/51/9/A0YSpE.jpg');
+        background-repeat: no-repeat;
+        background-size: 1550px 800px;
+        background-attachment: fixed;
+        color: var(--white);
+        font-family: "Comic Sans MS";
+    }
+</style>
+{% block meta %}
+    <meta charset="UTF-8">
+    <title>About David</title>
+    <script>
+        function davidMask(){
+            document.getElementById('myImage')
+                .src="../static/img/David-Xie-mask-on.jpg";
+            document.getElementById('message')
+        }
+
+        function davidNoMask(){
+            document.getElementById('myImage')
+                .src="../static/img/David-Xie-mask-off.JPG";
+            document.getElementById('message')
+        }
+    </script>
+{% endblock %}
+{% block content %}
+<h3>Hello, user! David is a junior in Computer Science Principles who enjoys coding to help others as well as for entertainment.</h3>
+
+<div class=imageContainer>
+    <img id="myImage"
+         src="../../../static/img/David-Xie-mask-on.jpg" width="530" height="300"/>
+</div>
+<div class="button">
+    <button class="btn btn-warning"
+            onclick=davidMask();>
+        Mask
+    </button>
+    <button  class="btn btn-success"
+             onclick=davidNoMask();>
+        No Mask
+    </button>
+</div>
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<style>
+    body {}
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+</style>
+<h3>Space Data:</h3>
+<script>async function getposition() {
+    const response = await fetch("https://astronomy.p.rapidapi.com/api/v2/bodies/positions?latitude=33.775867&longitude=-84.39733&from_date=2017-12-20&to_date=2017-12-21&elevation=166&time=12%3A00%3A00", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "astronomy.p.rapidapi.com",
+            "x-rapidapi-key": "55d06171e2mshc577035139f016ep188074jsn9d55cb4fbf77"
+        }
+    })
+    console.log(response);
+    const positions = await response.text();
+    console.log(positions)
+    document.getElementById("data").innerHTML = positions;
+}
+getposition()
+</script>
+<div id="data"></div>
+{% endblock %}
+</html>

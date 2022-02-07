@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+
+<style>
+    html, body{
+        margin: 0;
+        height: 100%;
+        animation: fadein 2s;
+        -moz-animation: fadein 2s; /* Firefox */
+        -webkit-animation: fadein 2s; /* Safari and Chrome */
+        -o-animation: fadein 2s; /* Opera */
+        background-image: url('https://astronomynow.com/wp-content/uploads/2020/09/Andromeda-Galaxy-at-Arms-Length.jpg');
+        background-repeat: no-repeat;
+        background-size: 1550px 800px;
+        background-attachment: fixed;
+        color: var(--white);
+        font-family: "Comic Sans MS";
+    }
+</style>
+
+{% block meta %}
+    <meta charset="UTF-8">
+    <title>Connor Home Page</title>
+    <style>
+        .button{
+            margin-left: 45%;
+        }
+    </style>
+    <script>
+        function connorMask(){
+            document.getElementById('myImage')
+                .src="../static/img/connorpicture.jpg";
+            document.getElementById('message')
+        }
+
+        function connorNoMask(){
+            document.getElementById('myImage')
+                .src="../static/img/connor_no_mask.jpg";
+            document.getElementById('message')
+        }
+    </script>
+{% endblock meta %}
+{% block content %}
+<div class="container p-3 my-3 text-black rounded">
+    <h3 id="message">
+        Hi! I'm Connor Wang. Welcome to my home page. Stay as long as you'd like!
+    </h3>
+    <div class=imageContainer>
+        <img id="myImage"
+             src="../../../static/img/connorpicture.jpg" width="530" height="300"/>
+    </div>
+<div class="button">
+    <button class="btn btn-warning"
+            onclick=connorMask();>
+        Mask
+    </button>
+    <button  class="btn btn-success"
+             onclick=connorNoMask();>
+        No Mask
+    </button>
+</div>
+
+    <div id="link">
+        <h4>Pair Share Journal:</h4>
+        <a href="https://docs.google.com/document/d/1uly00OvdDQg1FYxTBSTzyCB05yj-Pk7Py-5DwXi0QS0/edit">
+            <embed type="image/jpg" src="https://www.apkmirror.com/wp-content/uploads/2021/11/02/61a6ab7f73e1f-384x384.png"
+                   width="160" height="160"></a>
+    </div>
+<div id="astroNewsId">
+
+</div>
+    <div class="row justify-content-center" style="margin: 2%;">
+        <iframe height="1000px" src="https://replit.com/@CcWw/DoubleSuperficialEnvironment?lite=true"></iframe>
+    </div>
+{% endblock %}
+
+{#API STUFF#}
+<script>
+    async function getAstroNews() {
+        const response = await fetch("https://space-news.p.rapidapi.com/news/guardian", {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "space-news.p.rapidapi.com",
+                    "x-rapidapi-key": "92b9f4e31cmsh02f34db44282758p14191cjsndd8b61d87098"
+                }
+            })
+            console.log(response);
+            const astroNews = await response.text();
+            document.getElementById("astroNewsId").innerHTML = astroNews;
+    }
+    getAstroNews();
+</script>
+</div>
+</html>
