@@ -1,3 +1,4 @@
+from random import random
 
 from flask import render_template, request
 
@@ -107,6 +108,10 @@ def uploadphotos():
 @app.route('/site/')
 def site():
     return render_template("site.html")
+
+@app.route('/emotions/')
+def emotions():
+    return render_template("emotions.html")
 
 
 @app.route('/orbits/', methods=['GET', 'POST'])
