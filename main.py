@@ -62,6 +62,27 @@ def life():
 def learn_planets():
     return render_template("learn_planets.html")
 
+@app.route('/quizresponder/')
+def quizresponder():
+    ratio = 0
+    great_player = False
+    welldone = "Let's see if your good"
+    if request.form:
+        correct = request.form.get("correct")
+        total = request.form.get("total")
+        if total is not None :
+            ratio = int(correct)/int(total)
+            if ratio >= 1:
+                score1 = True
+            else:
+                score1 = False
+            if great_player == True:
+                welldone=("You're a great player!!")
+            else:
+                welldone=("You suck. Be better")
+        else:
+            print("do nothing")
+    return render_template("quizresponder.html", kdrval = ratio, gpstatus = , goodplayer=urgood)
 
 @app.route('/randomphotos/', methods=['GET', 'POST'])
 def randomphotos():
@@ -104,15 +125,14 @@ def flappybird():
 def uploadphotos():
     return render_template("uploadphotos.html")
 
-
 @app.route('/site/')
 def site():
     return render_template("site.html")
 
+
 @app.route('/emotions/')
 def emotions():
     return render_template("emotions.html")
-
 
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
