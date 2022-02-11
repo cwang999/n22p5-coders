@@ -272,7 +272,15 @@ def planetcalculator():
 
 @app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
 def connor_createtask():
-    return render_template("connarch_astrotrivianator.html")
+    if request.form:
+
+        userInputPy = request.form.get("userInput")
+        if userInputPy == "1":
+            return render_template("connarch_astrotrivianator.html", question="auibrcfkjs")
+        else:
+            return render_template("connarch_astrotrivianator.html", question=userInputPy)
+
+    return render_template("connarch_astrotrivianator.html", question="something")
 
 # runs the application on the development server
 if __name__ == "__main__":
