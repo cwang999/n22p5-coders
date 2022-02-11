@@ -292,6 +292,9 @@ def planetcalculator():
     else:
         return render_template("planetcalculator.html", time1=0, time2=0)
 
+@app.route('/connor_createtask/', methods=['GET', 'POST'])
+def connor_createtask():
+    return render_template("connor_createtask.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
