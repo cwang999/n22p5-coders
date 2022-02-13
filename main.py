@@ -1,4 +1,3 @@
-import random
 from flask import render_template, request
 
 from __init__ import app
@@ -61,7 +60,6 @@ def life():
 def learn_planets():
     return render_template("learn_planets.html")
 
-
 @app.route('/randomphotos/', methods=['GET', 'POST'])
 def randomphotos():
     photoID = random.randint(1, 5)
@@ -95,15 +93,22 @@ def gallery():
     return render_template("gallery.html")
 
 
+@app.route('/flappybird/')
+def flappybird():
+    return render_template("flappybird.html")
+
 @app.route('/uploadphotos/')
 def uploadphotos():
     return render_template("uploadphotos.html")
-
 
 @app.route('/site/')
 def site():
     return render_template("site.html")
 
+
+@app.route('/emotions/')
+def emotions():
+    return render_template("emotions.html")
 
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
@@ -263,6 +268,17 @@ def planetcalculator():
     else:
         return render_template("planetcalculator.html", time1=0, time2=0)
 
+@app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
+def connor_createtask():
+    if request.form:
+
+        userInputPy = request.form.get("userInput")
+        if userInputPy == "1":
+            return render_template("connarch_astrotrivianator.html", question="auibrcfkjs")
+        else:
+            return render_template("connarch_astrotrivianator.html", question=userInputPy)
+
+    return render_template("connarch_astrotrivianator.html", question="something")
 
 # runs the application on the development server
 if __name__ == "__main__":

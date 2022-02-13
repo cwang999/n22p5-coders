@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends "layouts/base.html" %}
-<head>
+{% block content %}
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-
-{% block body %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Space news</title>
+    </head>
 <body>
 <h2>Space News Title</h2>
 <div id="printspacefact"></div>
@@ -39,7 +39,6 @@
     }
     getAstroNews();
 </script>
-</body>
 {% endblock %}
-
+</body>
 </html>
