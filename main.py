@@ -1,4 +1,5 @@
 from flask import render_template, request
+import random
 
 from __init__ import app
 from crud.app_crud import app_crud
