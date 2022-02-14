@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+{% extends "layouts/base.html" %}
+
+{% block meta %}
     <meta charset="UTF-8">
     <title>Connor Create Task</title>
-</head>
-<body>
+{% endblock %}
+{% block content %}
 <div class="row justify-content-center" style="margin: 2%;">
     <form action="" id="input" method="POST">
         <input type="text" name="userInput" id="riubiwn">
@@ -12,5 +14,5 @@
     <p>{{ question }}</p>
     <iframe height="1000px" width="1000px" src="https://replit.com/@CcWw/CreateTask?lite=true"></iframe>
 </div>
-</body>
+{% endblock %}
 </html>
