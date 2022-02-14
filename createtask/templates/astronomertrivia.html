@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "layouts/base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Astronomer Trivia</title>
+</head>
+<body>
+<h1>Astronomer Trivia</h1>
+<form action={{url_for('createtask.scoring')}} method='POST'>
+    <ol>
+        {% for i in q %}
+            <li> <u>{{i}}</u> </li>
+            {% for j in o.get(i) %}
+                <input type='radio' value='{{j}}' name='{{i}}' />
+                <label> {{j}}</label><br>
+            {% endfor %}
+        {% endfor %}
+    </ol>
+    <input type="submit" value="submit" />
+</form>
+</body>
+</html>
