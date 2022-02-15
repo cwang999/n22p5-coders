@@ -278,7 +278,7 @@ unmanned_space_travel = ["What is the name of the first satellite?", "What is th
 unmanned_space_answers = ["Sputnik", "Buran", "Laika", "2021", "Galileo", "Cassini"]
 
 solar_system = ["How many planets are there?", "Who discovered Uranus?", "Who discovered Pluto?", "The discovery of which minor planet caused the push to downgrade Pluto?", "What is the name of collection of debris between Mars and Jupiter?", "What is the name of the large torus-shaped collection of debris beyond Neptune?", "How long in Earth days is Mercury's year?", "Which planet is closest in size to Earth?"]
-solar_system_answers = ["8", "William Herschel", "Clyde Tombaugh", "Eris", "Asteroid Belt", "Oort Cloud", "88", "Venus"]
+solar_system_answers = ["8", "William Herschel", "Clyde Tombaugh", "Eris", "Asteroid Belt", "Kuiper Belt", "88", "Venus"]
 # Function
 def trivia(category):
     score = 0
