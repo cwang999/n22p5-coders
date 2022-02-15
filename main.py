@@ -108,9 +108,30 @@ def site():
     return render_template("site.html")
 
 
-@app.route('/emotions/')
-def emotions():
-    return render_template("emotions.html")
+def calculate(ques1,ques2,ques3,ques4,ques5,ques6,ques7):
+    if ques7 is not None:
+        total = int(ques1) + int(ques2) + int(ques3) + int(ques4) + int(ques5) + int(ques6) + int(ques7)
+        percentagesun = total/ 35
+        percentagesun *= 100
+        return percentagesun
+
+
+@app.route('/sunormoon/', methods=['GET', 'POST'])
+def sunormoon():
+    ques7 = None
+    resultpy = 0
+    percentagemoon = 0
+    if request.form:
+        ques1 = request.form.get("ques1")
+        ques2 = request.form.get("ques2")
+        ques3 = request.form.get("ques3")
+        ques4 = request.form.get("ques4")
+        ques5 = request.form.get("ques5")
+        ques6 = request.form.get("ques6")
+        ques7 = request.form.get("ques7")
+        resultpy = calculate(ques1, ques2, ques3, ques4, ques5, ques6, ques7)
+        percentagemoon = 100 - resultpy
+    return render_template("sunormoon.html", result=resultpy, moonp=percentagemoon)
 
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
