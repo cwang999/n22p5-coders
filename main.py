@@ -280,7 +280,7 @@ unmanned_space_answers = ["Sputnik", "Buran", "Laika", "2021", "Galileo", "Cassi
 solar_system = ["How many planets are there?", "Who discovered Uranus?", "Who discovered Pluto?", "The discovery of which minor planet caused the push to downgrade Pluto?", "What is the name of collection of debris between Mars and Jupiter?", "What is the name of the large torus-shaped collection of debris beyond Neptune?", "How long in Earth days is Mercury's year?", "Which planet is closest in size to Earth?"]
 solar_system_answers = ["8", "William Herschel", "Clyde Tombaugh", "Eris", "Asteroid Belt", "Kuiper Belt", "88", "Venus"]
 # Function
-def trivia(category):
+def trivia(category, userInputPy, num):
     score = 0
     for i in range(num):
         if category == "Human Space Travel":
@@ -315,34 +315,43 @@ def trivia(category):
                 print("Incorrect, moving on")
     return score
 
+
 @app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
 def connor_createtask():
     global current_question
     global category
-    current_question = -1
+    global number_of_questions
+    global score
+    current_question = 1
     if request.form:
         userInputPy = request.form.get("userInput")
-        if current_question == -1:
+        if current_question == 1:
             if userInputPy == "Human Space Travel":
-                current_question += 1
+                current_question = 2
                 category = "Human Space Travel"
                 return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
             elif userInputPy == "Unmanned Space Travel":
-                current_question += 1
+                current_question = 2
                 category = "Unmanned Space Travel"
                 return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
             elif userInputPy == "Solar System":
-                current_question += 1
+                current_question = 2
                 category = "Solar System"
                 return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
             else:
-                return render_template("connarch_astrotrivianator.html", question="Invalid Input")
-        if current_question == 0:
-            if userInputPy == "1":
-                current_question += 1
-                return render_template("connarch_astrotrivianator.html", question="Ok here is the first question")
+                current_question = 2
+                category = userInputPy
+                return render_template("connarch_astrotrivianator.html", question="Your custom category is: " + category + ". How many questions?")
+        elif current_question == 2:
+            current_question = 3
+            number_of_questions = userInputPy
+            return render_template("connarch_astrotrivianator.html", question="You have chosen to take " + number_of_questions + " questions.")
+
+        else:
+            if category == "Human Space Travel":
+                return render_template("connarch_astrotrivianator.html", question=human_space_travel[random.randint(1, len(human_space_travel))])
             else:
-                return render_template("connarch_astrotrivianator.html", question="Invalid Input")
+                return render_template("connarch_astrotrivianator.html", question="I dunno")
 
     return render_template("connarch_astrotrivianator.html", question="Welcome to Connor's Trivia Quiz! Please select a category: Human Space Travel, Unmanned Space Travel, or Solar System")
 
