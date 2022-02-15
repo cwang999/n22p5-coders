@@ -1,6 +1,5 @@
-from random import random
-
 from flask import render_template, request
+import random
 
 from __init__ import app
 from crud.app_crud import app_crud
@@ -11,6 +10,7 @@ app.register_blueprint(app_crud)
 app.register_blueprint(app_homepages)
 app.register_blueprint(app_games)
 
+import random
 
 # connects default URL to render index.html
 
@@ -62,7 +62,6 @@ def life():
 def learn_planets():
     return render_template("learn_planets.html")
 
-
 @app.route('/randomphotos/', methods=['GET', 'POST'])
 def randomphotos():
     photoID = random.randint(1, 5)
@@ -104,36 +103,14 @@ def flappybird():
 def uploadphotos():
     return render_template("uploadphotos.html")
 
-
 @app.route('/site/')
 def site():
     return render_template("site.html")
 
-def calculate(ques1,ques2,ques3,ques4,ques5,ques6,ques7):
-    if ques7 is not None:
-        total = int(ques1) + int(ques2) + int(ques3) + int(ques4) + int(ques5) + int(ques6) + int(ques7)
-        percentagesun = total/ 35
-        percentagesun *= 100
-        return percentagesun
 
-
-@app.route('/sunormoon/', methods=['GET', 'POST'])
-def sunormoon():
-    ques7 = None
-    resultpy = 0
-    percentagemoon = 0
-    if request.form:
-        ques1 = request.form.get("ques1")
-        ques2 = request.form.get("ques2")
-        ques3 = request.form.get("ques3")
-        ques4 = request.form.get("ques4")
-        ques5 = request.form.get("ques5")
-        ques6 = request.form.get("ques6")
-        ques7 = request.form.get("ques7")
-        resultpy = calculate(ques1, ques2, ques3, ques4, ques5, ques6, ques7)
-        percentagemoon = 100 - resultpy
-    return render_template("sunormoon.html", result=resultpy, moonp=percentagemoon)
-
+@app.route('/emotions/')
+def emotions():
+    return render_template("emotions.html")
 
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
@@ -293,6 +270,81 @@ def planetcalculator():
     else:
         return render_template("planetcalculator.html", time1=0, time2=0)
 
+# Lists
+human_space_travel = ["In what year did Neil Armstrong land on the moon?", "Which President cancelled the Apollo program?", "Which President authorized the Apollo program?", "How many space shuttles were built?", "Which space shuttle exploded in 1986?", "What is the name of NASA's first manned spaceflight program?", "Who was the first American in space?", "Which German and former-Nazi rocket scientist led the Apollo program?"]
+human_space_answers = ["1969", "Richard Nixon", "John F. Kennedy", "5", "Challenger", "Mercury", "Alan Shepard", "Wernher von Braun"]
+
+unmanned_space_travel = ["What is the name of the first satellite?", "What is the name of the Soviet's space shuttle?", "What was the name of the first dog in space?", "In what year did the James Webb Space Telescope launch?", "Which space probe was the first to closely study Jupiter?", "What was the most recent space probe to Saturn?"]
+unmanned_space_answers = ["Sputnik", "Buran", "Laika", "2021", "Galileo", "Cassini"]
+
+solar_system = ["How many planets are there?", "Who discovered Uranus?", "Who discovered Pluto?", "The discovery of which minor planet caused the push to downgrade Pluto?", "What is the name of collection of debris between Mars and Jupiter?", "What is the name of the large torus-shaped collection of debris beyond Neptune?", "How long in Earth days is Mercury's year?", "Which planet is closest in size to Earth?"]
+solar_system_answers = ["8", "William Herschel", "Clyde Tombaugh", "Eris", "Asteroid Belt", "Kuiper Belt", "88", "Venus"]
+# Function
+def trivia(category):
+    score = 0
+    for i in range(num):
+        if category == "Human Space Travel":
+            # x = random.randrange(len(human_space_travel))
+            print(human_space_travel[i])
+            answer = input("Type your answer: ")
+            correct = human_space_answers[i]
+            if answer == correct:
+                print("Correct!")
+                score += 1
+            else:
+                print("Incorrect, moving on")
+        elif category == "Unmanned Space Travel":
+            # x = random.randrange(len(unmanned_space_travel))
+            print(unmanned_space_travel[i])
+            answer = input("Type your answer: ")
+            correct = unmanned_space_answers[i]
+            if answer == correct:
+                print("Correct!")
+                score += 1
+            else:
+                print("Incorrect, moving on")
+        elif category == "Solar System":
+            # x = random.randrange(len(solar_system))
+            print(solar_system[i])
+            answer = input("Type your answer: ")
+            correct = solar_system_answers[i]
+            if answer == correct:
+                print("Correct!")
+                score += 1
+            else:
+                print("Incorrect, moving on")
+    return score
+
+@app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
+def connor_createtask():
+    global current_question
+    global category
+    current_question = -1
+    if request.form:
+        userInputPy = request.form.get("userInput")
+        if current_question == -1:
+            if userInputPy == "Human Space Travel":
+                current_question += 1
+                category = "Human Space Travel"
+                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
+            elif userInputPy == "Unmanned Space Travel":
+                current_question += 1
+                category = "Unmanned Space Travel"
+                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
+            elif userInputPy == "Solar System":
+                current_question += 1
+                category = "Solar System"
+                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
+            else:
+                return render_template("connarch_astrotrivianator.html", question="Invalid Input")
+        if current_question == 0:
+            if userInputPy == "1":
+                current_question += 1
+                return render_template("connarch_astrotrivianator.html", question="Ok here is the first question")
+            else:
+                return render_template("connarch_astrotrivianator.html", question="Invalid Input")
+
+    return render_template("connarch_astrotrivianator.html", question="Welcome to Connor's Trivia Quiz! Please select a category: Human Space Travel, Unmanned Space Travel, or Solar System")
 
 # runs the application on the development server
 if __name__ == "__main__":

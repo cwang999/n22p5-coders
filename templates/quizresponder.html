@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block body %}
+    <head>
+        <meta charset="UTF-8">
+        <title>KDR Calculator</title>
+    </head>
+    <body>
+    <div class="col-0">
+        <form method="POST">
+            <label for="kills" style="font-size:30px; text-align:left; font-family: gilroy,serif;">How many did you get right?</label>
+            <input type="number" name="kills" id="kills">
+            <br>
+            <label for="deaths" style="font-size:30px; text-align:left; font-family: gilroy,serif;">How many questions were there in total?</label>
+            <input type="number" name="deaths" id="deaths">
+            <input type="submit" value="Enter">
+        </form>
+    </div>
+    <h1>Your KDR is:{{kdrval}}</h1>
+    <h1>{{goodplayer}}</h1>
+    </body>
+    </html>
+
+{% endblock %}

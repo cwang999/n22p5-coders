@@ -41,7 +41,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Email</th>
+                                <th>description</th>
                                 <th>Password</th>
                                 <th>Phone</th>
                             </tr>
@@ -58,7 +58,7 @@
                                 <tr>
                                     <td>{{ row['userID'] }}</td>
                                     <td>{{ row['name'] }}</td>
-                                    <td>{{ row['email'] }}</td>
+                                    <td>{{ row['description'] }}</td>
                                     <td>{{ row['password'] }}</td>
                                     <td>{{ pnf }}</td>
                                 </tr>
@@ -80,7 +80,7 @@
                         <thead>
                         <tr>
                             <th><label for="name">Name</label></th>
-                            <th><label for="email">Email</label></th>
+                            <th><label for="description">description</label></th>
                             <th><label for="password">Password</label></th>
                             <th><label for="phone">Phone</label></th>
                         </tr>
@@ -88,7 +88,7 @@
                         <tbody>
                         <tr>
                             <td><input type="text" name="name" id="name" required></td>
-                            <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
+                            <td><input type="description" name="description" id="description" required></td>
                             <td><input type="password" name="password" id="password" required></td>
                             <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
                             <td><input type="submit" value="Create"></td>
