@@ -270,16 +270,30 @@ def planetcalculator():
     else:
         return render_template("planetcalculator.html", time1=0, time2=0)
 
+# Lists
+
+# Function
+
 @app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
 def connor_createtask():
     global current_question
+    global category
     current_question = -1
     if request.form:
         userInputPy = request.form.get("userInput")
         if current_question == -1:
             if userInputPy == "Human Space Travel":
                 current_question += 1
-                return render_template("connarch_astrotrivianator.html", question="How many questions")
+                category = "Human Space Travel"
+                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
+            elif userInputPy == "Unmanned Space Travel":
+                current_question += 1
+                category = "Unmanned Space Travel"
+                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
+            elif userInputPy == "Solar System":
+                current_question += 1
+                category = "Solar System"
+                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
             else:
                 return render_template("connarch_astrotrivianator.html", question="Invalid Input")
         if current_question == 0:
@@ -289,7 +303,7 @@ def connor_createtask():
             else:
                 return render_template("connarch_astrotrivianator.html", question="Invalid Input")
 
-    return render_template("connarch_astrotrivianator.html", question="Welcome to Connor's Trivia Quiz!\nPlease select a category: Human Space Travel, Unmanned Space Travel, or Solar System")
+    return render_template("connarch_astrotrivianator.html", question="Welcome to Connor's Trivia Quiz! Please select a category: Human Space Travel, Unmanned Space Travel, or Solar System")
 
 # runs the application on the development server
 if __name__ == "__main__":
