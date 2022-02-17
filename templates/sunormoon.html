@@ -9,29 +9,30 @@
 <body>
 <form method="POST">
     <label for="ques1">Do you like the heat? 1 being not at all 5 being you love it </label>
-    <input type="number" name="ques1" id="ques1">
+    <input type="number" name="ques1" id="ques1" min="1" max="5">
     <br>
     <label for="ques2">DO you like bright colors? 1 being not at all 5 being you love it</label>
-    <input type="number" name="ques2" id="ques2">
+    <input type="number" name="ques2" id="ques2" min="1" max="5">
     <br>
     <label for="ques3">Do you like going out? 1 being not at all 5 being you love to </label>
-    <input type="number" name="ques3" id="ques3">
+    <input type="number" name="ques3" id="ques3" min="1" max="5">
     <br>
     <label for="ques4">Are you a morning person? 1 being not at all 5 totally</label>
-    <input type="number" name="ques4" id="ques4">
+    <input type="number" name="ques4" id="ques4" min="1" max="5">
     <br>
     <label for="ques5">Are you a cup half full person? 1 being not at all 5 totally</label>
-    <input type="number" name="ques5" id="ques5">
+    <input type="number" name="ques5" id="ques5" min="1" max="5">
     <br>
     <label for="ques6">Do you get scared by movies and books easily? 1 being not at all 5 being you love to</label>
-    <input type="number" name="ques6" id="ques6">
+    <input type="number" name="ques6" id="ques6" min="1" max="5">
     <br>
     <label for="ques7">Would your friends describe you as happy/joyful? 1 being not at all 5 being you love to</label>
-    <input type="number" name="ques7" id="ques7">
+    <input type="number" name="ques7" id="ques7" min="1" max="5">
     <br>
     <input type="submit" value="Enter">
 </form>
 {{ result }}
 {{ moonp }}
+{{ mesg }}
 </body>
 </html>
