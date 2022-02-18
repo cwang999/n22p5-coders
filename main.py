@@ -149,7 +149,7 @@ def sunormoon():
         else:
             resultpy = 9999
         if resultpy > percentagemoon:
-            msg = pun[1]
+            msg = (random.choice(pun))
 
     return render_template("sunormoon.html", result=resultpy, moonp=percentagemoon, mesg=msg)
 
