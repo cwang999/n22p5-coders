@@ -59,62 +59,32 @@ def scoring():
 
 def quiz_tester():
     # Defining Score variables
-    x = 0
-    score = x
+    score = 0
     shuffled_questions = shuffle(questions_options)
-    print(questions_options.values())
-    print(shuffled_questions)
-    print(questions_options.keys())
+    # print(questions_options.values())
+    # print(shuffled_questions)
+    # print(questions_options.keys())
 
-    # Question One
-    print("What is the name of Nicolaus Copernicus' idea that the earth revolves around the sun?")
-    answer_1 = input(
-    "a)The Heliocentric Theory of the Universe\nb)The Sun Theory\nc)Geocentric Theory of the Universe\nd)The Solar System Theory\n:")
-    if answer_1.lower() == "a" or answer_1.lower() == "The Heliocentric Theory of the Universe":
-        print("Correct")
-        x = x + 100
-    else:
-        print("Incorrect, Nicolaus Copernicus' idea is called the Heliocentric Theory of the Universe")
 
-    # Question Two
-    print("How many of Jupiter's moons did Galileo Galilei discover?")
-    answer_2 = input("a)1\nb)4\nc)69\nd)79\n:")
-    if answer_2.lower() == "b" or answer_2.lower() == "4":
-        print("Correct")
-        x = x + 100
-    else:
-        print("Incorrect, Galileo Galilei discovered 4 of Jupiter's moons, specifically the 4 largest")
+    counter = 1
+    for i in shuffled_questions:
+        print(counter, i)
+        counter = counter + 1
+        random.shuffle(questions_options.get(i))
+        options_dict = {'a': questions_options.get(i)[0], 'b': questions_options.get(i)[1],
+                        'c': questions_options.get(i)[2], 'd': questions_options.get(i)[3]}
+        for j in options_dict.keys():
+            print(j + ')', options_dict.get(j))
+        answer = input()
 
-    # Question Three
-    print("Johannes Kepler discovered that the Earth and other planets revolve around the sun in what-shaped orbits?")
-    answer_3 = input("a)Circular\nb)Parabolic\nc)Elliptical\nd)Hyperbolic\n:")
-    if answer_3.lower() == "c" or answer_3.lower() == "Elliptical":
-        print("Correct")
-        x = x + 100
-    else:
-        print("Incorrect, Johannes Kepler discovered that the planets revolve around the sun in elliptical orbits")
+        if options_dict.get(answer.lower()) == original_questions_options_dict.get(i)[0]:
+            print("Correct")
+            score = score + 1
+        else:
+            print("Incorrect, the correct answer is", original_questions_options_dict.get(i)[0])
 
-    # Question Four
-    print("Isaac Newton is considered one of the great minds of the Scientific Revolution of which century?")
-    answer_4 = input("a)14th century\nb)15th century\nc)16th century\nd)17th century\n:")
-    if answer_4.lower() == "d" or answer_4 == "17th century":
-        print("Correct")
-        x = x + 100
-    else:
-     print(
-        "Incorrect, Isaac Newton is considered one of the great minds of the Scientific Revolution of the 17th century")
 
-    # Question Five
-    print("How did Neil DeGrasse Tyson popularize science? Note: There is more than one correct answer")
-    answer_5 = input("a)His books\nb)Through radio\nc)Through television\nd)Through the discovery of Pluto:")
-    if answer_5.lower() == "a" or answer_5.lower() == "b" or answer_5.lower() == "c":
-        print("Correct")
-        x = x + 100
-    else:
-        print(
-            "Incorrect, Neil DeGrasse Tyson popularized science through his books and appearances on radio and television")
-
-    print("Final Score = ", x)
+    print("Final Score = ", score, "out of 10")
 
 if __name__ == '__main__':
     # app.run(debug=True)
