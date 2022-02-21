@@ -1,14 +1,17 @@
+from random import random
+
 from flask import render_template, request
 
 from __init__ import app
 from crud.app_crud import app_crud
 from homepages.homepages import app_homepages
 from games.games import app_games
+from createtask.astronomertrivia import app_astronomertrivia
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_homepages)
 app.register_blueprint(app_games)
-
+app.register_blueprint(app_astronomertrivia)
 
 # connects default URL to render index.html
 
