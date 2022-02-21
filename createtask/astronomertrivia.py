@@ -23,6 +23,7 @@ original_questions_options_dict = {
 
 questions_options = copy.deepcopy(original_questions_options_dict)
 
+
 def shuffle(q):
     """
     This function is for shuffling the dictionary keys, which are the questions.
@@ -47,12 +48,14 @@ def astronomertrivia():
 
 @app_astronomertrivia.route('/scoring/', methods=['POST'])
 def scoring():
+    # This is a function that does the scoring of the user's answers
     correct = 0
     for i in questions_options.keys():
         answered = request.form[i]
         if original_questions_options_dict[i][0] == answered:
             correct = correct+1
-    return '<h1>Final Score: <u>'+str(correct)+'</u> out of 10</h1>'
+    # return '<h1>Final Score: <u>'+str(correct)+'</u> out of 10</h1>'
+    return render_template('trivia_scored_answers.html', s = correct, q = questions_options.keys(),o = original_questions_options_dict)
 
 def quiz_tester():
     # Defining Score variables

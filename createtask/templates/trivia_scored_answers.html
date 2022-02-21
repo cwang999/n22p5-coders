@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "layouts/base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Astronomer Trivia Answers</title>
+</head>
+<body>
+<h1>Final Score: <u>{{ s }}</u> out of 10</h1>
+<ol>
+    {% for i in q %}
+        <b>Question:</b> <u>{{i}}</u><br>
+         <b>Answer:</b> {{o.get(i)[0]}} <br><br>
+
+    {% endfor %}
+</ol>
+</body>
+</html>
