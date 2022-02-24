@@ -106,23 +106,29 @@ def uploadphotos():
 def site():
     return render_template("site.html")
 
-
-#def calculate(ques1,ques2,ques3,ques4,ques5,ques6,ques7):
+#function to find percentage sun
 def calculate(ques):
-#    if ques[6] != "":
     total = 0
     for i in range(7):
             total = total + int(ques[i])
-    percentagesun = total/ 35
-    percentagesun *= 100
+    percentagesun = round((total/ 35)*100)
     return percentagesun
 
 
 @app.route('/sunormoon/', methods=['GET', 'POST'])
 def sunormoon():
+    # possible messages depending on what you get
     pun = ["Youre so sunny",
-           "like father, like sun"
+           "Going to space? Been there, sun that!",
+           "Going to space? Been there, sun that!",
+           "The sun has loads of degrees, but it's never even been to university!"
            ]
+    mpun = [
+        "What did scientists say when they discovered a skeleton on the surface of the moon? The cow didn't make it.",
+        "What does Buzz Aldrin say when he meets people? I am the second person to land on the moon. Neil before me.",
+        "What does Dwayne Johnson become when he lands on the moon? A moon rock.",
+        "Why was the moon landing fake? Because the moon is still up there. It did not land anywhere."
+    ]
     msg = "FINISH THE TEST FIRST"
     ques = []
     for i in range(7):
@@ -130,26 +136,23 @@ def sunormoon():
 #    ques[6] = None
     resultpy = 0
     percentagemoon = 0
+    #for loop to do all the request.form.get instead of a long list
     if request.form:
         for i in range(7):
             reqformval = "ques" + str(i+1)
             ques[i] = request.form.get(reqformval)
             print(ques[i])
-#        ques1 = request.form.get("ques1")
-#        ques2 = request.form.get("ques2")
-#        ques3 = request.form.get("ques3")
-#        ques4 = request.form.get("ques4")
-#        ques5 = request.form.get("ques5")
-#        ques6 = request.form.get("ques6")
-#        ques7 = request.form.get("ques7")
-#        resultpy = calculate(ques1, ques2, ques3, ques4, ques5, ques6, ques7)
+        #calculates percentage moon
         if ques[0] != "":
             resultpy = calculate(ques)
             percentagemoon = 100 - resultpy
         else:
             resultpy = 9999
+            #gives message based on whether sun or moon(random item from list)
         if resultpy > percentagemoon:
-            msg = (random.choice(pun))
+            msg = "You are more like the sun!!!!" + " " + (random.choice(pun))
+        else:
+            msg = "You are more like the moon!!!!" + " " + (random.choice(mpun))
 
     return render_template("sunormoon.html", result=resultpy, moonp=percentagemoon, mesg=msg)
 
