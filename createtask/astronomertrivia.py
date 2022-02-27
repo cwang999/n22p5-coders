@@ -24,7 +24,7 @@ original_questions_options_dict = {
 questions_options = copy.deepcopy(original_questions_options_dict)
 
 
-def shuffle(q):
+def shuffle(q, t):
     """
     This function is for shuffling the dictionary keys, which are the questions.
     Input q is not a list, but a dictionary
@@ -32,16 +32,19 @@ def shuffle(q):
     # selected_keys is a list of the shuffled questions
     selected_keys = []
     i = 0
-    while i < len(q):
-        current_selection = random.choice(list(q.keys()))
-        if current_selection not in selected_keys:
-            selected_keys.append(current_selection)
-            i = i+1
+    if t == "random":
+        while i < len(q):
+            current_selection = random.choice(list(q.keys()))
+            if current_selection not in selected_keys:
+                selected_keys.append(current_selection)
+                i = i+1
+    else:
+        selected_keys = sorted(list(q.keys()))
     return selected_keys
 
 @app_astronomertrivia.route('/astronomertrivia/')
 def astronomertrivia():
-    questions_shuffled = shuffle(questions_options)
+    questions_shuffled = shuffle(questions_options, "random")
     for q in questions_options.keys():
         random.shuffle(questions_options.get(q))
     return render_template('astronomertrivia.html', q = questions_shuffled, o = questions_options)
@@ -60,7 +63,7 @@ def scoring():
 def quiz_tester():
     # Defining Score variables
     score = 0
-    shuffled_questions = shuffle(questions_options)
+    shuffled_questions = shuffle(questions_options, "sorted")
     # print(questions_options.values())
     # print(shuffled_questions)
     # print(questions_options.keys())
