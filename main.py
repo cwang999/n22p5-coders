@@ -280,29 +280,43 @@ unmanned_space_answers = ["Sputnik", "Buran", "Laika", "2021", "Galileo", "Cassi
 solar_system = ["How many planets are there?", "Who discovered Uranus?", "Who discovered Pluto?", "The discovery of which minor planet caused the push to downgrade Pluto?", "What is the name of collection of debris between Mars and Jupiter?", "What is the name of the large torus-shaped collection of debris beyond Neptune?", "How long in Earth days is Mercury's year?", "Which planet is closest in size to Earth?"]
 solar_system_answers = ["8", "William Herschel", "Clyde Tombaugh", "Eris", "Asteroid Belt", "Kuiper Belt", "88", "Venus"]
 
-astro_counter = "Choose"
+def trivia(number, userInput, category):
+    if userInput == category[number]:
+        result = "Correct!"
+    else:
+        result = "Incorrect, moving on."
+    return result
 
 @app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
 def connor_createtask():
-    global astro_counter
-    global category
-    global numberOfQuestions
-    global answer
-    if request.form:
-        if astro_counter == "Choose":
-            category = request.form.get("Category")
-            numberOfQuestions = request.form.get("NumberOfQuestions")
-            astro_counter = "Started"
-            print(category)
-            print(numberOfQuestions)
-        else:
-            answer = request.form.get("Answer")
-            print(answer)
-        # return render_template("connarch_astrotrivianator.html",
-        #                        categoryHTML=category, noqHTML=numberOfQuestions)
-
-    astro_counter = "Choose"
     return render_template("connarch_astrotrivianator.html")
+
+@app.route('/human_space_travel/', methods=['GET', 'POST'])
+def hst():
+    global num
+    global score
+    if request.form:
+        # If index is not out of bounds:
+        if num < len(human_space_travel) - 1:
+            # Get user input
+            userInput = request.form.get("userInputHTML")
+            # Function! :D
+            response = trivia(num, userInput, human_space_answers)
+            # Increase score by 1 if the functions spits out "Correct!", also add 1 to the question counter num.
+            if response == "Correct!":
+                score += 1
+            num += 1
+            result = str(score) + " out of " + str(num)
+            return render_template("human_space_travel.html", responseHTML=response, questionHTML=human_space_travel[num], scoreHTML=result)
+        # If index is out of bounds:
+        else:
+            result = "Final score: " + str(score) + " out of " + str(num)
+            return render_template("human_space_travel.html", scoreHTML=result)
+    # Runs once, when the html page is first loaded up. Startup!
+    num = 0
+    score = 0
+    return render_template("human_space_travel.html", questionHTML=human_space_travel[num])
+
 
 # runs the application on the development server
 if __name__ == "__main__":
