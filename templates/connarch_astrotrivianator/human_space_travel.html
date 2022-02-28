@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+
+{% block meta %}
+    <meta charset="UTF-8">
+    <title>Connarch Astrotrivianator</title>
+{% endblock %}
+{% block content %}
+    <div class="row justify-content-center" style="margin: 2%;">
+
+        <button class="btn btn-danger" onclick="window.location.href='/connarch_astrotrivianator/'">
+            Return to Connarch's Astrotrivianator Category Selection
+        </button>
+
+        <form action="" id="input" method="POST">
+            <br>
+            <p>{{ questionHTML }}</p>
+            <input type="text" name="userInputHTML" autofocus>
+            <br>
+            <p>{{ responseHTML }}</p>
+            <p>{{ scoreHTML }}</p>
+        </form>
+
+    </div>
+{% endblock %}
+</html>

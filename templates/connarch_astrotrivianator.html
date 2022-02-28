@@ -4,7 +4,7 @@
 
 {% block meta %}
     <meta charset="UTF-8">
-    <title>Connor Create Task</title>
+    <title>Connarch Astrotrivianator</title>
     <style>
         input {
             padding: 12px 20px;
@@ -22,9 +22,17 @@
 {% block content %}
 <div class="row justify-content-center" style="margin: 2%;">
 
+    <h1>Welcome to Connarch's Astrotrivianator!</h1>
+    <h3>Please select a category:</h3>
     <div class="button">
-        <button class="btn btn-success" onclick="window.location.href='/human_space_travel/'">
+        <button class="btn btn-danger" onclick="window.location.href='/connarch_astrotrivianator/human_space_travel/'">
             Human Space Travel
+        </button>
+        <button class="btn btn-success" onclick="window.location.href='/connarch_astrotrivianator/unmanned_space_travel/'">
+            Unmanned Space Travel
+        </button>
+        <button class="btn btn-dark" onclick="window.location.href='/connarch_astrotrivianator/solar_system/'">
+            Solar System
         </button>
     </div>
 {#    <iframe height="1000px" width="1000px" src="https://replit.com/@CcWw/CreateTask?lite=true"></iframe>#}
