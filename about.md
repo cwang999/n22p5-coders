@@ -4,17 +4,12 @@
 
 {{ site.description }}
 
-## Funders
 
-We gratefully acknowledge funding from the XYZ Founding Council, under grant number 'abc'.
+## Project Theme
 
-## Cite us
+- Our Theme was built around space related projects and quizzes, with ninjas being our mascot. Many of our projects and tangibles relate to the theme of space, most backgrounds also being a dark theme or having a space-related background.
 
-You can cite the project as:
 
->    *The Carpentries 2019 Annual Report. Zenodo. https://doi.org/10.5281/zenodo.3840372*
+## Sassy / Bootstrap
 
-## Contact us
-
-- Email: [{{ site.email }}](mailto:{{ site.email }})
-- Twitter: [@thecarpentries](https://twitter.com/thecarpentries)
+- Our website uses both sassy and bootstrap, sassy in the form of .scss files located within our program that makes the theme consistent throughout, using {{ blocks }} to distribute the .scss layout to each page. For bootstrap, it comes in the form of containers and buttons that make many of our features somewhat visually appealing, although we haven't had the opportunity to add it to every single page. The majority of our projects use it though.
