@@ -8,26 +8,41 @@
 {% endblock %}
 {% block content %}
 <div class="row justify-content-center" style="margin: 2%;">
+
     <form action="" id="input" method="POST">
-        <input type="text" name="userInput" id="riubiwn">
+        <p>Please select a category: Human Space Travel, Unmanned Space Travel, or Solar System</p>
+        <input type="text" name="Category">
+        <br>
+        <p>How many questions?</p>
+        <input type="text" name="NumberOfQuestions">
+        <input type="submit">
+        <br>
     </form>
-    <p>{{ question }}</p>
+
     <form action="" id="input" method="POST">
-        <input type="text" name="userInput" placeholder="Add custom question">
-        <input type="text" name="userInput" placeholder="Add custom answer">
-        <input type="submit" value="Add!">
-        <br>
-        <br>
-        <input type="text" name="userInput" placeholder="Update question #">
-        <input type="text" name="userInput" placeholder="Update question">
-        <input type="text" name="userInput" placeholder="Update answer">
-        <input type="submit" value="Update!">
-        <br>
-        <br>
-        <input type="text" name="userInput" placeholder="Delete question #">
-        <input type="submit" value="Delete!">
+        <p>{{ questionHTML }}</p>
+        <input type="text" name="Answer">
+        <input type="submit">
     </form>
-    <iframe height="1000px" width="1000px" src="https://replit.com/@CcWw/CreateTask?lite=true"></iframe>
+
+    <p>{{ categoryHTML }}</p>
+    <p>{{ noqHTML }}</p>
+{#    <form action="" id="input" method="POST">#}
+{#        <input type="text" name="userInput" placeholder="Add custom question">#}
+{#        <input type="text" name="userInput" placeholder="Add custom answer">#}
+{#        <input type="submit" value="Add!">#}
+{#        <br>#}
+{#        <br>#}
+{#        <input type="text" name="userInput" placeholder="Update question #">#}
+{#        <input type="text" name="userInput" placeholder="Update question">#}
+{#        <input type="text" name="userInput" placeholder="Update answer">#}
+{#        <input type="submit" value="Update!">#}
+{#        <br>#}
+{#        <br>#}
+{#        <input type="text" name="userInput" placeholder="Delete question #">#}
+{#        <input type="submit" value="Delete!">#}
+{#    </form>#}
+{#    <iframe height="1000px" width="1000px" src="https://replit.com/@CcWw/CreateTask?lite=true"></iframe>#}
 </div>
 {% endblock %}
 </html>
