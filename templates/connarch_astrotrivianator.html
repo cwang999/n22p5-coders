@@ -5,6 +5,19 @@
 {% block meta %}
     <meta charset="UTF-8">
     <title>Connor Create Task</title>
+    <style>
+        input {
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 15px darkblue;
+            border-radius: 10px;
+            {#outline: none;#}
+        }
+
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+    </style>
 {% endblock %}
 {% block content %}
 <div class="row justify-content-center" style="margin: 2%;">

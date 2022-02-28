@@ -1,16 +1,22 @@
+from random import random
+
 from flask import render_template, request
-import random
 
 from __init__ import app
 from crud.app_crud import app_crud
-from homepages.homepages import app_homepages
 from games.games import app_games
+
+from createtask.astronomertrivia import app_astronomertrivia
+from homepages.homepages import app_homepages
+
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_homepages)
 app.register_blueprint(app_games)
 
+app.register_blueprint(app_astronomertrivia)
 import random
+
 
 # connects default URL to render index.html
 
@@ -108,9 +114,51 @@ def site():
     return render_template("site.html")
 
 
-@app.route('/emotions/')
-def emotions():
-    return render_template("emotions.html")
+#def calculate(ques1,ques2,ques3,ques4,ques5,ques6,ques7):
+def calculate(ques):
+#    if ques[6] != "":
+    total = 0
+    for i in range(7):
+            total = total + int(ques[i])
+    percentagesun = total/ 35
+    percentagesun *= 100
+    return percentagesun
+
+
+@app.route('/sunormoon/', methods=['GET', 'POST'])
+def sunormoon():
+    pun = ["Youre so sunny",
+           "like father, like sun"
+           ]
+    msg = "FINISH THE TEST FIRST"
+    ques = []
+    for i in range(7):
+        ques.append("")
+#    ques[6] = None
+    resultpy = 0
+    percentagemoon = 0
+    if request.form:
+        for i in range(7):
+            reqformval = "ques" + str(i+1)
+            ques[i] = request.form.get(reqformval)
+            print(ques[i])
+#        ques1 = request.form.get("ques1")
+#        ques2 = request.form.get("ques2")
+#        ques3 = request.form.get("ques3")
+#        ques4 = request.form.get("ques4")
+#        ques5 = request.form.get("ques5")
+#        ques6 = request.form.get("ques6")
+#        ques7 = request.form.get("ques7")
+#        resultpy = calculate(ques1, ques2, ques3, ques4, ques5, ques6, ques7)
+        if ques[0] != "":
+            resultpy = calculate(ques)
+            percentagemoon = 100 - resultpy
+        else:
+            resultpy = 9999
+        if resultpy > percentagemoon:
+            msg = (random.choice(pun))
+
+    return render_template("sunormoon.html", result=resultpy, moonp=percentagemoon, mesg=msg)
 
 @app.route('/orbits/', methods=['GET', 'POST'])
 def orbits():
