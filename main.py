@@ -327,81 +327,44 @@ unmanned_space_answers = ["Sputnik", "Buran", "Laika", "2021", "Galileo", "Cassi
 
 solar_system = ["How many planets are there?", "Who discovered Uranus?", "Who discovered Pluto?", "The discovery of which minor planet caused the push to downgrade Pluto?", "What is the name of collection of debris between Mars and Jupiter?", "What is the name of the large torus-shaped collection of debris beyond Neptune?", "How long in Earth days is Mercury's year?", "Which planet is closest in size to Earth?"]
 solar_system_answers = ["8", "William Herschel", "Clyde Tombaugh", "Eris", "Asteroid Belt", "Kuiper Belt", "88", "Venus"]
-# Function
-def trivia(category, userInputPy, num):
-    score = 0
-    for i in range(num):
-        if category == "Human Space Travel":
-            # x = random.randrange(len(human_space_travel))
-            print(human_space_travel[i])
-            answer = input("Type your answer: ")
-            correct = human_space_answers[i]
-            if answer == correct:
-                print("Correct!")
-                score += 1
-            else:
-                print("Incorrect, moving on")
-        elif category == "Unmanned Space Travel":
-            # x = random.randrange(len(unmanned_space_travel))
-            print(unmanned_space_travel[i])
-            answer = input("Type your answer: ")
-            correct = unmanned_space_answers[i]
-            if answer == correct:
-                print("Correct!")
-                score += 1
-            else:
-                print("Incorrect, moving on")
-        elif category == "Solar System":
-            # x = random.randrange(len(solar_system))
-            print(solar_system[i])
-            answer = input("Type your answer: ")
-            correct = solar_system_answers[i]
-            if answer == correct:
-                print("Correct!")
-                score += 1
-            else:
-                print("Incorrect, moving on")
-    return score
 
+def trivia(number, userInput, category):
+    if userInput == category[number]:
+        result = "Correct!"
+    else:
+        result = "Incorrect, moving on."
+    return result
 
 @app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
 def connor_createtask():
-    global current_question
-    global category
-    global number_of_questions
+    return render_template("connarch_astrotrivianator.html")
+
+@app.route('/human_space_travel/', methods=['GET', 'POST'])
+def hst():
+    global num
     global score
-    current_question = 1
     if request.form:
-        userInputPy = request.form.get("userInput")
-        if current_question == 1:
-            if userInputPy == "Human Space Travel":
-                current_question = 2
-                category = "Human Space Travel"
-                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
-            elif userInputPy == "Unmanned Space Travel":
-                current_question = 2
-                category = "Unmanned Space Travel"
-                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
-            elif userInputPy == "Solar System":
-                current_question = 2
-                category = "Solar System"
-                return render_template("connarch_astrotrivianator.html", question="Your category is: " + category + ". How many questions?")
-            else:
-                current_question = 2
-                category = userInputPy
-                return render_template("connarch_astrotrivianator.html", question="Your custom category is: " + category + ". How many questions?")
-        elif current_question == 2:
-            current_question = 3
-            number_of_questions = userInputPy
-            return render_template("connarch_astrotrivianator.html", question="You have chosen to take " + number_of_questions + " questions.")
-
+        # If index is not out of bounds:
+        if num < len(human_space_travel) - 1:
+            # Get user input
+            userInput = request.form.get("userInputHTML")
+            # Function! :D
+            response = trivia(num, userInput, human_space_answers)
+            # Increase score by 1 if the functions spits out "Correct!", also add 1 to the question counter num.
+            if response == "Correct!":
+                score += 1
+            num += 1
+            result = str(score) + " out of " + str(num)
+            return render_template("human_space_travel.html", responseHTML=response, questionHTML=human_space_travel[num], scoreHTML=result)
+        # If index is out of bounds:
         else:
-            if category == "Human Space Travel":
-                return render_template("connarch_astrotrivianator.html", question=human_space_travel[random.randint(1, len(human_space_travel))])
-            else:
-                return render_template("connarch_astrotrivianator.html", question="I dunno")
+            result = "Final score: " + str(score) + " out of " + str(num)
+            return render_template("human_space_travel.html", scoreHTML=result)
+    # Runs once, when the html page is first loaded up. Startup!
+    num = 0
+    score = 0
+    return render_template("human_space_travel.html", questionHTML=human_space_travel[num])
 
-    return render_template("connarch_astrotrivianator.html", question="Welcome to Connor's Trivia Quiz! Please select a category: Human Space Travel, Unmanned Space Travel, or Solar System")
 
 # runs the application on the development server
 if __name__ == "__main__":
