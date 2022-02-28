@@ -4,14 +4,19 @@
 
 {% block meta %}
     <meta charset="UTF-8">
-    <title>Connor Create Task</title>
+    <title>Connarch Astrotrivianator</title>
 {% endblock %}
 {% block content %}
     <div class="row justify-content-center" style="margin: 2%;">
 
+        <button class="btn btn-dark" onclick="window.location.href='/connarch_astrotrivianator/'">
+            Return to Connarch's Astrotrivianator Category Selection
+        </button>
+
         <form action="" id="input" method="POST">
+            <br>
             <p>{{ questionHTML }}</p>
-            <input type="text" name="userInputHTML">
+            <input type="text" name="userInputHTML" autofocus>
             <br>
             <p>{{ responseHTML }}</p>
             <p>{{ scoreHTML }}</p>

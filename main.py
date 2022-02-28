@@ -336,11 +336,11 @@ def trivia(number, userInput, category):
     return result
 
 @app.route('/connarch_astrotrivianator/', methods=['GET', 'POST'])
-def connor_createtask():
+def connarch_astrotrivianator():
     return render_template("connarch_astrotrivianator.html")
 
-@app.route('/human_space_travel/', methods=['GET', 'POST'])
-def hst():
+@app.route('/connarch_astrotrivianator/human_space_travel/', methods=['GET', 'POST'])
+def connarch_astrotrivianator_hst():
     global num
     global score
     if request.form:
@@ -355,15 +355,67 @@ def hst():
                 score += 1
             num += 1
             result = str(score) + " out of " + str(num)
-            return render_template("human_space_travel.html", responseHTML=response, questionHTML=human_space_travel[num], scoreHTML=result)
+            return render_template("connarch_astrotrivianator/human_space_travel.html", responseHTML=response, questionHTML=human_space_travel[num], scoreHTML=result)
         # If index is out of bounds:
         else:
             result = "Final score: " + str(score) + " out of " + str(num)
-            return render_template("human_space_travel.html", scoreHTML=result)
+            return render_template("connarch_astrotrivianator/human_space_travel.html", scoreHTML=result)
     # Runs once, when the html page is first loaded up. Startup!
     num = 0
     score = 0
-    return render_template("human_space_travel.html", questionHTML=human_space_travel[num])
+    return render_template("connarch_astrotrivianator/human_space_travel.html", questionHTML=human_space_travel[num])
+
+@app.route('/connarch_astrotrivianator/unmanned_space_travel/', methods=['GET', 'POST'])
+def connarch_astrotrivianator_ust():
+    global num
+    global score
+    if request.form:
+        # If index is not out of bounds:
+        if num < len(unmanned_space_travel) - 1:
+            # Get user input
+            userInput = request.form.get("userInputHTML")
+            # Function! :D
+            response = trivia(num, userInput, unmanned_space_answers)
+            # Increase score by 1 if the functions spits out "Correct!", also add 1 to the question counter num.
+            if response == "Correct!":
+                score += 1
+            num += 1
+            result = str(score) + " out of " + str(num)
+            return render_template("connarch_astrotrivianator/unmanned_space_travel.html", responseHTML=response, questionHTML=unmanned_space_travel[num], scoreHTML=result)
+        # If index is out of bounds:
+        else:
+            result = "Final score: " + str(score) + " out of " + str(num)
+            return render_template("connarch_astrotrivianator/unmanned_space_travel.html", scoreHTML=result)
+    # Runs once, when the html page is first loaded up. Startup!
+    num = 0
+    score = 0
+    return render_template("connarch_astrotrivianator/unmanned_space_travel.html", questionHTML=unmanned_space_travel[num])
+
+@app.route('/connarch_astrotrivianator/solar_system/', methods=['GET', 'POST'])
+def connarch_astrotrivianator_ss():
+    global num
+    global score
+    if request.form:
+        # If index is not out of bounds:
+        if num < len(solar_system) - 1:
+            # Get user input
+            userInput = request.form.get("userInputHTML")
+            # Function! :D
+            response = trivia(num, userInput, solar_system_answers)
+            # Increase score by 1 if the functions spits out "Correct!", also add 1 to the question counter num.
+            if response == "Correct!":
+                score += 1
+            num += 1
+            result = str(score) + " out of " + str(num)
+            return render_template("connarch_astrotrivianator/solar_system.html", responseHTML=response, questionHTML=solar_system[num], scoreHTML=result)
+        # If index is out of bounds:
+        else:
+            result = "Final score: " + str(score) + " out of " + str(num)
+            return render_template("connarch_astrotrivianator/solar_system.html", scoreHTML=result)
+    # Runs once, when the html page is first loaded up. Startup!
+    num = 0
+    score = 0
+    return render_template("connarch_astrotrivianator/solar_system.html", questionHTML=solar_system[num])
 
 
 # runs the application on the development server
