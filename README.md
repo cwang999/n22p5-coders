@@ -4,7 +4,7 @@ Our idea is to create a website for Del Norte track. It will have a sign up page
 
 [Deployed Website]()
 
-[Jekyll Page](https://compapter.me)
+[Jekyll Page](https://cwang999.github.io/n22p5-coders/)
 
 Release Day Policy:
 Day before review day, 6PM: Freeze Code - everybody push changes, no one change code after 6 PM [EVERYONE]
