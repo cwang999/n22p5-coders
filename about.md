@@ -1,14 +1,8 @@
 # About
 
-## Project
-
-{{ site.description }}
-
-
 ## Project Theme
 
-- Our Theme was built around space related projects and quizzes, with ninjas being our mascot. Many of our projects and tangibles relate to the theme of space, most backgrounds also being a dark theme or having a space-related background.
-
+{{ Welcome to the n22p5-coders! Our idea is to create a website for Del Norte track. It will have a sign up page allowing people interested in track to sign up, as well as a schedule page and a page showing individuals' statistics.  }}
 
 ## Sassy / Bootstrap
 
