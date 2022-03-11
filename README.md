@@ -78,14 +78,13 @@ Review Ticket
 
 -----------------------------------------------------------------------------------
 ### Your Creators
-![image](https://user-images.githubusercontent.com/89278326/145645493-99d04805-dcc8-481d-819a-31bbeeddb244.png)
 
 | Name             | Journal                                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ |
-| Reinhardt Lotter + Derrick Huang | [Journal](https://docs.google.com/document/d/1sQEuq-pUUQEaaTpWS4qkyn-rWqiij7jwhqi_axAfKCg/edit?usp=sharing) |
-| Arch Huang | [Journal](https://docs.google.com/document/d/1em_jarWLRf7CYE-5v51hX0MLGqWXDoDfaWKtYXLEFfI/edit?usp=sharing) |
-| Conner Wang | [Journal](https://docs.google.com/document/d/1uly00OvdDQg1FYxTBSTzyCB05yj-Pk7Py-5DwXi0QS0/edit) |
-| David Xie | [Journal](https://docs.google.com/document/d/1wy8MC1kQk1CmiamgsEtrp-5xw_cyt9X6VvoslxgsjW0/edit?usp=sharing) |
+| Connor Wang | [Journal]() |
+| Jacob Rosenkrantz | [Journal]() |
+| Stanley Yan | [Journal]() |
+| Leo Sun | [Journal]() |
 
 [Contributing guidelines](https://docs.google.com/document/d/1U18-l772UyNbFlkvBeJZ7O4DMtzl09AFkpKyu8vNqQg/edit?usp=sharing)
 
@@ -93,11 +92,10 @@ Review Ticket
 ---------------------------------------
 | Name             | ID              | Scrumboard                                                                   | Issues | Commits  | Profile          |
 | ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ | ----------- | ---------------- |
-| Arch Huang  | Archkitten | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Aarchkitten) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aarch+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Archkitten)         | [@ArchKitten](https://github.com/ArchKitten)     |
-| Reinhardt Lotter | Reinhardtlotter | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Reinhardtlotter) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Areinhardt+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Reinhardtlotter)         | [@Reinhardtlotter](https://github.com/Reinhardtlotter) |
-| Derrick Huang    | Pitsco          | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aderrick+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco)         | [@Pitsco](https://github.com/Pitsco)          |
-| David Xie      | David-Xie123  | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Adavid+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01)          | [@David-Xie123](https://github.com/David-Xie123)  |
-| Conner Wang  | cwang999 | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aconnor+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999)         | [@cwang999](https://github.com/cwang999)     |
+| Connor Wang  | cwang999 | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aconnor+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999)         | [@cwang999](https://github.com/cwang999)     |
+| Jacob Rosenkrantz| Reinhardtlotter | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Reinhardtlotter) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Areinhardt+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Reinhardtlotter)         | [@Reinhardtlotter](https://github.com/Reinhardtlotter) |
+| Stanley Yan    | Pitsco          | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aderrick+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco)         | [@Pitsco](https://github.com/Pitsco)          |
+| Leo Sun      | David-Xie123  | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Adavid+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01)          | [@David-Xie123](https://github.com/David-Xie123)  |
 
 
 ### Week 0
