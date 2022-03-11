@@ -1,6 +1,8 @@
-# Ninjas
+# Coders
 
-[Deployed Website](https://crahpi.tk)
+Our idea is to create a website for Del Norte track. It will have a sign up page allowing people interested in track to sign up, as well as a schedule page and a page showing individuals' statistics. 
+
+[Deployed Website]()
 
 [Jekyll Page](https://compapter.me)
 
@@ -97,58 +99,11 @@ Review Ticket
 | David Xie      | David-Xie123  | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Adavid+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01)          | [@David-Xie123](https://github.com/David-Xie123)  |
 | Conner Wang  | cwang999 | [Scrumboard](https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aconnor+) | [Commits](https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999)         | [@cwang999](https://github.com/cwang999)     |
 
-### Week 5
-| Name | Assignment | Ticket |
-| ---------- | ---------- | ------ |
-| Arch | Jekyll | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/62) |
-| Reinhardt | Under the hood (javascript) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/63) |
-| Derrick | Under the hood (javascript) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/63)  |
-| David | Crud | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/64) |
-| Conner | Sassy Bootstrap | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/65) |
-
-### Week 4
-| Name | Assignment | Ticket |
-| ---------- | ---------- | ------ |
-| Arch | Replit PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/36) |
-| Reinhardt | Orbit Times PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/39) |
-| Derrick | Galaxy Comparision PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/38)  |
-| David | Search PBL | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/41) |
-| Conner | Finished Rock Content PBL, started on upload images PBL| [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/37) |
-
-### Week 3
-| Name | Assignment | Ticket |
-| ---------- | ---------- | ------ |
-| Arch | Updated Deployment | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/36) |
-| Reinhardt | Manage pull requests | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/39) |
-| Derrick | Organize scrumboard + readme, 1-minute video | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/38)  [Ticket2](https://youtu.be/TSD0Jb_oI8c)|
-| David | Asynchronous Accesses, 1-minute video | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/41)  [Ticket2](https://youtu.be/TSD0Jb_oI8c) |
-| Conner | Bootstrap, 3 frontend screens| [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/37) |
-
-
-### Week 2
-| Name | Assignment | Ticket |
-| ---------- | ---------- | ------ |
-| Arch | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/33d2f835120c31b0a9ea73aad004eb4d3b43040f) |
-| Reinhardt | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/ee6612b4bb875ba771413dff2cf051dc4c8f0e60) |
-| Derrick | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) |
-| David | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/17)  |
-| Conner | Home Page (with API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/commit/ed4d0762171382055ab24a5f57732375ff0187ee) |
-
-### Week 1
-| Name | Assignment | Ticket |
-| ---------- | ---------- | ------ |
-| Arch | Wiki Page, Wire Frames | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
-| Reinhardt | Wiki Page, Wire Frames | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
-| Derrick | Wiki Page | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) |
-| David | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/17)  |
-| Conner | Wiki Page, Wireframes | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/11) [Ticket 2](https://github.com/Archkitten/m22p4-ninjas/issues/16) |
-
 
 ### Week 0
 | Name | Assignment | Ticket |
 | ---- |----------- | -------- |
-| Arch | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/6) |
-| Reinhardt | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/2) |
-| Derrick | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/4) |
-| David | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/17) |
-| Conner | Home Page (No API) | [Ticket](https://github.com/Archkitten/m22p4-ninjas/issues/3) |
+| Connor | Home Page (No API) | [Ticket]() |
+| Jacob | Home Page (No API) | [Ticket]() |
+| Leo | Home Page (No API) | [Ticket]()|
+| Stanley | Home Page (No API) | [Ticket]() |
