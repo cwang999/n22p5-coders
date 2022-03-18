@@ -1,3 +1,4 @@
+{% include navbar.html %}
 # Wireframes
 -----
 ## Home Page
