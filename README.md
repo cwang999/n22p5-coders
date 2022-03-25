@@ -49,7 +49,7 @@ Review Ticket
     <tbody>
     <tr>
       <td>Leo Sun</td>
-      <td>@</td>
+      <td>@lleosunn</td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3APitsco">Issues</a> </td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco">Scrum tasks</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco">Commits</a></td>
