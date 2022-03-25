@@ -28,8 +28,8 @@ Review Ticket
   </thead>
   <tbody>
     <tr>
-      <td>Arch Huang</td>
-      <td>@Archkitten</td>
+      <td>Connor Wang</td>
+      <td>@cwang999</td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues/assigned/Archkitten">Issues</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Aarchkitten">Scrum tasks</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Archkitten">Commits</a></td>
@@ -38,8 +38,8 @@ Review Ticket
   </tbody>
     <tbody>
     <tr>
-      <td>Reinhardt Lotter</td>
-      <td>@Reinhardtlotter</td>
+      <td>Jacob Rosenkrantz</td>
+      <td>@jar04</td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3AReinhardtlotter">Issues</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Reinhardtlotter">Scrum tasks</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Reinhardtlotter">Commits</a></td>
@@ -48,8 +48,8 @@ Review Ticket
   </tbody>
     <tbody>
     <tr>
-      <td>Derrick Huang</td>
-      <td>@Pitsco</td>
+      <td>Leo Sun</td>
+      <td>@</td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3APitsco">Issues</a> </td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco">Scrum tasks</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco">Commits</a></td>
@@ -58,8 +58,8 @@ Review Ticket
   </tbody>
     <tbody>
     <tr>
-      <td>David Xie</td>
-      <td>@David-Xie123</td>
+      <td>Stanley Yan</td>
+      <td>@Stanleyy03840</td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3ADavid-Xie123">Issues</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123">Scrum tasks</a></td>
       <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01">Commits</a></td>
