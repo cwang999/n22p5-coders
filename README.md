@@ -15,68 +15,7 @@ Day before review day, 7PM: Move Tickets, add Tangibles [EVERYONE]
 Time Box
 Review Ticket
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>ID</th>
-      <th>Issues</th>
-      <th>Scrumboard</th>
-      <th>Commits</th>
-      <th>Profile</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Connor Wang</td>
-      <td>@cwang999</td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues/assigned/Archkitten">Issues</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Aarchkitten">Scrum tasks</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Archkitten">Commits</a></td>
-      <td><a href="https://github.com/ArchKitten">Profile</a></td>
-    </tr>
-  </tbody>
-    <tbody>
-    <tr>
-      <td>Jacob Rosenkrantz</td>
-      <td>@jar04</td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3AReinhardtlotter">Issues</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Reinhardtlotter">Scrum tasks</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Reinhardtlotter">Commits</a></td>
-      <td><a href="https://github.com/Reinhardtlotter">Profile</a></td>
-    </tr>
-  </tbody>
-    <tbody>
-    <tr>
-      <td>Leo Sun</td>
-      <td>@lleosunn</td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3APitsco">Issues</a> </td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Pitsco">Scrum tasks</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=Pitsco">Commits</a></td>
-      <td><a href="https://github.com/Pitsco">Profile</a></td>
-    </tr>
-  </tbody>
-    <tbody>
-    <tr>
-      <td>Stanley Yan</td>
-      <td>@Stanleyy03840</td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3ADavid-Xie123">Issues</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Adavid-xie123">Scrum tasks</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=David-Xie123&since=2021-11-01&until=2021-12-01">Commits</a></td>
-      <td><a href="https://github.com/David-Xie123">Profile</a></td>
-    </tr>
-  </tbody>
-      <tbody>
-    <tr>
-      <td>Connor Wang</td>
-      <td>@cwang999</td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aopen+assignee%3Acwang999">Issues</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/projects/1?card_filter_query=assignee%3Acwang999">Scrum tasks</a></td>
-      <td><a href="https://github.com/Archkitten/m22p4-ninjas/commits?author=cwang999">Commits</a></td>
-      <td><a href="https://github.com/cwang999">Profile</a></td>
-    </tr>
-  </tbody>
-</table>
+
 
 -----------------------------------------------------------------------------------
 ### Your Creators
