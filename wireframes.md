@@ -1,4 +1,5 @@
-<!-- {% include navbar.html %} -->
+{% include navbar.html %}
+
 # Wireframes
 -----
 ## Home Page
