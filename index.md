@@ -15,18 +15,6 @@ Day before review day, 7PM: Move Tickets, add Tangibles [EVERYONE]
 Time Box
 Review Ticket
 
-
-
------------------------------------------------------------------------------------
-### Your Creators
-
-| Name             | Journal                                                                                                      |
-| ---------------- | ------------------------------------------------------------------------------------------------------------ |
-| Connor Wang | [Journal]() |
-| Jacob Rosenkrantz | [Journal]() |
-| Stanley Yan | [Journal]() |
-| Leo Sun | [Journal]() |
-
 [Contributing guidelines](https://docs.google.com/document/d/1U18-l772UyNbFlkvBeJZ7O4DMtzl09AFkpKyu8vNqQg/edit?usp=sharing)
 
 ## Teammates
