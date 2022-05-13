@@ -1,7 +1,5 @@
 {% include navbar.html %}
 
-
-### Week 0
 | Name | Assignment | Ticket |
 | ---- |----------- | -------- |
 | Connor | Home Page (No API) | [Ticket]() |
