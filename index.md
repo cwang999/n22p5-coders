@@ -29,9 +29,8 @@ Review Ticket
 [Contributing guidelines](https://docs.google.com/document/d/1U18-l772UyNbFlkvBeJZ7O4DMtzl09AFkpKyu8vNqQg/edit?usp=sharing)
 
 ## Teammates
----------------------------------------
-| Name             | ID              | Scrumboard                                                                   | Issues | Commits  | Profile          |
-| ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ | ----------- | ---------------- |
+| Name             | ID              | Scrumboard                                 | Issues | Commits  | Profile          |
+| ---------------- | --------------- | ------------------------------------------ | ------ | ----------- | ---------------- |
 | Connor Wang  | cwang999 | [Scrumboard](https://github.com/cwang999/n22p5-coders/projects/1?card_filter_query=assignee%3Acwang999) | [Issue](https://github.com/Archkitten/m22p4-ninjas/issues?q=is%3Aissue+label%3Aconnor+) | [Commits](https://github.com/cwang999/n22p5-coders/commits?author=cwang999)         | [@cwang999](https://github.com/cwang999)     |
 | Jacob Rosenkrantz| jar04 | [Scrumboard](https://github.com/cwang999/n22p5-coders/projects/1?card_filter_query=assignee%3jar04) | [Issue](https://github.com/cwang999/n22p5-coders/issues?q=is%3Aopen+is%3Aissue+author%3Ajar04+assignee%3Ajar04) | [Commits](https://github.com/cwang999/n22p5-coders/commits?author=jar04)         | [@jar04](https://github.com/jar04) |
 | Stanley Yan    | Stanleyy03840          | [Scrumboard](https://github.com/cwang999/n22p5-coders/projects/1?card_filter_query=assignee%3Stanleyy03840) | [Issue](https://github.com/cwang999/n22p5-coders/issues?q=is%3Aopen+is%3Aissue+author%3Ajar04+assignee%3AStanleyy03840) | [Commits](https://github.com/cwang999/n22p5-coders/commits?author=Stanleyy03840)         | [@Stanleyy03840](https://github.com/Stanleyy03840)          |
